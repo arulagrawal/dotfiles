@@ -1,0 +1,41 @@
+#! /bin/sh
+
+# formal numerals now
+bspc monitor eDP1 -d 壱 弐 参 肆 伍 陸 漆
+bspc monitor VIRTUAL1 -d 壱 弐 参 肆 伍 陸 漆
+
+background=$(xrdb -query | grep "background" | cut -f2 | sed -r 's/#//' | head -n 1)
+foreground=$(xrdb -query | grep "foreground" | cut -f2 | sed -r 's/#//' | head -n 1)
+color0=$(xrdb -query | grep "color0" | cut -f2 | sed -r 's/#//' | head -n 1)
+color1=$(xrdb -query | grep "color1" | cut -f2 | sed -r 's/#//' | head -n 1)
+color2=$(xrdb -query | grep "color2" | cut -f2 | sed -r 's/#//' | head -n 1)
+color3=$(xrdb -query | grep "color3" | cut -f2 | sed -r 's/#//' | head -n 1)
+color4=$(xrdb -query | grep "color4" | cut -f2 | sed -r 's/#//' | head -n 1)
+color5=$(xrdb -query | grep "color5" | cut -f2 | sed -r 's/#//' | head -n 1)
+color6=$(xrdb -query | grep "color6" | cut -f2 | sed -r 's/#//' | head -n 1)
+color7=$(xrdb -query | grep "color7" | cut -f2 | sed -r 's/#//' | head -n 1)
+color8=$(xrdb -query | grep "color8" | cut -f2 | sed -r 's/#//' | head -n 1)
+
+bspc config border_width         4
+bspc config window_gap           8
+
+bspc config split_ratio           0.50
+bspc config borderless_monocle    true
+bspc config gapless_monocle       true
+bspc config focus_follows_pointer true
+
+bspc config normal_border_color "#$color8"
+bspc config active_border_color "#$color1"
+bspc config focused_border_color "#CAA9FA"
+bspc config presel_feedback_color "#$color8"
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a chrome desktop='^1'
+bspc rule -a google-chrome desktop='^1'
+bspc rule -a Google-chrome desktop='^1'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+
+# Autostart
+~/scripts/colors.sh &
