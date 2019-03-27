@@ -1,6 +1,7 @@
 call plug#begin()
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-commentary'
@@ -8,6 +9,7 @@ Plug 'luochen1990/rainbow'
 Plug 'jiangmiao/auto-pairs'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'yggdroot/indentline'
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
@@ -69,3 +71,20 @@ vmap <C-x> "+ci
 " Paste
 vmap <C-v> <ESC>"+pi
 imap <C-v> <ESC>"+pi
+
+
+" air-line
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
