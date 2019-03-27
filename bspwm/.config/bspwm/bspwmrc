@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/bash
 
 # formal numerals now
 bspc monitor eDP1 -d 壱 弐 参 肆 伍 陸 漆
