@@ -1,4 +1,4 @@
-redshift -l -26.009722:28.026111 &
+redshift &
 polybar burs &
 polybar bur &
 compton --config ~/.compton.conf --blur-background &
