@@ -2,13 +2,20 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/arul/.oh-my-zsh"
+export ZSH="/home/arul/.oh-my-zsh"
 
+
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt autocd extendedglob nomatch
+unsetopt beep
+bindkey -v
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME=powerlevel10k/powerlevel10k
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -27,7 +34,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -39,7 +46,7 @@ ZSH_THEME="robbyrussell"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -62,10 +69,9 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -77,7 +83,7 @@ export LANG=en_US.UTF-8
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -93,4 +99,92 @@ fi
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+#
+# My Aliases
+alias vimrc='nvim ~/.config/nvim/init.vim'
+alias zshrc='nvim ~/.zshrc; source ~/.zshrc'
+alias joke='curl https://icanhazdadjoke.com && printf "\n"'
+alias weather='curl wttr.in'
+alias c='clear'
+alias comp='killall compton; compton --config .compton.conf --blur-background &'
+
+
+
+alias q='exit 0'
+alias d='clear'
+
+alias la='ls -Ah'
+alias ll='ls -lAh'
+alias l.='ls -ld .*'
+
+alias mkdir='mkdir -pv'
+alias grep='grep --color=auto'
+alias debug="set -o nounset; set -o xtrace"
+alias x='chmod +x'
+
+alias du='du -kh'
+alias df='df -kTh'
+
+if hash nvim >/dev/null 2>&1; then
+    alias vim='nvim'
+    alias v='nvim'
+    alias sv='sudo nvim'
+else
+    alias v='vim'
+    alias sv='sudo vim'
+fi
+
+alias f='ranger'
+
+alias gp='git pull'
+alias gf='git fetch'
+alias gc='git clone'
+alias gs='git stash'
+alias gb='git branch'
+alias gm='git merge'
+alias gch='git checkout'
+alias gcm='git commit -m'
+alias glg='git log --stat'
+alias gpo='git push origin HEAD'
+alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
+
+alias pup='sudo pacman -Syyu' # update
+alias pin='sudo pacman -S'    # install
+alias pun='sudo pacman -Rs'   # remove
+alias pcc='sudo pacman -Scc'  # clear cache
+alias pls='pacman -Ql'        # list files
+alias prm='sudo pacman -Rnsc' # really remove, configs and all
+
+alias yup='yay' # update
+alias yin='yay -S'    # install
+alias yun='yay -Rs'   # remove
+alias ycc='yay -Scc'  # clear cache
+alias yls='yay -Ql'        # list files
+alias yrm='yay -Rnsc' # really remove, configs and all
+
+alias pkg='makepkg --printsrcinfo > .SRCINFO && makepkg -fsrc'
+alias spkg='pkg --sign'
+
+alias mk='make && make clean'
+alias smk='sudo make clean install && make clean'
+alias ssmk='sudo make clean install && make clean && rm -iv config.h'
+
+# aliases inside tmux session
+if [[ $TERM == *tmux* ]]; then
+    alias :sp='tmux split-window'
+    alias :vs='tmux split-window -h'
+fi
+
+alias rcp='rsync -v --progress'
+alias rmv='rcp --remove-source-files'
+
+alias calc='python -qi -c "from math import *"'
+alias brok='sudo find . -type l -! -exec test -e {} \; -print'
+alias timer='time read -p "Press enter to stop"'
+
+# shellcheck disable=2142
+alias xp='xprop | awk -F\"'" '/CLASS/ {printf \"NAME = %s\nCLASS = %s\n\", \$2, \$4}'"
+alias get='curl --continue-at - --location --progress-bar --remote-name --remote-time'
+source ~/.purepower
