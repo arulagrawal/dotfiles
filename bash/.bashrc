@@ -55,6 +55,7 @@ alias bashrc='nvim ~/.bashrc; source ~/.bashrc'
 alias joke='curl https://icanhazdadjoke.com && printf "\n"'
 alias weather='curl wttr.in'
 alias c='clear'
+alias comp='killall compton; compton --config .compton.conf --blur-background &'
 
 
 

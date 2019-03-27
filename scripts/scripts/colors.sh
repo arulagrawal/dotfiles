@@ -1,7 +1,6 @@
 #!/bin/sh
 
-intel-virtual-output
-# feh --bg-fill ~/Pictures/wallpaper.jpg
+#intel-virtual-output
 ~/.screenlayout/correct.sh
 
 background=$(xrdb -query | grep "background" | cut -f2 | sed -r 's/#//' | head -n 1)
