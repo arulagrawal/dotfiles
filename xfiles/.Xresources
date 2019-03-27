@@ -37,7 +37,7 @@ URxvt.letterSpace: -0.9
 URxvt*background: [50]#282a36
 *.foreground: #F8F8F2
 *.color0:     #000000
-*.color8:     #50FA7B
+*.color8:     #4D4D4D
 *.color1:     #FF5555
 *.color9:     #FF6E67
 *.color2:     #50FA7B

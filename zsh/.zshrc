@@ -4,6 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/arul/.oh-my-zsh"
 
+fpath=( "$HOME/.zfunctions" $fpath )
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -16,7 +17,6 @@ bindkey -v
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="dracula"
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=7'
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
