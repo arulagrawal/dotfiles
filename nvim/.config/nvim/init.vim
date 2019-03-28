@@ -10,6 +10,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'yggdroot/indentline'
 Plug 'vim-airline/vim-airline'
+Plug 'edkolev/promptline.vim'
 
 call plug#end()
 
