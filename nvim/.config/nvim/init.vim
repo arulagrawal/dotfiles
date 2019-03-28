@@ -7,10 +7,10 @@ Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-commentary'
 Plug 'luochen1990/rainbow'
 Plug 'jiangmiao/auto-pairs'
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'yggdroot/indentline'
 Plug 'vim-airline/vim-airline'
 Plug 'edkolev/promptline.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end()
 
@@ -27,7 +27,9 @@ color dracula
 " let g:indentLine_setColors = 0
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_color_term = 6
-
+let g:selection = ['#21222C', 234]
+let g:subtle = ['#21222C', 234]
+syntax on
 " syntastic settings - recommended 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -41,7 +43,7 @@ let g:syntastic_check_on_wq = 0
 set nocompatible
 filetype on
 set background=dark
-set t_Co=16
+set t_Co=256
 set mouse=a
 set number
 syntax on
@@ -57,7 +59,7 @@ set tm=500
 set encoding=utf8
 set ffs=unix,dos,mac
 " use spaces instead of tabs
-" set expandtab
+set expandtab
 set tabstop=8
 set softtabstop=4
 set shiftwidth=4
