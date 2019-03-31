@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#intel-virtual-output
+intel-virtual-output
 ~/.screenlayout/correct.sh
 
 background=$(xrdb -query | grep "background" | cut -f2 | sed -r 's/#//' | head -n 1)

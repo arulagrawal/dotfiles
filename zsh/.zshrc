@@ -206,3 +206,9 @@ alias timer='time read -p "Press enter to stop"'
 # shellcheck disable=2142
 alias xp='xprop | awk -F\"'" '/CLASS/ {printf \"NAME = %s\nCLASS = %s\n\", \$2, \$4}'"
 alias get='curl --continue-at - --location --progress-bar --remote-name --remote-time'
+
+
+#funtions
+se() { du -a ~/.dotfiles/* ~/scripts/* | awk '{print $2}' | sed '/^.\{50\}./d' | fzf | xargs -r $EDITOR ;}
+
+eval $(thefuck --alias)

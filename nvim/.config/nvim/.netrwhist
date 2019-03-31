@@ -1,11 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/arul/.config'
-let g:netrw_dirhist_2='/home/arul/.config/autostart'
-let g:netrw_dirhist_3='/home/arul/.config'
-let g:netrw_dirhist_4='/home/arul/.config/polybar'
-let g:netrw_dirhist_5='/home/arul/.config/sxhkd'
-let g:netrw_dirhist_6='/home/arul/.config/polybar'
-let g:netrw_dirhist_7='/home/arul/.config/spotify'
-let g:netrw_dirhist_8='/home/arul/scripts/rice'
-let g:netrw_dirhist_9='/home/arul/.cache/squash'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/arul/scripts'
+let g:netrw_dirhist_2='/home/arul/.dotfiles/bspwm'
+let g:netrw_dirhist_3='/home/arul/.dotfiles/bspwm/.config'
+let g:netrw_dirhist_4='/home/arul/.dotfiles/bspwm/.config/bspwm'
