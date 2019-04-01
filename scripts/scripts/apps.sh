@@ -1,4 +1,5 @@
 #!/bin/bash
+cd ~
 redshift &
 polybar burs &
 polybar bur &

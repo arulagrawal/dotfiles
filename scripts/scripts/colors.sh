@@ -2,7 +2,7 @@
 
 intel-virtual-output
 ~/.screenlayout/correct.sh
-
+feh --bg-fill ~/Pictures/wallpaper.jpg
 background=$(xrdb -query | grep "background" | cut -f2 | sed -r 's/#//' | head -n 1)
 foreground=$(xrdb -query | grep "foreground" | cut -f2 | sed -r 's/#//' | head -n 1)
 color0=$(xrdb -query | grep "color0" | cut -f2 | sed -r 's/#//' | head -n 1)
