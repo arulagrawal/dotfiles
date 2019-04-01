@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # formal numerals now
-bspc monitor eDP1 -d 壱 弐 参 肆 伍 陸 漆
-bspc monitor VIRTUAL1 -d 壱 弐 参 肆 伍 陸 漆
+bspc monitor eDP-1-1 -d 壱 弐 参 肆 伍 陸 漆
+bspc monitor HDMI-0 -d 壱 弐 参 肆 伍 陸 漆
 
 background=$(xrdb -query | grep "background" | cut -f2 | sed -r 's/#//' | head -n 1)
 foreground=$(xrdb -query | grep "foreground" | cut -f2 | sed -r 's/#//' | head -n 1)

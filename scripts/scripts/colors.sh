@@ -1,6 +1,6 @@
 #!/bin/bash
 
-intel-virtual-output
+#intel-virtual-output
 ~/.screenlayout/correct.sh
 feh --bg-fill ~/Pictures/wallpaper.jpg
 background=$(xrdb -query | grep "background" | cut -f2 | sed -r 's/#//' | head -n 1)
@@ -28,6 +28,7 @@ bspc config active_border_color "#$color9"
 bspc config presel_feedback_color "#$color1"
 
 sxhkd &
-bspc monitor VIRTUAL1 -d 壱 弐 参 肆 伍 陸 漆
+bspc monitor HDMI-0 -d 壱 弐 参 肆 伍 陸 漆
+bspc monitor eDP-1-1 -d 壱 弐 参 肆 伍 陸 漆
 ~/scripts/apps.sh &
 #END

@@ -20,7 +20,7 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/burs]
-monitor = ${env:MONITOR:eDP1}
+monitor = ${env:MONITOR:eDP-1-1}
 width = 1905
 height = 32
 offset-x = 8
@@ -51,7 +51,7 @@ font-3 = "Wuncon Siji:style=bold:pixelsize=11:antialias=false;1"
 font-1 = Material Icons:size=11;2
 font-2 = M+ 1mn:style=bold:pixelsize=11;1
 
-modules-left = bspwm 
+modules-left = bspwm
 modules-right = volume memory cpu date battery powermenu
 
 tray-position = left
@@ -60,7 +60,7 @@ tray-padding = 2
 wm-restack = bspwm
 
 [bar/bur]
-monitor = ${env:MONITOR:VIRTUAL1}
+monitor = ${env:MONITOR:HDMI-0}
 width = 1905
 height = 32
 offset-x = 8
@@ -91,7 +91,7 @@ font-3 "Wuncon Siji:style=bold:pixelsize=11:antialias=false;1"
 font-1 = Material Icons:size=11;2
 font-2 = M+ 1mn:style=bold:pixelsize=11;1
 
-modules-left = bspwm 
+modules-left = bspwm
 modules-center = spotify
 modules-right = volume memory cpu date battery powermenu
 
