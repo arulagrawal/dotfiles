@@ -1,6 +1,6 @@
 #!/bin/bash
 cd ~
-#redshift &
+redshift &
 polybar burs &
 polybar bur &
 compton --config ~/.compton.conf --blur-background &
