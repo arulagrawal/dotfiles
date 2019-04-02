@@ -1,5 +1,7 @@
 These are my dotfiles.
 
-Major Commenting needed.
-
 Managed via GNU Stow
+
+TODO:
+    - Commenting
+    - Clean up scripts folder
