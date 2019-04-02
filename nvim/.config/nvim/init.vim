@@ -1,8 +1,8 @@
 call plug#begin()
 
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " Plug 'scrooloose/syntastic'
 " Plug 'tpope/vim-commentary'
 " Plug 'luochen1990/rainbow'

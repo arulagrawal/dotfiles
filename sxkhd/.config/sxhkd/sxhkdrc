@@ -3,17 +3,18 @@
 #
 # scrot
 super + shift + p
-        scrot && pkill scrot -q 100
+    scrot && pkill scrot -q 100
 
 super + shift + r
-        pkill polybar && polybar -r burs
+    pkill polybar && polybar -r burs & disown
+    polybar -r bur
 # brightness and darkness of monitor
 # darker
 super + F11
-        xbacklight -dec 10
+    xbacklight -dec 10
 # brighter
 super + F12
-        xbacklight -inc 10
+    xbacklight -inc 10
 
 # terminal emulator
 super + Return
@@ -106,45 +107,36 @@ super + Tab
 
 # focus the older or newer node in the focus history
 super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
+    bspc wm -h off; \
+    bspc node {older,newer} -f; \
+    bspc wm -h on
 
 # focus to the given desktop
 super + {1-9}
-        x=$(bspc query -M -m); \
-        y="{1-9}"; \
-        x=$(echo -n $x  | tail -c 1); \
-        echo $x; \
-        if [[ "$x" -eq "B" ]]; \
-        then \
-                bspc desktop -f "^1:^$y"; \
-        fi ; \
-        if [[ "$x" -eq "2" ]]; \
-        then \
-                bspc desktop -f "^2:^$y"; \
-        fi;
-        #echo $x;
-        #var=$((var / 2)); \
-        #var=$((var + 1)); \
-        #echo $var; \
-        #bspc {desktop -f,node -d} "^2:^"$var
-        #bspc {desktop -f,node -d} '^1:^{1-9,10}'; \
-        #bspc {desktop -f,node -d} '^2:^{1-9,10}'
+    x=$(bspc query -M -m | sed 's/.*\(.\)/\1/'); \
+    y="{1-9}"; \
+    echo $x; \
+    if [[ "$x" -eq "B" ]]; \
+    then \
+        bspc desktop -f "^1:^$y"; \
+    fi ; \
+    if [[ "$x" -eq "2" ]]; \
+    then \
+        bspc desktop -f "^2:^$y"; \
+    fi;
 
 # send node to desktop on current monitor
 super + shift + {1-9}
-        x=$(bspc query -M -m); \
-        y="{1-9}"; \
-        x=$(echo -n $x  | tail -c 1); \
-        if [[ "$x" -eq "B" ]]; \
-        then \
-                bspc node -d "^1:^$y"; \
-        fi ; \
-        if [[ "$x" -eq "2" ]]; \
-        then \
-                bspc node -d "^2:^$y"; \
-        fi;
+    x=$(bspc query -M -m | sed 's/.*\(.\)/\1/'); \
+    y="{1-9}"; \
+    if [[ "$x" -eq "B" ]]; \
+    then \
+        bspc node -d "^1:^$y"; \
+    fi ; \
+    if [[ "$x" -eq "2" ]]; \
+    then \
+        bspc node -d "^2:^$y"; \
+    fi;
 #
 # preselect
 #
@@ -171,15 +163,15 @@ super + shift + {1-9}
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # move a floating window
 super + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
+    bspc node -v {-20 0,0 20,0 -20,20 0}
 
 
 ##Media Keys
@@ -193,8 +185,8 @@ XF86AudioMute
 	amixer -q set Master toggle
 
 XF86AudioPlay
-    dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause    
-    
+    dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+
 XF86AudioPrev
     dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 
