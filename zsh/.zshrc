@@ -127,12 +127,12 @@ alias zshrc='nvim ~/.zshrc; source ~/.zshrc'
 alias joke='curl https://icanhazdadjoke.com && printf "\n"'
 alias weather='curl wttr.in'
 alias c='clear'
-alias comp='killall compton; compton --config .compton.conf --blur-background &'
+alias d='clear'
+alias comp='killall compton; compton --config .compton.conf --blur-background & disown'
 
 
 
 alias q='exit 0'
-alias d='clear'
 
 alias la='ls -Ah'
 alias ll='ls -lAh'
@@ -156,18 +156,6 @@ else
 fi
 
 alias f='ranger'
-
-alias gp='git pull'
-alias gf='git fetch'
-alias gc='git clone'
-alias gs='git stash'
-alias gb='git branch'
-alias gm='git merge'
-alias gch='git checkout'
-alias gcm='git commit -m'
-alias glg='git log --stat'
-alias gpo='git push origin HEAD'
-alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 
 alias pup='sudo pacman -Syyu' # update
 alias pin='sudo pacman -S'    # install
@@ -212,3 +200,6 @@ alias dot='ranger ~/.dotfiles'
 se() { du -a ~/.dotfiles/* ~/scripts/* | awk '{print $2}' | sed '/^.\{60\}./d' | sed '/plugged/d' | fzf | xargs -r $EDITOR ;}
 
 eval $(thefuck --alias)
+
+
+fortune
