@@ -9,3 +9,4 @@ autocutsel -selection PRIMARY -fork &
 pactl set-sink-volume 0 50%
 pactl set-sink-volume 1 50%
 #optirun -b none nvidia-settings --load-config-only -c :8
+~/scripts/defaultsetup.sh &

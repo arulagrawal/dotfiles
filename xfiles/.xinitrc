@@ -1,6 +1,6 @@
 nitrogen --restore &
 xrdb merge ~/.Xresources &
-xsetroot -cursor_name left_ptr &
+#xsetroot -cursor_name left_ptr &
 #flashfocus &
 ~/scripts/colors.sh &
 xset +fp /usr/share/fonts &

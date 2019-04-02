@@ -20,7 +20,7 @@ XTerm.termName: xterm-256color
 XTerm.vt100.locale: true
 XTerm.vt100.selectToClipboard: true
 XTerm.scaleHeight: 1.01
-
+XCursor.theme: Breeze_Snow
 URxvt.scrollBar: false
 URxvt*depth: 32
 URxvt.perl-ext-common: default,matcher,resize-font

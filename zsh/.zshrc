@@ -209,6 +209,6 @@ alias get='curl --continue-at - --location --progress-bar --remote-name --remote
 
 alias dot='ranger ~/.dotfiles'
 #funtions
-se() { du -a ~/.dotfiles/* ~/scripts/* | awk '{print $2}' | sed '/^.\{50\}./d' | fzf | xargs -r $EDITOR ;}
+se() { du -a ~/.dotfiles/* ~/scripts/* | awk '{print $2}' | sed '/^.\{60\}./d' | sed '/plugged/d' | fzf | xargs -r $EDITOR ;}
 
 eval $(thefuck --alias)
