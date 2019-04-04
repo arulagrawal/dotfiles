@@ -139,26 +139,26 @@ label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/bspwm]
 type = internal/bspwm
-module-margin-left = 4
-module-margin-right = 4
+module-margin-left = 2
+module-margin-right = 2
 label-focused = %name%
-label-focused-font = 4 
+label-focused-font = 4
 label-focused-background = ${xrdb:background:#ff0000}
 label-focused-underline= ${xrdb:color9:#ff0000}
-label-focused-padding = 4
+label-focused-padding = 2
 
 label-occupied = %name%
 
 label-occupied-foreground = ${xrdb:color1:#ff0000}
-label-occupied-padding = 4
+label-occupied-padding = 2
 
 label-urgent = %name%
 label-urgent-background = ${xrdb:color1:#ff0000}
-label-urgent-padding = 4
+label-urgent-padding = 2
 
 label-empty = %name%
 label-empty-foreground = ${xrdb:foreground:#ff0000}
-label-empty-padding = 4
+label-empty-padding = 2
 
 [module/i3]
 
@@ -195,25 +195,6 @@ label-visible-padding = ${self.label-focused-padding}
 label-urgent = %name%
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
-
-[module/mpd]
-type = internal/mpd
-format-online = <icon-prev> <toggle> <icon-next> <label-song>
-host = 127.0.0.1
-port = 6600
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-
-bar-progress-width = 10
-bar-progress-indicator = |
-bar-progress-fill = ─
-bar-progress-empty = ─
 
 [module/battery]
 

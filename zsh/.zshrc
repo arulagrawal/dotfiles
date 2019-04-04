@@ -62,7 +62,7 @@ export UPDATE_ZSH_DAYS=13
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -88,7 +88,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting command-not-found)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting command-not-found extract sudo z)
 
 source $ZSH/oh-my-zsh.sh
 # User configuration
@@ -196,10 +196,23 @@ alias xp='xprop | awk -F\"'" '/CLASS/ {printf \"NAME = %s\nCLASS = %s\n\", \$2, 
 alias get='curl --continue-at - --location --progress-bar --remote-name --remote-time'
 
 alias dot='ranger ~/.dotfiles'
+alias t='todo.sh'
+#end aliases
+
+
 #funtions
 se() { du -a ~/.dotfiles/* ~/scripts/* | awk '{print $2}' | sed '/^.\{60\}./d' | sed '/plugged/d' | fzf | xargs -r $EDITOR ;}
 
+hex2dec()
+{
+    echo $((16#$1));
+}
+
+dec2hex()
+{
+    echo "obase=16; $1" | bc;
+}
+
+
+#end functions
 eval $(thefuck --alias)
-
-
-fortune

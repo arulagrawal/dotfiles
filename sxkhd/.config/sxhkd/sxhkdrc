@@ -6,15 +6,8 @@ super + shift + p
     scrot && pkill scrot -q 100
 
 super + shift + r
-    pkill polybar && polybar -r burs & disown
-    polybar -r bur
-# brightness and darkness of monitor
-# darker
-super + F11
-    xbacklight -dec 10
-# brighter
-super + F12
-    xbacklight -inc 10
+    pkill polybar && polybar -r burs & disown; \
+    polybar -r bur & disown;
 
 # terminal emulator
 super + Return
@@ -27,9 +20,13 @@ super + shift + Return
 super + @space
 	rofi -show run -theme base16-dracula -sidebar-mode -terminal urxvt -font "Hack 11"
 
-#launch ranger
-super + r
-	urxvt -e ranger
+# rotate desktop
+super + {_,shift + }r
+	bspc node @/ --rotate {90,-90}
+
+# Circulate the leaves of the tree
+super + {_,shift + }c
+	bspc node @/ --circulate {backward,forward}
 
 #launch chrome
 super + grave
@@ -58,6 +55,7 @@ super + {_,shift + }w
 super + shift + m
     bspc node -m next
 
+# focus next monitor
 super + m
     bspc monitor -f next
 
@@ -94,7 +92,7 @@ super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous node in the current desktop
-super + {_,shift + }c
+super + {_,shift + }x
 	bspc node -f {next,prev}.local
 
 # focus the next/previous desktop in the current monitor
@@ -102,7 +100,7 @@ super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
-super + Tab
+{alt,super} + Tab
 	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
