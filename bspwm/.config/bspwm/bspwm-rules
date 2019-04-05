@@ -7,8 +7,8 @@ instance=$3;
 class=$2;
 
 case $class in
+    (Firefox|Firefox-esr|Iceweasel) echo \ desktop=^2:^1;;
 	(Emacs) echo state=tiled\ layer=normal;;
-	(Firefox|Firefox-esr|Iceweasel) echo desktop=^2;;
 	(Gimp*) echo follow=on;;
 	(Gitk) echo state=floating\ layer=normal;;
 	(MPlayer) echo state=floating\ layer=normal;;
@@ -18,7 +18,6 @@ case $class in
 	(TelegramDesktop) echo desktop=^3;;
 	(XCalc) echo state=floating\ layer=normal;;
 	(Xmessage) echo state=floating\ layer=normal;;
-	([cC]hromium|Chromium-browser) echo desktop=^2;;
 	([sS]urf) echo desktop=^2;;
 	([lL]ibre[oO]ffice*) echo state=tiled\ layer=normal;;
 	(mpv) echo state=floating\ layer=normal;;

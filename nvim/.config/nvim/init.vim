@@ -3,6 +3,7 @@ call plug#begin()
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'zhou13/vim-easyescape'
 " Plug 'scrooloose/syntastic'
 " Plug 'tpope/vim-commentary'
 " Plug 'luochen1990/rainbow'
@@ -123,6 +124,7 @@ Plug 'rust-lang/rust.vim'
 if filereadable(expand("~/.config/nvim/local_bundles.vim"))
   source ~/.config/nvim/local_bundles.vim
 endif
+
 call plug#end()
 filetype plugin indent on
 syntax on
@@ -132,6 +134,11 @@ autocmd BufReadPost *
   \ if line("'\"") >= 1 && line("'\"") <= line("$") |
   \   exe "normal! g`\"" |
   \ endif
+
+let g:easyescape_chars = { "j": 1, "k": 1 }
+let g:easyescape_timeout = 100
+cnoremap jk <ESC>
+cnoremap kj <ESC>
 
 set encoding=utf-8
 set fileencoding=utf-8

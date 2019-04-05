@@ -18,15 +18,7 @@ super + shift + Return
 
 # program launcher
 super + @space
-	rofi -show run -theme base16-dracula -sidebar-mode -terminal urxvt -font "Hack 11"
-
-# rotate desktop
-super + {_,shift + }r
-	bspc node @/ --rotate {90,-90}
-
-# Circulate the leaves of the tree
-super + {_,shift + }c
-	bspc node @/ --circulate {backward,forward}
+	rofi -show combi -theme base16-dracula -terminal urxvt -font "Hack 11"
 
 #launch chrome
 super + grave
@@ -51,6 +43,22 @@ super + alt + Escape
 super + {_,shift + }w
 	bspc node -{c,k}
 
+# rotate desktop
+super + {_,shift + }r
+	bspc node @/ --rotate {90,-90}
+
+# Circulate the leaves of the tree
+super + {_,shift + }c
+	bspc node @/ --circulate {backward,forward}
+
+# Make split ratios equal
+super + equal
+	bspc node @/ --equalize
+
+# Make split ratios balanced
+super + minus
+	bspc node @/ --balance
+
 # send window to other monitor
 super + shift + m
     bspc node -m next
@@ -65,7 +73,7 @@ super + y
 
 # swap the current node and the biggest node
 super + g
-	bspc node -s biggest
+	bspc node -s biggest.local
 
 #
 # state/flags
@@ -91,17 +99,19 @@ super + {_,shift + }{h,j,k,l}
 super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
-# focus the next/previous node in the current desktop
-super + {_,shift + }x
-	bspc node -f {next,prev}.local
+#do something with x and z
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
-{alt,super} + Tab
-	bspc {node,desktop} -f last
+super + Tab
+	bspc desktop -f last
+
+# focus the next/previous node in the current desktop
+alt + {_, shift + }Tab
+    bspc node -f {next,prev}.local
 
 # focus the older or newer node in the focus history
 super + {o,i}

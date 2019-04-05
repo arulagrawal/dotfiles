@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #intel-virtual-output
-~/.screenlayout/correct.sh
+#~/.screenlayout/correct.sh
 feh --bg-fill ~/Pictures/wallpaper.jpg
 background=$(xrdb -query | grep "background" | cut -f2 | sed -r 's/#//' | head -n 1)
 foreground=$(xrdb -query | grep "foreground" | cut -f2 | sed -r 's/#//' | head -n 1)
@@ -24,7 +24,7 @@ color15=$(xrdb -query | grep "color15" | cut -f2 | sed -r 's/#//' | head -n 1)
 
 
 bspc config normal_border_color "#$color8"
-bspc config active_border_color "#$color9"
+bspc config active_border_color "#$color8"
 bspc config presel_feedback_color "#$color1"
 
 sxhkd &

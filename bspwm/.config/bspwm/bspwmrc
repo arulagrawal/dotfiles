@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# formal numerals now
 bspc monitor eDP-1-1 -d 壱 弐 参 肆 伍 陸 漆
 bspc monitor HDMI-0 -d 壱 弐 参 肆 伍 陸 漆
 
@@ -16,22 +15,25 @@ color6=$(xrdb -query | grep "color6" | cut -f2 | sed -r 's/#//' | head -n 1)
 color7=$(xrdb -query | grep "color7" | cut -f2 | sed -r 's/#//' | head -n 1)
 color8=$(xrdb -query | grep "color8" | cut -f2 | sed -r 's/#//' | head -n 1)
 
-bspc config border_width         4
+bspc config border_width         2
 bspc config window_gap           8
 
 bspc config split_ratio           0.50
 bspc config borderless_monocle    true
 bspc config gapless_monocle       true
 bspc config focus_follows_pointer true
+bspc config pointer_follows_monitor true
 
 bspc config normal_border_color "#$color8"
-bspc config active_border_color "#$color1"
+bspc config active_border_color "#4D4D4D"
 bspc config focused_border_color "#CAA9FA"
 bspc config presel_feedback_color "#$color8"
 
 # window rules
 bspc rule -a discord monitor="^1" desktop="^1"
 bspc rule -a spotify monitor="^1" desktop="^2"
-bspc config external_rules_command ~/.config/bspwm/bspwm-rules;
+bspc rule -a Lxappearance desktop="^2:^7"
+
+bspc config external_rules_command ~/.config/bspwm/bspwm-rules
 # Autostart
 ~/scripts/colors.sh &

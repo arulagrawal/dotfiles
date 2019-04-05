@@ -105,6 +105,10 @@ else
   export EDITOR='nvim'
 fi
 
+
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 

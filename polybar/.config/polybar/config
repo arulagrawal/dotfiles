@@ -54,8 +54,7 @@ font-2 = M+ 1mn:style=bold:pixelsize=11;1
 modules-left = bspwm
 modules-right = volume memory cpu date battery powermenu
 
-tray-position = left
-tray-padding = 2
+tray-position = none
 
 wm-restack = bspwm
 
@@ -96,7 +95,7 @@ modules-center = spotify
 modules-right = volume memory cpu date battery powermenu
 
 tray-position = left
-tray-padding = 2
+tray-padding = 0
 
 wm-restack = bspwm
 
@@ -139,7 +138,7 @@ label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/bspwm]
 type = internal/bspwm
-module-margin-left = 2
+module-margin-left = 1
 module-margin-right = 2
 label-focused = %name%
 label-focused-font = 4
@@ -320,7 +319,7 @@ menu-0-1-exec = menu-open-2
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0
 menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
+menu-1-1-exec = reboot
 
 menu-2-0 = power off
 menu-2-0-exec = shutdown now
@@ -347,3 +346,6 @@ format-prefix = " "
 format = <label>
 exec = python /home/arul/scripts/spotify.py -f '{artist}: {song}' --font=1
 format-underline = #1db954
+
+
+# vim: filetype=sh
