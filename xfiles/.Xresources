@@ -32,7 +32,7 @@ URxvt*borderless: true
 !URxvt*inheritPixMap: true
 !URxvt*transparency: true
 !URxvt*shading: 120
-URxvt.letterSpace: -0.9
+URxvt.letterSpace: -0.5
 URxvt*background: [50]#282a36
 *.foreground: #F8F8F2
 *.color0:     #000000
@@ -51,3 +51,5 @@ URxvt*background: [50]#282a36
 *.color14:    #9AEDFE
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6
+
+st.font:xft:Hack Nerd Font:pixelsize=15:antialias=true

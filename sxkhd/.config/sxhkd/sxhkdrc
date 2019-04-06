@@ -11,7 +11,7 @@ super + shift + r
 
 # terminal emulator
 super + Return
-	urxvt
+	urxvtc
 
 super + shift + Return
     xterm
@@ -22,7 +22,7 @@ super + @space
 
 #launch chrome
 super + grave
-	google-chrome-stable
+	firefox
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -124,7 +124,7 @@ super + {1-9}
     x=$(bspc query -M -m | sed 's/.*\(.\)/\1/'); \
     y="{1-9}"; \
     echo $x; \
-    if [[ "$x" -eq "B" ]]; \
+    if [[ "$x" -eq "4" ]]; \
     then \
         bspc desktop -f "^1:^$y"; \
     fi ; \
@@ -137,7 +137,7 @@ super + {1-9}
 super + shift + {1-9}
     x=$(bspc query -M -m | sed 's/.*\(.\)/\1/'); \
     y="{1-9}"; \
-    if [[ "$x" -eq "B" ]]; \
+    if [[ "$x" -eq "4" ]]; \
     then \
         bspc node -d "^1:^$y"; \
     fi ; \
