@@ -215,3 +215,4 @@ dec2hex()
 
 #end functions
 eval $(thefuck --alias)
+cd ~
