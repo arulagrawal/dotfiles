@@ -7,6 +7,7 @@ xrdb merge ~/.Xresources &
 #flashfocus &
 xset +fp /usr/share/fonts &
 xset fp rehash &
+~/scripts/bspwm/colors.sh &
 #compton --config .compton.conf --blur-background &
 #sxhkd &
 exec bspwm

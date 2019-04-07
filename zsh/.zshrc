@@ -149,14 +149,10 @@ alias x='chmod +x'
 alias du='du -kh'
 alias df='df -kTh'
 
-if hash nvim >/dev/null 2>&1; then
-    alias vim='nvim'
-    alias v='nvim'
-    alias sv='sudo nvim'
-else
-    alias v='vim'
-    alias sv='sudo vim'
-fi
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
+alias sv='sudo edit'
 
 alias f='ranger'
 
