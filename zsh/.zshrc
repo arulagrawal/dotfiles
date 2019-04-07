@@ -135,7 +135,6 @@ alias d='clear'
 alias comp='killall compton; compton --config .compton.conf --blur-background & disown'
 
 
-
 alias q='exit 0'
 
 alias la='ls -Ah'

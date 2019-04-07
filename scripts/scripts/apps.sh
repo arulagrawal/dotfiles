@@ -1,7 +1,7 @@
 #!/bin/bash
 polybar burs &
 polybar bur &
-compton --config ~/.compton.conf --blur-background &
+compton --config ~/.compton.conf --blur-background & disown
 #autocutsel -fork &
 #autocutsel -selection PRIMARY -fork &
 pactl set-sink-volume 0 50%
