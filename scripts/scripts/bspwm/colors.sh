@@ -31,5 +31,5 @@ sxhkd &
 urxvtd -q -o -f
 bspc monitor HDMI-0 -d 壱 弐 参 肆 伍 陸 漆
 bspc monitor eDP-1-1 -d 壱 弐 参 肆 伍 陸 漆
-~/scripts/apps.sh &
+./desktop.sh &
 #END

@@ -344,7 +344,7 @@ type = custom/script
 interval = 1
 format-prefix = " "
 format = <label>
-exec = python /home/arul/scripts/spotify.py -f '{artist}: {song}' --font=1
+exec = python /home/arul/scripts/polybar/spotify.py -f '{artist}: {song}' --font=1
 format-underline = #1db954
 
 
