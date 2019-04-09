@@ -127,7 +127,7 @@ bindkey "^X^E" edit-command-line
 #
 # My Aliases
 alias vimrc='nvim ~/.config/nvim/init.vim'
-alias zshrc='nvim ~/.zshrc; source ~/.zshrc'
+alias zshrc='nvim ~/.zshrc && source ~/.zshrc'
 alias joke='curl https://icanhazdadjoke.com && printf "\n"'
 alias weather='curl wttr.in'
 alias c='clear'
@@ -152,7 +152,7 @@ alias df='df -kTh'
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
-alias sv='sudo edit'
+alias sv='sudoedit'
 
 alias f='ranger'
 
@@ -177,21 +177,8 @@ alias mk='make && make clean'
 alias smk='sudo make clean install && make clean'
 alias ssmk='sudo make clean install && make clean && rm -iv config.h'
 
-# aliases inside tmux session
-if [[ $TERM == *tmux* ]]; then
-    alias :sp='tmux split-window'
-    alias :vs='tmux split-window -h'
-fi
-
-alias rcp='rsync -v --progress'
-alias rmv='rcp --remove-source-files'
-
 alias calc='python -qi -c "from math import *"'
-alias brok='sudo find . -type l -! -exec test -e {} \; -print'
-alias timer='time read -p "Press enter to stop"'
 
-# shellcheck disable=2142
-alias xp='xprop | awk -F\"'" '/CLASS/ {printf \"NAME = %s\nCLASS = %s\n\", \$2, \$4}'"
 alias get='curl --continue-at - --location --progress-bar --remote-name --remote-time'
 
 alias dot='ranger ~/.dotfiles'
@@ -200,7 +187,7 @@ alias t='todo.sh'
 
 
 #funtions
-se() { du -a ~/.dotfiles/* ~/scripts/* | awk '{print $2}' | sed '/^.\{60\}./d' | sed '/plugged/d' | fzf | xargs -r $EDITOR ;}
+se() {find ~/.dotfiles/ -type f -exec du -a {} + | awk '{print $2}' | sed '/^.\{60\}./d' | sed '/git\|bash\|plugged\|xrdb/d' | fzf | xargs -r $EDITOR;}
 
 hex2dec()
 {
@@ -215,4 +202,3 @@ dec2hex()
 
 #end functions
 eval $(thefuck --alias)
-cd ~

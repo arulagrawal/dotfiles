@@ -2,8 +2,8 @@
 
 #intel-virtual-output
 #~/.screenlayout/correct.sh
-cd ~/scripts/bspwm/
-feh --bg-fill ~/Pictures/wallpaper.jpg
+#feh --bg-fill ~/Pictures/wallpaper.jpg
+nitrogen --restore
 background=$(xrdb -query | grep "background" | cut -f2 | sed -r 's/#//' | head -n 1)
 foreground=$(xrdb -query | grep "foreground" | cut -f2 | sed -r 's/#//' | head -n 1)
 color0=$(xrdb -query | grep "color0" | cut -f2 | sed -r 's/#//' | head -n 1)
@@ -32,5 +32,4 @@ sxhkd &
 urxvtd -q -o -f
 bspc monitor HDMI-0 -d 壱 弐 参 肆 伍 陸 漆
 bspc monitor eDP-1-1 -d 壱 弐 参 肆 伍 陸 漆
-./desktop.sh &
 #END

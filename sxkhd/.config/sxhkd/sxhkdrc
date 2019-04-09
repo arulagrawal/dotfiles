@@ -121,7 +121,7 @@ super + {o,i}
 
 # focus to the given desktop
 super + {1-9}
-    x=$(bspc query -M -m | sed 's/.*\(.\)/\1/'); \
+    x=$(bspc query -M -m | grep -o '.$'); \
     y="{1-9}"; \
     echo $x; \
     if [[ "$x" -eq "4" ]]; \
@@ -135,7 +135,7 @@ super + {1-9}
 
 # send node to desktop on current monitor
 super + shift + {1-9}
-    x=$(bspc query -M -m | sed 's/.*\(.\)/\1/'); \
+    x=$(bspc query -M -m | grep -o '.$'); \
     y="{1-9}"; \
     if [[ "$x" -eq "4" ]]; \
     then \

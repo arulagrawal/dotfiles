@@ -119,11 +119,11 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/filesystem]
@@ -238,7 +238,7 @@ label = %percentage_used%%
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 1
 
 date =
 date-alt = " %Y-%m-%d"
@@ -345,7 +345,7 @@ interval = 1
 format-prefix = " "
 format = <label>
 exec = python /home/arul/scripts/polybar/spotify.py -f '{artist}: {song}' --font=1
-format-underline = #1db954
+format-underline = #50FA7B
 
 
 # vim: filetype=sh

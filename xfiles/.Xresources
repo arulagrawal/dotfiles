@@ -18,16 +18,14 @@ Xft.rgba: rgb
 Xft.dpi: 96
 XTerm.termName: xterm-256color
 XTerm.vt100.locale: true
-XTerm.vt100.selectToClipboard: true
 XTerm.scaleHeight: 1.01
 XCursor.theme: Breeze Snow
 URxvt.scrollBar: false
 URxvt*depth: 32
 URxvt.depth: 32
-URxvt.perl-ext-common: default,matcher,resize-font
+URxvt.perl-ext-common: default,matcher,resize-font,clipboard
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
-URxvt.clipboard.autocopy: true
 !URxvt.matcher.rend.0: Uline Bold fg5
 URxvt*borderless: true
 !URxvt*inheritPixMap: true
@@ -60,3 +58,16 @@ st.color6:     #8BE9FD
 st.color14:    #9AEDFE
 st.color7:     #BFBFBF
 st.color15:    #E6E6E6
+
+
+Xft.dpi: 190
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+URxvt*lineSpace: -1
+
+
+URxvt*selection_to_clipboard: false
