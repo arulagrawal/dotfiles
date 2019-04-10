@@ -121,30 +121,12 @@ super + {o,i}
 
 # focus to the given desktop
 super + {1-9}
-    x=$(bspc query -M -m | grep -o '.$'); \
-    y="{1-9}"; \
-    echo $x; \
-    if [[ "$x" -eq "4" ]]; \
-    then \
-        bspc desktop -f "^1:^$y"; \
-    fi ; \
-    if [[ "$x" -eq "2" ]]; \
-    then \
-        bspc desktop -f "^2:^$y"; \
-    fi;
+    bspc desktop -f 'focused:^{1-9}'
 
 # send node to desktop on current monitor
 super + shift + {1-9}
-    x=$(bspc query -M -m | grep -o '.$'); \
-    y="{1-9}"; \
-    if [[ "$x" -eq "4" ]]; \
-    then \
-        bspc node -d "^1:^$y"; \
-    fi ; \
-    if [[ "$x" -eq "2" ]]; \
-    then \
-        bspc node -d "^2:^$y"; \
-    fi;
+    bspc node -d "focused:^{1-9}"
+
 #
 # preselect
 #

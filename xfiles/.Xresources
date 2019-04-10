@@ -23,7 +23,7 @@ XCursor.theme: Breeze Snow
 URxvt.scrollBar: false
 URxvt*depth: 32
 URxvt.depth: 32
-URxvt.perl-ext-common: default,matcher,resize-font,clipboard
+URxvt.perl-ext-common: default,matcher,resize-font
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 !URxvt.matcher.rend.0: Uline Bold fg5
@@ -60,10 +60,10 @@ st.color7:     #BFBFBF
 st.color15:    #E6E6E6
 
 
-Xft.dpi: 190
+Xft.dpi: 96
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintfull
+Xft.hintstyle: hintslight
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
