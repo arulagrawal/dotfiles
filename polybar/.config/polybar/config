@@ -344,8 +344,8 @@ type = custom/script
 interval = 1
 format-prefix = " "
 format = <label>
-exec = python /home/arul/scripts/polybar/spotify.py -f '{artist}: {song}' --font=1
+exec = python /home/arul/scripts/polybar/spotify.py -f '{artist}: {song}' --font=1 -t 60
 format-underline = #50FA7B
-
+click-left = dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 
 # vim: filetype=sh

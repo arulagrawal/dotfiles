@@ -103,6 +103,7 @@ if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
   export EDITOR='nvim'
+  export VISUAL='nvim'
 fi
 
 
@@ -130,7 +131,6 @@ alias vimrc='nvim ~/.config/nvim/init.vim'
 alias zshrc='nvim ~/.zshrc && source ~/.zshrc'
 alias joke='curl https://icanhazdadjoke.com && printf "\n"'
 alias weather='curl wttr.in'
-alias c='clear'
 alias d='clear'
 alias comp='killall compton; compton --config .compton.conf --blur-background & disown'
 
@@ -187,7 +187,7 @@ alias t='todo.sh'
 
 
 #funtions
-se() {find ~/.dotfiles/ -type f -exec du -a {} + | awk '{print $2}' | sed '/^.\{60\}./d' | sed '/git\|bash\|plugged\|xrdb/d' | fzf | xargs -r $EDITOR;}
+se() {find ~/.dotfiles/ -type f -exec du -a {} + | awk '{print $2}' | sed '/git\|bash\|plugged\|xrdb/d' | fzf | xargs -r $EDITOR;}
 
 hex2dec()
 {
@@ -199,6 +199,14 @@ dec2hex()
     echo "obase=16; $1" | bc;
 }
 
-
+c() {
+    if [ $# -eq 0 ] ; then
+        clear
+    elif [ -d "$1" ] ; then
+        cd "$1"
+    elif [ -f "$1" ] ; then
+        cat "$1"
+    fi
+}
 #end functions
 eval $(thefuck --alias)
