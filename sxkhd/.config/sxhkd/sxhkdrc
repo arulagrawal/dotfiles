@@ -14,6 +14,9 @@ super + shift + r
 super + Return
     urxvtc
 
+super + d
+    ~/scripts/bspwm/draw.sh
+
 super + shift + Return
     xst
 
@@ -126,7 +129,7 @@ super + {1-9}
 
 # send node to desktop on current monitor
 super + shift + {1-9}
-    bspc node -d "focused:^{1-9}"
+    bspc node -d 'focused:^{1-9}'
 
 #
 # preselect

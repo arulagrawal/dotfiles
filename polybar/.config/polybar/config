@@ -139,7 +139,7 @@ label-unmounted-foreground = ${colors.foreground-alt}
 [module/bspwm]
 type = internal/bspwm
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 label-focused = %name%
 label-focused-font = 4
 label-focused-background = ${xrdb:background:#ff0000}
@@ -342,7 +342,7 @@ margin-bottom = 0
 [module/spotify]
 type = custom/script
 interval = 1
-format-prefix = " "
+format-prefix = ""
 format = <label>
 exec = python /home/arul/scripts/polybar/spotify.py -f '{artist}: {song}' --font=1 -t 60
 format-underline = #50FA7B
