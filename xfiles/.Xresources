@@ -1,7 +1,7 @@
 ! -----------------------------------
 ! Includes for easier (Instant) rice!
 ! -----------------------------------
-#include ".cache/squash/x_colors"
+!#include ".cache/squash/x_colors"
 !#include "/home/arul/.xrdb/colors/monodevek"
 !#include "~/.xrdb/fonts/hack"
 !#include "/home/arul/.xrdb/rofi/nord"
@@ -32,8 +32,34 @@ URxvt*borderless: true
 !URxvt*transparency: true
 !URxvt*shading: 120
 URxvt.letterSpace: -0.5
+*.background: #282a36
 URxvt.background: [50]#282a36
 
+*.cursorColor:  #c4c4b5
+*.foreground: #F8F8F2
+*.color0:     #000000
+*.color8:     #4D4D4D
+*.color1:     #FF5555
+*.color9:     #FF6E67
+*.color2:     #50FA7B
+*.color10:    #5AF78E
+*.color3:     #F1FA8C
+*.color11:    #F4F99D
+*.color4:     #BD93F9
+*.color12:    #CAA9FA
+*.color5:     #FF79C6
+*.color13:    #FF92D0
+*.color6:     #8BE9FD
+*.color14:    #9AEDFE
+*.color7:     #BFBFBF
+*.color15:    #E6E6E6
+URxvt.font:xft:Hack Nerd Font:pixelsize=15:antialias=true:hinting=full, \
+           xft:Material Icons:pixelsize=15:antialias=true
+URxvt.boldFont:xft:Hack Nerd Font:bold:pixelsize=15:antialias=true
+
+rofi.color-enabled: true
+/* rofi.color-window: #2c3539, #2c3539, #2c3539 */
+/* rofi.color-normal: #2c3539, #c4c4b5, #2c3539, #343d41, #ac8d6e */
 st.font: Hack Nerd Font:pixelsize=15:antialias=true
 st.bold_font: 1
 st.opacity: 127.5

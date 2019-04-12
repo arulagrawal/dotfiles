@@ -22,11 +22,11 @@ super + shift + Return
 
 # program launcher
 super + @space
-	rofi -show combi -theme base16-dracula -terminal urxvt -font "Hack 11"
+	rofi -show combi -theme base16-dracula -terminal urxvtc -font "Hack 11"
 
-#launch chrome
-super + grave
-	firefox
+#launch firefox/surf
+super + {b, shift + b}
+	{firefox, ~/suckless/surf/surf-open.sh}
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -46,6 +46,14 @@ super + alt + Escape
 # close and kill
 super + {_,shift + }w
 	bspc node -{c,k}
+
+# hide window
+super + v
+  bspc node -g hidden
+
+# unhide window
+super + shift + v
+  bspc node {,$(bspc query -N -n .hidden | tail -n1)} -g hidden=off
 
 # rotate desktop
 super + {_,shift + }r
@@ -100,8 +108,8 @@ super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+#super + {p,b,comma,period}
+#	bspc node -f @{parent,brother,first,second}
 
 #do something with x and z
 
@@ -109,12 +117,16 @@ super + {p,b,comma,period}
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
+# send to next/previous desktop in current monitor
+super + shift + bracket{left,right}
+    bspc node -d {prev,next}.local
+
 # focus the last node/desktop
-super + Tab
-	bspc desktop -f last
+super + grave
+	bspc desktop -f last.occupied
 
 # focus the next/previous node in the current desktop
-alt + {_, shift + }Tab
+super + {_, shift + }Tab
     bspc node -f {next,prev}.local
 
 # focus the older or newer node in the focus history
@@ -186,3 +198,5 @@ XF86AudioPrev
 
 XF86AudioNext
     dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+
+#vim:set syntax=sh

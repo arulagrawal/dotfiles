@@ -24,6 +24,7 @@ cava
 ckb-next
 c-lolcat
 clonezilla
+cmake
 cmatrix
 code
 compton-tryone-git
@@ -53,13 +54,14 @@ freetype2
 freetype2-demos
 fzf
 gcolor2
+gcr
 gd
 gimp
 git
 gnome-backgrounds
+gnome-font-viewer
 go
 gotop
-gparted
 gptfdisk
 gst-libav
 gst-plugins-base
@@ -69,6 +71,7 @@ gtk3
 gtk-engine-murrine
 gtk-engines
 haveged
+hblock
 hdparm
 highlight
 htop
@@ -97,6 +100,7 @@ lxappearance
 maim
 memtest86+
 mesa-demos
+minecraft
 mkinitcpio-nfs-utils
 mosh
 mousetweaks
@@ -110,6 +114,7 @@ netactview
 networkmanager
 nfs-utils
 nilfs-utils
+ninja
 nitrogen
 noto-fonts
 noto-fonts-cjk
@@ -154,6 +159,7 @@ stow
 s-tui
 sxhkd
 syslinux
+tabbed
 terminus-font
 thefuck
 tldr
@@ -170,11 +176,14 @@ ttf-material-icons
 ttf-mplus
 ttf-ms-fonts
 tty-clock
+undefined-medium-fonts
 unrar
 urxvt-resize-font-git
 vlc
 volumeicon
 w3m
+webkitgtk
+webkitgtk2
 wget
 wireless-regdb
 wireless_tools
@@ -256,4 +265,5 @@ xorg-xwud
 xsel
 xst-git
 yay
+yetris
 zsh

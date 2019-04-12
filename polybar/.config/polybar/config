@@ -21,7 +21,7 @@ alert = #bd2c40
 
 [bar/burs]
 monitor = ${env:MONITOR:eDP-1-1}
-width = 1905
+width = 1904
 height = 32
 offset-x = 8
 offset-y = 8
@@ -60,7 +60,7 @@ wm-restack = bspwm
 
 [bar/bur]
 monitor = ${env:MONITOR:HDMI-0}
-width = 1905
+width = 1904
 height = 32
 offset-x = 8
 offset-y = 8
@@ -94,7 +94,7 @@ modules-left = bspwm
 modules-center = spotify
 modules-right = volume memory cpu date battery powermenu
 
-tray-position = left
+tray-position = none
 tray-padding = 0
 
 wm-restack = bspwm
