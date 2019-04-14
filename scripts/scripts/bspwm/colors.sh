@@ -28,8 +28,7 @@ bspc config normal_border_color "#$color8"
 bspc config active_border_color "#$color8"
 bspc config presel_feedback_color "#$color1"
 
-sxhkd &
-urxvtd -q -o -f
+
 bspc monitor HDMI-0 -d 壱 弐 参 肆 伍 陸 漆
 bspc monitor eDP-1-1 -d 壱 弐 参 肆 伍 陸 漆
 #END

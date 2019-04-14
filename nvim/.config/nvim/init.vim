@@ -139,7 +139,7 @@ let g:easyescape_chars = { "j": 1, "k": 1 }
 let g:easyescape_timeout = 100
 cnoremap jk <ESC>
 cnoremap kj <ESC>
-
+noremap <silent><esc> <esc>:noh<CR><esc>
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8

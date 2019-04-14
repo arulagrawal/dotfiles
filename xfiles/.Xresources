@@ -60,7 +60,7 @@ URxvt.boldFont:xft:Hack Nerd Font:bold:pixelsize=15:antialias=true
 rofi.color-enabled: true
 /* rofi.color-window: #2c3539, #2c3539, #2c3539 */
 /* rofi.color-normal: #2c3539, #c4c4b5, #2c3539, #343d41, #ac8d6e */
-st.font: Hack Nerd Font:pixelsize=15:antialias=true
+st.font: Hack Nerd Font Mono:pixelsize=15:antialias=true
 st.bold_font: 1
 st.opacity: 127.5
 st.shell: /usr/bin/zsh
@@ -97,3 +97,8 @@ URxvt*lineSpace: -1
 
 
 URxvt*selection_to_clipboard: false
+
+rofi.color-enabled: true
+rofi.color-enaled: true
+rofi.color-window: #000000, #000000, #000000
+rofi.color-normal: #000000, #F8F8F2, #000000, #4D4D4D, #FF5555

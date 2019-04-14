@@ -133,7 +133,7 @@ alias joke='curl https://icanhazdadjoke.com && printf "\n"'
 alias weather='curl wttr.in'
 alias d='clear'
 alias comp='killall compton; compton --config .compton.conf --blur-background & disown'
-
+alias server='mosh arul@arul.io'
 
 alias q='exit 0'
 
@@ -186,8 +186,15 @@ alias t='todo.sh'
 #end aliases
 
 
-#funtions
-se() {find ~/.dotfiles/ -type f -exec du -a {} + | awk '{print $2}' | sed '/git\|bash\|plugged\|xrdb/d' | fzf | xargs -r $EDITOR;}
+#functions
+#quick lookup for my config files
+se() {find ~/.dotfiles/ -type f -exec du -a {} + | awk '{print $2}' | sed '/git\|bash\|plugged\|xrdb/d' | fzf --reverse | xargs -r $EDITOR;}
+
+#show me what my key config looks like - pressing enter goes to that command in the config
+keys()
+{
+    awk '/^[a-zA-Z]/ && last {print $0,"\t",last} {last=""} /^#/{last=$0}' ~/.config/sxhkd/sxhkdrc | column -t -s $'\t' | fzf --reverse | awk -F\# '{print $1}' | sed -e "s/ *$//" | xargs -I cmd nvim +/cmd ~/.config/sxhkd/sxhkdrc
+}
 
 hex2dec()
 {
