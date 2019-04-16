@@ -24,7 +24,8 @@ super + shift + Return
 
 # save song to spotify
 super + ctrl + s
-    ~/scripts/utility/spotify_add.py
+    ~/scripts/utility/spotify_add.py; \
+    dunstify -u normal "Song added to spotify";
 
 # preselect in reverse fashion to normal
 super + ctrl + Return
