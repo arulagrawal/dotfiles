@@ -40,7 +40,7 @@ super + {_,shift + }b
 	{firefox, surf}
 
 # launch nautilus
-super + f
+super + n
     nautilus
 
 # make sxhkd reload its configuration files:

@@ -44,4 +44,3 @@ bspc rule -a scratchpad sticky=on state=floating hidden=on
 ~/scripts/bspwm/defaultsetup.sh &
 
 dunstify -u critical "system" "everything is up and running"
-

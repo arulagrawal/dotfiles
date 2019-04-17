@@ -138,12 +138,13 @@ label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/bspwm]
 type = internal/bspwm
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 0
+module-margin-right = 0
 label-focused = %name%
 label-focused-font = 4
 label-focused-background = ${xrdb:background:#ff0000}
-label-focused-underline= ${xrdb:color9:#ff0000}
+label-focused-foreground = ${xrdb:color6}
+;label-focused-underline= ${xrdb:color9:#ff0000}
 label-focused-padding = 2
 
 label-occupied = %name%

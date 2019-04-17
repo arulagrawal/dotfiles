@@ -188,7 +188,7 @@ alias t='todo.sh'
 
 #functions
 #quick lookup for my config files
-dots() 
+dots()
 {
     find ~/.dotfiles/ -type f -exec du -a {} + | awk '{print $2}' | sed '/git\|bash\|plugged\|xrdb/d' | fzf --reverse | xargs -r $EDITOR;
 }

@@ -1,5 +1,6 @@
 call plug#begin()
 
+"Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -54,6 +55,9 @@ Plug 'honza/vim-snippets'
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
+"folding
+Plug 'tmhedberg/SimpylFold'
+
 
 " c
 Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
@@ -99,7 +103,7 @@ Plug 'c9s/perlomni.vim'
 "" Python Bundle
 Plug 'davidhalter/jedi-vim'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
-
+"Plug 'vim-python/python-syntax'
 
 " ruby
 Plug 'tpope/vim-rails'
@@ -146,9 +150,14 @@ set fileencodings=utf-8
 
 set backspace=indent,eol,start
 
+
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
+
 let g:deoplete#enable_at_startup = 1
 let g:dracula_colorterm = 0
-color dracula
+colorscheme dracula
 " let g:indentLine_setColors = 0
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_color_term = 6
@@ -503,6 +512,7 @@ let g:airline#extensions#virtualenv#enabled = 1
 " Syntax highlight
 " Default highlight is better than polyglot
 let g:polyglot_disabled = ['python']
+let g:python_highlight_all = 0
 let python_highlight_all = 1
 
 
@@ -611,3 +621,6 @@ endif
 
 
 :let g:session_autosave = "no"
+
+
+
