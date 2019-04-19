@@ -143,8 +143,8 @@ module-margin-right = 0
 label-focused = %name%
 label-focused-font = 4
 label-focused-background = ${xrdb:background:#ff0000}
-label-focused-foreground = ${xrdb:color6}
-;label-focused-underline= ${xrdb:color9:#ff0000}
+label-focused-foreground = ${xrdb:foreground:#ff0000}
+label-focused-underline= ${xrdb:color9:#ff0000}
 label-focused-padding = 2
 
 label-occupied = %name%

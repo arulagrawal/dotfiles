@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-import requests
-import base64
-import json
+import requests, base64, json
 
 song_api_point = "https://api.spotify.com/v1/me/player"
 save_api_point = "https://api.spotify.com/v1/me/tracks"
@@ -21,28 +19,27 @@ def getClientString():
 
 
 def getToken(client_string):
-    header = {'Authorization': 'Basic ' + client_string}
+    headers = {'Authorization': 'Basic ' + client_string}
     payload = {'grant_type': 'refresh_token', 'refresh_token': r_token}
-    p = requests.post(token_api_point, headers=header, data=payload)
+    p = requests.post(token_api_point, headers=headers, data=payload)
     token_json = json.loads(p.text)
     my_token = str(token_json['access_token'])
     return my_token
 
 
 def getCurrentSong(my_token):
-    payload = {'market': 'ZA'}
+    params = {'market': 'ZA'}
     headers = {'Authorization': 'Bearer ' + my_token}
-    r = requests.get(song_api_point, params=payload, headers=headers)
-    song = r.json()
-    return song
+    r = requests.get(song_api_point, params=params, headers=headers)
+    return r.json()
 
 
 def addCurrentSongToLibrary(song, my_token):
     song = song['item']['uri']
     song_id = song[14:]
-    payload = {'ids': song_id}
+    params = {'ids': song_id}
     headers = {'Authorization': 'Bearer ' + my_token}
-    requests.put(save_api_point, params=payload, headers=headers)
+    requests.put(save_api_point, params=params, headers=headers)
 
 
 def main():

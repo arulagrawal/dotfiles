@@ -53,9 +53,9 @@ URxvt.background: [50]#282a36
 *.color14:    #9AEDFE
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6
-URxvt.font:xft:Hack Nerd Font:pixelsize=15:antialias=true:hinting=full, \
+URxvt.font:xft:Hack Nerd Font Mono:pixelsize=15:antialias=true:hinting=full, \
            xft:Material Icons:pixelsize=15:antialias=true
-URxvt.boldFont:xft:Hack Nerd Font:bold:pixelsize=15:antialias=true
+URxvt.boldFont:xft:Hack Nerd Font Mono:bold:pixelsize=15:antialias=true
 
 rofi.color-enabled: true
 /* rofi.color-window: #2c3539, #2c3539, #2c3539 */
@@ -68,7 +68,7 @@ st.borderpx: 4
 !st.color0: #14151b
 st.depth: 32
 st*depth: 32
-
+st.cursorshape: 2
 st.color8:     #4D4D4D
 st.color1:     #FF5555
 st.color9:     #FF6E67

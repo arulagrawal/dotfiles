@@ -94,6 +94,10 @@ super + shift + m
 super + m
     bspc monitor -f next
 
+# swap the desktops of the monitors
+super + ctrl + shift + m
+    bspc desktop -s next:focused
+
 # send the newest marked node to the newest preselected node
 super + shift + y
 	bspc node newest.marked.local -n newest.!automatic.local
@@ -129,11 +133,11 @@ super + {_,shift + }{h,j,k,l}
 #do something with x and z
 
 # focus the next/previous desktop in the current monitor
-super + bracket{left,right}
+super + {q,e}
 	bspc desktop -f {prev,next}.local
 
 # send to next/previous desktop in current monitor
-super + shift + bracket{left,right}
+super + shift + {q,e}
     bspc node -d {prev,next}.local
 
 # focus the last node/desktop
@@ -205,7 +209,7 @@ XF86AudioLowerVolume
 	pactl set-sink-volume 0 -5%
 
 XF86AudioMute
-	amixer -q set Master toggle
+	pamixer -t
 
 XF86AudioPlay
     dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
