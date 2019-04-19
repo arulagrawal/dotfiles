@@ -1,3 +1,4 @@
+6cord
 accountsservice
 acpilight
 alsa-firmware
@@ -15,11 +16,13 @@ arc-gtk-theme
 arc-x-icons-theme
 aria2
 autocutsel
+autopep8
 b43-firmware
 b43-fwcutter
 baobab
 blueman
 bluez-utils
+bonsai.sh-git
 broadcom-wl
 bspwm
 cava
@@ -52,6 +55,7 @@ ffmpeg
 figlet
 file-roller
 firefox
+flake8
 fortune-mod
 freetype2
 fzf
@@ -85,6 +89,7 @@ ipw2200-fw
 jdk8-openjdk
 jsoncpp
 laptop-detect
+laptop-mode-tools
 lib32-nvidia-utils
 libmad
 libmatroska
@@ -94,6 +99,7 @@ lightdm-webkit2-greeter
 lm_sensors
 lostfiles
 lsb-release
+lutris
 lxappearance
 maim
 memtest86+
@@ -102,8 +108,8 @@ minecraft
 mkinitcpio-nfs-utils
 mlocate
 mosh
-mousetweaks
 mtools
+mupdf
 nautilus
 nbd
 ncdu
@@ -119,6 +125,7 @@ nitrogen
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
+npm
 ntfs-3g
 nvidia
 nvidia-settings
@@ -131,15 +138,15 @@ pamixer
 parted
 pavucontrol
 perl-anyevent-i3
-piper
 polybar
-popcorntime-ce
+popcorntime-bin
 powertop
 pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
 python-chardet
 python-neovim
+python-pylint
 ranger
 redshift
 refind-efi
@@ -157,14 +164,14 @@ spicetify-cli
 spotify
 steam
 stow
-s-tui
 sxhkd
 syslinux
 tabbed
+task
 terminus-font
 thefuck
 tldr
-todotxt
+toilet
 tracker
 tracker-miners
 tree
@@ -177,9 +184,12 @@ ttf-ms-fonts
 tty-clock
 udiskie
 udisks2
+ufetch-git
 unclutter
+ungoogled-chromium-bin
 unrar
 urxvt-resize-font-git
+visual
 vlc
 volumeicon
 w3m
@@ -265,4 +275,6 @@ xsel
 xst-git
 yay
 yetris
+youtube-dl
+zathura-pdf-mupdf
 zsh

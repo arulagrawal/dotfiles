@@ -32,6 +32,7 @@ class Spotify:
         headers = {'Authorization': 'Basic ' + self.client_string}
         payload = {'grant_type': 'refresh_token',
                    'refresh_token': self.r_token}
+
         p = requests.post(token_api_point, headers=headers, data=payload)
         token_json = json.loads(p.text)
         self.my_token = str(token_json['access_token'])

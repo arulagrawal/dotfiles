@@ -102,6 +102,7 @@ Plug 'c9s/perlomni.vim'
 " python
 "" Python Bundle
 Plug 'davidhalter/jedi-vim'
+Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 "Plug 'vim-python/python-syntax'
 
@@ -159,7 +160,7 @@ let g:deoplete#enable_at_startup = 1
 let g:dracula_colorterm = 0
 colorscheme dracula
 " let g:indentLine_setColors = 0
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_color_term = 6
 let g:selection = ['#21222C', 234]
 let g:subtle = ['#21222C', 234]
@@ -492,7 +493,7 @@ augroup vimrc-python
 augroup END
 
 " jedi-vim
-let g:jedi#popup_on_dot = 0
+let g:jedi#popup_on_dot = 1
 let g:jedi#goto_assignments_command = "<leader>g"
 let g:jedi#goto_definitions_command = "<leader>d"
 let g:jedi#documentation_command = "K"

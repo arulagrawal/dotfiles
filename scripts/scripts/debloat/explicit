@@ -1,3 +1,4 @@
+6cord
 accountsservice
 acpilight
 alsa-firmware
@@ -17,6 +18,7 @@ aria2
 autoconf
 autocutsel
 automake
+autopep8
 b43-firmware
 b43-fwcutter
 baobab
@@ -25,6 +27,7 @@ binutils
 bison
 blueman
 bluez-utils
+bonsai.sh-git
 broadcom-wl
 bspwm
 bzip2
@@ -67,6 +70,7 @@ file-roller
 filesystem
 findutils
 firefox
+flake8
 flex
 fortune-mod
 freetype2
@@ -112,6 +116,7 @@ jdk8-openjdk
 jfsutils
 jsoncpp
 laptop-detect
+laptop-mode-tools
 less
 lib32-nvidia-utils
 libmad
@@ -126,6 +131,7 @@ lm_sensors
 logrotate
 lostfiles
 lsb-release
+lutris
 lxappearance
 m4
 maim
@@ -139,8 +145,8 @@ minecraft
 mkinitcpio-nfs-utils
 mlocate
 mosh
-mousetweaks
 mtools
+mupdf
 nautilus
 nbd
 ncdu
@@ -156,6 +162,7 @@ nitrogen
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
+npm
 ntfs-3g
 nvidia
 nvidia-settings
@@ -172,10 +179,9 @@ pavucontrol
 pciutils
 perl
 perl-anyevent-i3
-piper
 pkgconf
 polybar
-popcorntime-ce
+popcorntime-bin
 powertop
 procps-ng
 psmisc
@@ -184,6 +190,7 @@ pulseaudio-alsa
 pulseaudio-bluetooth
 python-chardet
 python-neovim
+python-pylint
 ranger
 redshift
 refind-efi
@@ -205,7 +212,6 @@ spicetify-cli
 spotify
 steam
 stow
-s-tui
 sudo
 sxhkd
 sysfsutils
@@ -213,11 +219,12 @@ syslinux
 systemd-sysvcompat
 tabbed
 tar
+task
 terminus-font
 texinfo
 thefuck
 tldr
-todotxt
+toilet
 tracker
 tracker-miners
 tree
@@ -230,12 +237,15 @@ ttf-ms-fonts
 tty-clock
 udiskie
 udisks2
+ufetch-git
 unclutter
+ungoogled-chromium-bin
 unrar
 urxvt-resize-font-git
 usbutils
 util-linux
 vi
+visual
 vlc
 volumeicon
 w3m
@@ -323,4 +333,6 @@ xsel
 xst-git
 yay
 yetris
+youtube-dl
+zathura-pdf-mupdf
 zsh
