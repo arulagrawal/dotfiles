@@ -505,7 +505,6 @@ let g:jedi#smart_auto_mappings = 0
 " ale
 :call extend(g:ale_linters, {
     \'python': ['flake8'], })
-
 " vim-airline
 let g:airline#extensions#virtualenv#enabled = 1
 
