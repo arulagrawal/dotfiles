@@ -7,7 +7,7 @@ instance=$3;
 class=$2;
 
 case $class in
-    (Firefox|Firefox-esr|Iceweasel) echo \ desktop=^2:^1;;
+    (Firefox|Firefox-esr|Iceweasel|Chromium) echo \ desktop=^2:^1;;
     (scratchpad) echo sticky=on;;
 	(Emacs) echo state=tiled\ layer=normal;;
 	(Gimp*) echo follow=on;;

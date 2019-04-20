@@ -12,7 +12,7 @@
 #udiskie to auto mount usb devices
 ##
 
-apps=(sxhkd firefox spotify redshift-gtk discord unclutter udiskie)
+apps=(sxhkd firefox spotify redshift discord unclutter udiskie)
 for a in "${apps[@]}"
 do
     $a & disown

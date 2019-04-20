@@ -84,19 +84,19 @@ Plug 'jelera/vim-javascript-syntax'
 
 " lua
 "" Lua Bundle
-Plug 'xolox/vim-lua-ftplugin'
-Plug 'xolox/vim-lua-inspect'
+"Plug 'xolox/vim-lua-ftplugin'
+"Plug 'xolox/vim-lua-inspect'
 
 
 " ocaml
 "" OCaml Bundle
-Plug 'def-lkb/ocp-indent-vim'
+"Plug 'def-lkb/ocp-indent-vim'
 
 
 " perl
 "" Perl Bundle
-Plug 'vim-perl/vim-perl'
-Plug 'c9s/perlomni.vim'
+"Plug 'vim-perl/vim-perl'
+"Plug 'c9s/perlomni.vim'
 
 
 " python
@@ -107,19 +107,19 @@ Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 "Plug 'vim-python/python-syntax'
 
 " ruby
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
-Plug 'tpope/vim-projectionist'
-Plug 'thoughtbot/vim-rspec'
-Plug 'ecomba/vim-ruby-refactoring'
+"Plug 'tpope/vim-rails'
+"Plug 'tpope/vim-rake'
+"Plug 'tpope/vim-projectionist'
+"Plug 'thoughtbot/vim-rspec'
+"Plug 'ecomba/vim-ruby-refactoring'
 
 
 " rust
 " Vim racer
-Plug 'racer-rust/vim-racer'
+"Plug 'racer-rust/vim-racer'
 
 " Rust.vim
-Plug 'rust-lang/rust.vim'
+"Plug 'rust-lang/rust.vim'
 
 
 "*****************************************************************************
