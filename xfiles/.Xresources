@@ -84,7 +84,7 @@ st.color6:     #8BE9FD
 st.color14:    #9AEDFE
 st.color7:     #BFBFBF
 st.color15:    #E6E6E6
-
+st.termname: st-256color
 
 /* Xft.dpi: 96 */
 /* Xft.autohint: 0 */

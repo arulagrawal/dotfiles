@@ -150,8 +150,8 @@ set fileencoding=utf-8
 set fileencodings=utf-8
 
 set backspace=indent,eol,start
-
-
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+au VimLeave * set guicursor=a:block-blinkon0
 set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
@@ -165,7 +165,7 @@ let g:indentLine_color_term = 6
 let g:selection = ['#21222C', 234]
 let g:subtle = ['#21222C', 234]
 syntax on
-" syntastic settings - recommended 
+" syntastic settings - recommended
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*

@@ -25,6 +25,10 @@ SPACESHIP_PROMPT_ORDER=(
   dir           # Current directory section
   host          # Hostname section
   git           # Git section (git_branch + git_status)
+  node
+  golang
+  venv
+  pyenv
   line_sep      # Line break
   battery       # Battery level and status
   jobs          # Background jobs indicator
@@ -88,7 +92,7 @@ export UPDATE_ZSH_DAYS=13
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting command-not-found extract sudo z)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting command-not-found extract sudo z fzf)
 
 source $ZSH/oh-my-zsh.sh
 # User configuration
@@ -182,7 +186,6 @@ alias calc='python -qi -c "from math import *"'
 alias get='curl --continue-at - --location --progress-bar --remote-name --remote-time'
 
 alias dot='ranger ~/.dotfiles'
-alias t='todo.sh'
 #end aliases
 
 

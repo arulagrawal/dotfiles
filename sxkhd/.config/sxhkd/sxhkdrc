@@ -10,21 +10,22 @@ super + shift + r
     pkill polybar && polybar -r burs & disown; \
     polybar -r bur & disown;
 
-# open urxvt
+# open xst
 super + Return
-    urxvtc
+    xst
 
 # draw a terminal window
 super + d
-    ~/scripts/bspwm/draw.sh
+    bspc rule -a \* -o state=floating rectangle=$(slop -f "%g") && urxvt
+    #~/scripts/bspwm/draw.sh
 
-# open xst
+# open urxct
 super + shift + Return
-    xst
+    urxvtc
 
 # save song to spotify
 super + ctrl + s
-    ~/scripts/utility/spotify_add.py; \
+    ~/scripts/utility/python/spotify_add.py; \
     dunstify -u normal "Song added to spotify";
 
 # preselect in reverse fashion to normal
@@ -47,6 +48,9 @@ super + n
 super + Escape
 	pkill -USR1 -x sxhkd
 
+# launch youtube dmenu
+super + y
+    youtube
 #
 # bspwm hotkeys
 
