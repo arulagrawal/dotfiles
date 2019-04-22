@@ -4,7 +4,7 @@
 
 ##
 #sxhkd for keyboard shortcuts, run keys for help
-#firefox for web
+#chromium for web
 #spotify for music
 #redshift for the eyes
 #discord for the mates
@@ -12,7 +12,7 @@
 #udiskie to auto mount usb devices
 ##
 
-apps=(sxhkd firefox spotify redshift discord unclutter udiskie)
+apps=(sxhkd chromium spotify redshift discord unclutter udiskie xst)
 for a in "${apps[@]}"
 do
     $a & disown

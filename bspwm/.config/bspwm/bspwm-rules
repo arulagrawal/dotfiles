@@ -8,22 +8,9 @@ class=$2;
 
 case $class in
     (Firefox|Firefox-esr|Iceweasel|Chromium) echo \ desktop=^2:^1;;
-    (scratchpad) echo sticky=on;;
-	(Emacs) echo state=tiled\ layer=normal;;
-	(Gimp*) echo follow=on;;
-	(Gitk) echo state=floating\ layer=normal;;
-	(MPlayer) echo state=floating\ layer=normal;;
-	(Pidgin) echo desktop=^3;;
-	(Pinentry-gtk-2) echo state=floating\ layer=above;;
+    (dota2) echo desktop=^2:^9;;
 	(Spotify) echo desktop=^2\ monitor=^1;;
-	(TelegramDesktop) echo desktop=^3;;
-	(XCalc) echo state=floating\ layer=normal;;
-	(Xmessage) echo state=floating\ layer=normal;;
 	([sS]urf) echo state=tiled;;
-	([lL]ibre[oO]ffice*) echo state=tiled\ layer=normal;;
-	(mpv) echo state=floating\ layer=normal;;
-	(stj1) echo state=floating\ layer=above\ sticky=on;;
-	(weechat) echo desktop=^3;;
 	('')
 		case $(ps -p "$(xdo pid $id)" -o comm= 2>/dev/null) in
 			(spotify) echo desktop=^2\ monitor=^1;;

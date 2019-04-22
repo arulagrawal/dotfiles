@@ -50,7 +50,7 @@ super + Escape
 
 # launch youtube dmenu
 super + y
-    youtube
+    ~/scripts/bin/dmenu_youtube
 #
 # bspwm hotkeys
 

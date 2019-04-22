@@ -2,6 +2,7 @@ call plug#begin()
 
 "Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'junegunn/goyo.vim'
 " Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'zhou13/vim-easyescape'
@@ -156,6 +157,7 @@ set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
 
+let g:goyo_linenr = 1
 let g:deoplete#enable_at_startup = 1
 let g:dracula_colorterm = 0
 colorscheme dracula
