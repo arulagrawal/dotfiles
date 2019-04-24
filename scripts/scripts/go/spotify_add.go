@@ -15,6 +15,19 @@ var c = &http.Client{
 	Timeout: 5 * time.Second,
 }
 
+type song struct {
+	Item item `json:"item"`
+}
+
+type item struct {
+	Title string `json:"name"`
+	URI   string `json:"uri"`
+}
+
+type songID struct {
+	ids string
+}
+
 type authToken struct {
 	AccessToken string `json:"access_token"`
 }
@@ -29,7 +42,7 @@ type spotify struct {
 	accessToken   authToken
 	client        client
 	encodedClient string
-	song          string
+	currentSong   song
 }
 
 func (s *spotify) GetClient() {
@@ -86,6 +99,65 @@ func (s *spotify) GetNewToken() error {
 	return nil
 }
 
+func (s *spotify) GetCurrentSong() error {
+	songAPI := "https://api.spotify.com/v1/me/player"
+	request, err := http.NewRequest(
+		"GET",
+		songAPI,
+		nil,
+	)
+	if err != nil {
+		return err
+	}
+	request.Header.Set("Authorization", "Bearer "+s.accessToken.AccessToken)
+	request.Header.Set("content-type", "application/x-www-form-urlencoded")
+	response, err := c.Do(request)
+	if err != nil {
+		return err
+	}
+	defer response.Body.Close()
+	body, err := ioutil.ReadAll(response.Body)
+	if err != nil {
+		return err
+	}
+	//fmt.Println(string(body))
+	var currentSong song
+	if err := json.Unmarshal(body, &currentSong); err != nil {
+		return err
+	}
+	s.currentSong = currentSong
+	//fmt.Println(currentSong)
+	return nil
+}
+
+func (s *spotify) AddCurrentSongToLibrary() error {
+	saveAPI := "https://api.spotify.com/v1/me/tracks"
+	s.GetCurrentSong()
+	currentSongID := s.currentSong.Item.URI[14:]
+	auth := url.Values{}
+	auth.Set("ids", currentSongID)
+	url := saveAPI + "?" + auth.Encode()
+	request, err := http.NewRequest(
+		"PUT",
+		url,
+		nil,
+	)
+	if err != nil {
+		return err
+	}
+	request.Header.Set("Authorization", "Bearer "+s.accessToken.AccessToken)
+	request.Header.Set("content-type", "application/json")
+
+	response, err := c.Do(request)
+	if err != nil {
+		return err
+	}
+	defer response.Body.Close()
+	//fmt.Println(string(body))
+
+	return nil
+}
+
 func main() {
 	spotifyClient := spotify{}
 	spotifyClient.GetClient()
@@ -93,7 +165,12 @@ func main() {
 	spotifyClient.EncodeClient()
 	err := spotifyClient.GetNewToken()
 	if err != nil {
-		fmt.Println()
-		fmt.Println(err)
+		panic(err)
 	}
+
+	err = spotifyClient.AddCurrentSongToLibrary()
+	if err != nil {
+		panic(err)
+	}
+
 }

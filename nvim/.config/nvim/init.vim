@@ -136,18 +136,6 @@ endif
 call plug#end()
 
 set hidden
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-let g:LanguageClient_rootMarkers = {
-        \ 'go': ['.git', 'go.mod'],
-        \ }
-
-let g:LanguageClient_serverCommands = {
-    \ 'go': ['bingo'],
-    \ }
-
-
 
 filetype plugin indent on
 syntax on
