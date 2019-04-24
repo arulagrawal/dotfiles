@@ -34,7 +34,7 @@ super + ctrl + Return
 
 # program launcher - rofi
 super + @space
-	rofi -show combi -theme drac -terminal xst -font "SF Pro Display 14"
+	rofi -show combi -theme drac -terminal xst -font "SF Pro Display 14" -matching fuzzy
 
 # launch browser - chromium/surf
 super + {_,shift + }b
@@ -68,11 +68,11 @@ super + {_,shift + }w
 
 # hide window
 super + v
-  bspc node -g hidden
+    bspc node -g hidden
 
 # unhide window
 super + shift + v
-  bspc node {, $(bspc query -N -n .hidden | tail -n1)} -g hidden=off
+    bspc node {, $(bspc query -N -n .hidden | tail -n1)} -g hidden=off
 
 # rotate desktop
 super + {_,shift + }r
@@ -102,9 +102,9 @@ super + m
 super + ctrl + shift + m
     bspc desktop -s next:focused
 
-# send the newest marked node to the newest preselected node
+# send the focused node to the newest preselected node
 super + shift + y
-	bspc node newest.marked.local -n newest.!automatic.local
+	bspc node focused.local -n newest.!automatic.local
 
 # swap the current node and the biggest node
 super + shift + g

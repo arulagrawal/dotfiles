@@ -4,6 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/arul/.oh-my-zsh"
 export PATH="$HOME/scripts/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 fpath=( "$HOME/.zfunctions" $fpath )
 
 HISTFILE=~/.histfile
@@ -110,6 +111,8 @@ fi
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
+
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -134,6 +137,7 @@ alias weather='curl wttr.in'
 alias d='clear'
 alias comp='killall compton; compton --config .compton.conf --blur-background & disown'
 alias server='mosh arul@arul.io'
+alias code='vscodium'
 
 alias q='exit 0'
 

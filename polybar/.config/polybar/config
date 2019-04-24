@@ -52,6 +52,7 @@ font-1 = Material Icons:size=11;2
 font-2 = M+ 1mn:style=bold:pixelsize=11;1
 
 modules-left = bspwm
+modules-center = spotify
 modules-right = volume memory cpu date battery powermenu
 
 tray-position = none

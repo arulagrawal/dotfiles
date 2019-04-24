@@ -32,6 +32,7 @@ URxvt*borderless: true
 !URxvt*transparency: true
 !URxvt*shading: 120
 URxvt.letterSpace: -0.5
+*.background: #282a36
 URxvt.background: [50]#282a36
 
 *.cursorColor:  #c4c4b5

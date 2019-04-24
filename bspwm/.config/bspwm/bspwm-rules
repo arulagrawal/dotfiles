@@ -8,12 +8,14 @@ class=$2;
 
 case $class in
     (Firefox|Firefox-esr|Iceweasel|Chromium) echo \ desktop=^2:^1;;
+    ([dD]iscord) echo desktop=^1:^1;;
+    ([zZ]athura) echo state=tiled;;
     (dota2) echo desktop=^2:^9;;
-	(Spotify) echo desktop=^2\ monitor=^1;;
+	(Spotify) echo desktop=^1:^2;;
 	([sS]urf) echo state=tiled;;
 	('')
 		case $(ps -p "$(xdo pid $id)" -o comm= 2>/dev/null) in
-			(spotify) echo desktop=^2\ monitor=^1;;
+			(spotify) echo desktop=^1:^2;;
 		esac;;
 esac;
 

@@ -1,14 +1,23 @@
 package main
 
 import (
-	"bytes"
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"net/url"
 	"os"
+	"time"
 )
+
+var c = &http.Client{
+	Timeout: 5 * time.Second,
+}
+
+type authToken struct {
+	AccessToken string `json:"access_token"`
+}
 
 type client struct {
 	ClientID     string `json:"c_id"`
@@ -17,7 +26,7 @@ type client struct {
 }
 
 type spotify struct {
-	accessToken   string
+	accessToken   authToken
 	client        client
 	encodedClient string
 	song          string
@@ -41,24 +50,40 @@ func (s *spotify) EncodeClient() {
 	// fmt.Println(s.encodedClient)
 }
 
-func (s *spotify) GetNewToken() {
+func (s *spotify) GetNewToken() error {
 	tokenAPI := "https://accounts.spotify.com/api/token"
-	payload := []byte(`{"grant_type": "refresh_token", "refresh_token": s.client.RefreshToken}`)
-	client := &http.Client{}
-	req, err := http.NewRequest("POST", tokenAPI, bytes.NewBuffer(payload))
+	auth := url.Values{}
+	auth.Set("grant_type", "refresh_token")
+	auth.Set("refresh_token", s.client.RefreshToken)
+	url := tokenAPI + "?" + auth.Encode()
+	//fmt.Println(url)
+	request, err := http.NewRequest(
+		"POST",
+		url,
+		nil,
+	)
 	if err != nil {
-
+		return err
 	}
-	auth := "Basic " + s.encodedClient
-	req.Header.Set("Authorization", auth)
-	res, err := client.Do(req)
-	// fmt.Println(req)
+	authH := "Basic " + s.encodedClient
+	request.Header.Set("Authorization", authH)
+	request.Header.Set("content-type", "application/x-www-form-urlencoded")
+	response, err := c.Do(request)
 	if err != nil {
-		fmt.Println("error is:", err)
+		return err
 	}
-	defer res.Body.Close()
+	defer response.Body.Close()
 
-	fmt.Println(res)
+	body, err := ioutil.ReadAll(response.Body)
+	if err != nil {
+		return err
+	}
+	var token authToken
+	if err := json.Unmarshal(body, &token); err != nil {
+		return err
+	}
+	s.accessToken = token
+	return nil
 }
 
 func main() {
@@ -66,5 +91,9 @@ func main() {
 	spotifyClient.GetClient()
 	// fmt.Println(spotifyClient)
 	spotifyClient.EncodeClient()
-	spotifyClient.GetNewToken()
+	err := spotifyClient.GetNewToken()
+	if err != nil {
+		fmt.Println()
+		fmt.Println(err)
+	}
 }

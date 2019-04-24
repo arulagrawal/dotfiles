@@ -68,8 +68,10 @@ Plug 'ludwig/split-manpage.vim'
 " go
 "" Go Lang Bundle
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
-
-
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ }
 " html
 "" HTML Bundle
 Plug 'hail2u/vim-css3-syntax'
@@ -132,6 +134,21 @@ if filereadable(expand("~/.config/nvim/local_bundles.vim"))
 endif
 
 call plug#end()
+
+set hidden
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+let g:LanguageClient_rootMarkers = {
+        \ 'go': ['.git', 'go.mod'],
+        \ }
+
+let g:LanguageClient_serverCommands = {
+    \ 'go': ['bingo'],
+    \ }
+
+
+
 filetype plugin indent on
 syntax on
 
