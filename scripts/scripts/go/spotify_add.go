@@ -149,7 +149,6 @@ func (s *spotify) AddCurrentSongToLibrary() error {
 	}
 	request.Header.Set("Authorization", "Bearer "+s.accessToken.AccessToken)
 	request.Header.Set("content-type", "application/json")
-
 	response, err := c.Do(request)
 	if err != nil {
 		return err

@@ -39,7 +39,6 @@ licenses
 linux
 linux-firmware
 logrotate
-lvm2
 m4
 make
 man-db

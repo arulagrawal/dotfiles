@@ -99,6 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 export RTV_BROWSER=surf
+export BROWSER=chromium
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -158,7 +159,7 @@ alias vi='nvim'
 alias vim='nvim'
 alias sv='sudoedit'
 
-alias f='ranger'
+alias f='lf'
 
 alias pup='sudo pacman -Syyu' # update
 alias pin='sudo pacman -S'    # install
@@ -185,7 +186,7 @@ alias calc='python -qi -c "from math import *"'
 
 alias get='curl --continue-at - --location --progress-bar --remote-name --remote-time'
 
-alias dot='ranger ~/dotfiles'
+alias dot='lf ~/dotfiles'
 #end aliases
 
 

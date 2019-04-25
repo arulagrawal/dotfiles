@@ -35,15 +35,21 @@ super + ctrl + Return
 # program launcher - rofi
 super + @space
 	rofi -show combi -theme drac -terminal xst -font "SF Pro Display 14" -matching fuzzy
+    :q
+    :q
 
 
 # launch browser - chromium/surf
 super + {_,shift + }b
 	{chromium, surf}
 
-# launch ranger/pcmanfm
+# launch vscodium
+super + v
+    vscodium
+
+# launch lf/pcmanfm
 super + {_,shift + }n
-    {urxvtc -e ranger, pcmanfm}
+    {xst -e lf, pcmanfm}
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -66,14 +72,6 @@ super + alt + Escape
 # close and kill
 super + {_,shift + }w
 	bspc node -{c,k}
-
-# hide window
-super + v
-    bspc node -g hidden
-
-# unhide window
-super + shift + v
-    bspc node {, $(bspc query -N -n .hidden | tail -n1)} -g hidden=off
 
 # rotate desktop
 super + {_,shift + }r

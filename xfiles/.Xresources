@@ -62,8 +62,8 @@ rofi.color-enabled: true
 /* rofi.color-normal: #2c3539, #c4c4b5, #2c3539, #343d41, #ac8d6e */
 st.font: Hack Nerd Font Mono:pixelsize=15:antialias=true
 st.bold_font: 1
-st.opacity: 127
 st.shell: /usr/bin/zsh
+st.opacity: 127.5
 st.borderpx: 4
 !st.color0: #14151b
 st.cursorshape: 2

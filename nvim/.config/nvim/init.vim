@@ -73,6 +73,9 @@ Plug 'honza/vim-snippets'
 " go
 "" Go Lang Bundle
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+"Plug 'mdempsky/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+Plug 'Shougo/deoplete.nvim'
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 
 
 " html
@@ -90,6 +93,7 @@ Plug 'jelera/vim-javascript-syntax'
 
 " python
 "" Python Bundle
+Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'davidhalter/jedi-vim'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
@@ -162,10 +166,12 @@ set number
 let no_buffers_menu=1
 let g:dracula_colorterm = 0
 colorscheme dracula
+set mouse=a
 set mousemodel=popup
 set t_Co=256
 set guioptions=egmrti
 set gfn=Monospace\ 10
+noremap <silent><esc> <esc>:noh<CR><esc>
 
 " IndentLine
 let g:indentLine_enabled = 1
@@ -250,6 +256,7 @@ nnoremap <silent> <leader>sh :terminal<CR>
 "*****************************************************************************
 " remove trailing whitespaces
 command! FixWhitespace :%s/\s\+$//e
+let g:deoplete#enable_at_startup = 1
 
 "*****************************************************************************
 "" Functions
@@ -295,6 +302,17 @@ set autoread
 "*****************************************************************************
 "" Mappings
 "*****************************************************************************
+
+"copy
+vmap <C-c> "+y
+imap <C-c> "+yi
+
+" Cut
+vmap <C-x> "+ci
+
+" Paste
+vmap <C-v> <ESC>"+pi
+imap <C-v> <ESC>"+pi
 
 "" Split
 noremap <Leader>h :<C-u>split<CR>
@@ -450,6 +468,7 @@ let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_trailing_whitespace_error = 0
 let g:go_highlight_extra_types = 1
 
+let g:deoplete#sources#go#gocode_binary = '~/go/bin/gocode'
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 augroup completion_preview_close
