@@ -22,9 +22,9 @@ ZSH_THEME="spaceship"
 
 
 SPACESHIP_PROMPT_ORDER=(
-  user          # Username section
+  #user          # Username section
   dir           # Current directory section
-  host          # Hostname section
+  #host          # Hostname section
   git           # Git section (git_branch + git_status)
   line_sep      # Line break
   battery       # Battery level and status

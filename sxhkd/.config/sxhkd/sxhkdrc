@@ -10,22 +10,22 @@ super + shift + r
     pkill polybar && polybar -r burs & disown; \
     polybar -r bur & disown;
 
-# open urxvt
+# open xst
 super + Return
-    urxvtc
+    xst
 
 # draw a terminal window
 super + d
     bspc rule -a \* -o state=floating rectangle=$(slop -f "%g") && urxvt
     #~/scripts/bspwm/draw.sh
 
-# open xst
+# open urxvt
 super + shift + Return
-    xst
+    urxvtc
 
 # save song to spotify
 super + ctrl + s
-    ~/scripts/python/spotify_add.py; \
+    ~/scripts/go/spotify_add; \
     dunstify -u normal "Song added to spotify";
 
 # preselect in reverse fashion to normal
@@ -36,13 +36,14 @@ super + ctrl + Return
 super + @space
 	rofi -show combi -theme drac -terminal xst -font "SF Pro Display 14" -matching fuzzy
 
+
 # launch browser - chromium/surf
 super + {_,shift + }b
 	{chromium, surf}
 
-# launch pcmanfm
-super + n
-    pcmanfm
+# launch ranger/pcmanfm
+super + {_,shift + }n
+    {urxvtc -e ranger, pcmanfm}
 
 # make sxhkd reload its configuration files:
 super + Escape

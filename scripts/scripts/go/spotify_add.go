@@ -3,11 +3,11 @@ package main
 import (
 	"encoding/base64"
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"os"
+	"path/filepath"
 	"time"
 )
 
@@ -22,10 +22,6 @@ type song struct {
 type item struct {
 	Title string `json:"name"`
 	URI   string `json:"uri"`
-}
-
-type songID struct {
-	ids string
 }
 
 type authToken struct {
@@ -45,14 +41,20 @@ type spotify struct {
 	currentSong   song
 }
 
-func (s *spotify) GetClient() {
-	jsonFile, err := os.Open("spotifyinfo.json")
+func (s *spotify) GetClient() error {
+	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
 	if err != nil {
-		fmt.Println(err)
+		return err
+	}
+	file := dir + "/spotifyinfo.json"
+	jsonFile, err := os.Open(file)
+	if err != nil {
+		return err
 	}
 	byteValue, _ := ioutil.ReadAll(jsonFile)
 	json.Unmarshal(byteValue, &s.client)
 	// fmt.Println(s.client)
+	return nil
 }
 
 func (s *spotify) EncodeClient() {
@@ -160,10 +162,13 @@ func (s *spotify) AddCurrentSongToLibrary() error {
 
 func main() {
 	spotifyClient := spotify{}
-	spotifyClient.GetClient()
+	err := spotifyClient.GetClient()
+	if err != nil {
+		panic(err)
+	}
 	// fmt.Println(spotifyClient)
 	spotifyClient.EncodeClient()
-	err := spotifyClient.GetNewToken()
+	err = spotifyClient.GetNewToken()
 	if err != nil {
 		panic(err)
 	}

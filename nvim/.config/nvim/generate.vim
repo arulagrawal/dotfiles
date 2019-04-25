@@ -27,7 +27,6 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
@@ -65,6 +64,8 @@ Plug 'xolox/vim-session'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
+"" Color
+Plug 'tomasr/molokai'
 
 "*****************************************************************************
 "" Custom bundles
@@ -160,20 +161,32 @@ set ruler
 set number
 
 let no_buffers_menu=1
-let g:dracula_colorterm = 0
-colorscheme dracula
+silent! colorscheme molokai
+
 set mousemodel=popup
 set t_Co=256
 set guioptions=egmrti
 set gfn=Monospace\ 10
 
-" IndentLine
-let g:indentLine_enabled = 1
-let g:indentLine_concealcursor = 0
-let g:indentLine_char = '┆'
-let g:indentLine_faster = 1
+if has("gui_running")
+  if has("gui_mac") || has("gui_macvim")
+    set guifont=Menlo:h12
+    set transparency=7
+  endif
+else
+  let g:CSApprox_loaded = 1
+
+  " IndentLine
+  let g:indentLine_enabled = 1
+  let g:indentLine_concealcursor = 0
+  let g:indentLine_char = '┆'
+  let g:indentLine_faster = 1
 
   
+endif
+
+
+
 "" Disable the blinking cursor.
 set gcr=a:blinkon0
 set scrolloff=3
@@ -201,7 +214,7 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'dracula'
+let g:airline_theme = 'powerlineish'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -556,12 +569,12 @@ if !exists('g:airline_symbols')
 endif
 
 if !exists('g:airline_powerline_fonts')
-  let g:airline_left_sep = ''
-  let g:airline_left_alt_sep = ''
-  let g:airline_right_sep = ''
-  let g:airline_right_alt_sep = ''
   let g:airline#extensions#tabline#left_sep = ' '
   let g:airline#extensions#tabline#left_alt_sep = '|'
+  let g:airline_left_sep          = '▶'
+  let g:airline_left_alt_sep      = '»'
+  let g:airline_right_sep         = '◀'
+  let g:airline_right_alt_sep     = '«'
   let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
   let g:airline#extensions#readonly#symbol   = '⊘'
   let g:airline#extensions#linecolumn#prefix = '¶'
