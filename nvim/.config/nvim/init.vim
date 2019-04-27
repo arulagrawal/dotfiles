@@ -72,9 +72,8 @@ Plug 'honza/vim-snippets'
 
 " go
 "" Go Lang Bundle
-Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
-"Plug 'mdempsky/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'Shougo/deoplete.nvim'
+Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 
 
@@ -468,7 +467,6 @@ let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_trailing_whitespace_error = 0
 let g:go_highlight_extra_types = 1
 
-let g:deoplete#sources#go#gocode_binary = '~/go/bin/gocode'
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 augroup completion_preview_close

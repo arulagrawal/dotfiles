@@ -4,7 +4,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/arul/.oh-my-zsh"
 export PATH="$HOME/scripts/bin:$PATH"
-export PATH="$HOME/go/bin:$PATH"
+export GOPATH="~/go"
+export PATH=$GOPATH/bin:$PATH
 fpath=( "$HOME/.zfunctions" $fpath )
 
 HISTFILE=~/.histfile

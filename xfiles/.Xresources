@@ -12,7 +12,7 @@ Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintslight
 Xft.hinting: 1
 !XTerm.vt100.faceName: Iosevka Term:size=11:antialias=true
-XTerm.vt100.faceName: Hack Nerd Font:size=11:antialias=true
+XTerm.vt100.faceName: Hack Nerd Font:pixelsize=15:antialias=true
 !XTerm.vt100.font: -schumacher-clean-medium-r-normal-*-12-120-75-75-c-*-iso8859-*
 Xft.rgba: rgb
 Xft.dpi: 96
@@ -20,20 +20,7 @@ XTerm.termName: xterm-256color
 XTerm.vt100.locale: true
 XTerm.scaleHeight: 1.01
 XCursor.theme: Breeze Snow
-URxvt.scrollBar: false
-URxvt*depth: 32
-URxvt.depth: 32
-URxvt.perl-ext-common: default,matcher,resize-font
-URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.matcher.button: 1
-!URxvt.matcher.rend.0: Uline Bold fg5
-URxvt*borderless: true
-!URxvt*inheritPixMap: true
-!URxvt*transparency: true
-!URxvt*shading: 120
-URxvt.letterSpace: -0.5
 *.background: #282a36
-URxvt.background: [50]#282a36
 
 *.cursorColor:  #c4c4b5
 *.foreground: #F8F8F2
@@ -53,9 +40,9 @@ URxvt.background: [50]#282a36
 *.color14:    #9AEDFE
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6
-URxvt.font:xft:Hack Nerd Font Mono:pixelsize=15:antialias=true:hinting=full, \
+*.font:xft:Hack Nerd Font Mono:pixelsize=15:antialias=true:hinting=full, \
            xft:Material Icons:pixelsize=15:antialias=true
-URxvt.boldFont:xft:Hack Nerd Font Mono:bold:pixelsize=15:antialias=true
+*.boldFont:xft:Hack Nerd Font Mono:bold:pixelsize=15:antialias=true
 
 rofi.color-enabled: true
 /* rofi.color-window: #2c3539, #2c3539, #2c3539 */
@@ -92,10 +79,6 @@ st.termname: st-256color
 /* Xft.hinting: 1 */
 /* Xft.antialias: 1 */
 /* Xft.rgba: rgb */
-URxvt*lineSpace: -1
-
-
-URxvt*selection_to_clipboard: false
 
 rofi.color-enabled: true
 rofi.color-enaled: true

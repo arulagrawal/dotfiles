@@ -10,18 +10,36 @@ super + shift + r
     pkill polybar && polybar -r burs & disown; \
     polybar -r bur & disown;
 
-# open xst
+# open alacritty
 super + Return
-    xst
+    alacritty
+
+# scratchpad
+super + d
+    sid=$(bspc query --nodes --node any.private.hidden); \
+    echo $sid; \
+    if [[ -z "$sid" ]] \
+    then \
+        echo "hide it"; \
+        sid=$(bspc query --nodes --node any.private); \
+        bspc node "$sid" --flag hidden=true; \
+    else \  
+        echo "unhide it"; \
+        bspc node "$sid" --flag hidden=false; \
+        bspc node "$sid" --to-desktop "focused:focused" --focus; \
+    fi
+
+
 
 # draw a terminal window
-super + d
-    bspc rule -a \* -o state=floating rectangle=$(slop -f "%g") && urxvt
+super + shift + d
+    bspc rule -a \* -o state=floating rectangle=$(slop -f "%g") && alacritty
     #~/scripts/bspwm/draw.sh
 
-# open urxvt
+
+# open xst
 super + shift + Return
-    urxvtc
+    xst
 
 # save song to spotify
 super + ctrl + s
@@ -35,8 +53,6 @@ super + ctrl + Return
 # program launcher - rofi
 super + @space
 	rofi -show combi -theme drac -terminal xst -font "SF Pro Display 14" -matching fuzzy
-    :q
-    :q
 
 
 # launch browser - chromium/surf
