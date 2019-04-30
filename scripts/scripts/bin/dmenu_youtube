@@ -13,11 +13,11 @@ SB='#BD93F9'
 SF='#FFF'
 
 CACHEDIR="/tmp/dyou"
-PLAYER="vlc"
+PLAYER="mpv"
 
 # Style of dmenu
 #search=$(echo | dmenu -fn $FN -i -p "YouTube >" -nb $NB -nf $NF -sb $SB -sf $SF | tr " " +)
-search=$(echo | dmenu -fn $FN -i -p "YouTube >" -sb $SB | tr " " +)
+search=$(echo | dmenu -i -p "YouTube >" | tr " " +)
 
 [ -z ${search} ] && exit
 

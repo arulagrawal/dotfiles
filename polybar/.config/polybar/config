@@ -339,7 +339,6 @@ compositing-foreground = source
 margin-top = 0
 margin-bottom = 0
 
-; vim:ft=dosini
 
 [module/spotify]
 type = custom/script
@@ -350,4 +349,5 @@ exec = python /home/arul/scripts/polybar/spotify.py -f '{artist}: {song}' --font
 format-underline = #50FA7B
 click-left = dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 
-# vim: filetype=sh
+; vim: filetype=sh
+# vim:ft=dosini

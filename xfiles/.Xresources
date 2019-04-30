@@ -19,10 +19,25 @@ Xft.dpi: 96
 XTerm.termName: xterm-256color
 XTerm.vt100.locale: true
 XTerm.scaleHeight: 1.01
-XCursor.theme: Breeze Snow
+!XCursor.theme: Breeze Snow
 *.background: #282a36
-
-*.cursorColor:  #c4c4b5
+URxvt.scrollBar: false
+URxvt*depth: 32
+URxvt.perl-ext-common: default,matcher,resize-font
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.clipboard.autocopy: true
+!URxvt.matcher.rend.0: Uline Bold fg5
+URxvt*borderless: true
+!URxvt*inheritPixMap: true
+!URxvt*transparency: true
+!URxvt*shading: 120
+URxvt.letterSpace: -1
+URxvt*background: [10]#282a36
+URxvt.font:xft:Hack Nerd Font Mono:pixelsize=15:antialias=true:hinting=full, \
+           xft:Material Icons:pixelsize=15:antialias=true
+URxvt.boldFont:xft:Hack Nerd Font Mono:bold:pixelsize=15:antialias=true
+!*.cursorColor:  #c4c4b5
 *.foreground: #F8F8F2
 *.color0:     #000000
 *.color8:     #4D4D4D
@@ -40,9 +55,8 @@ XCursor.theme: Breeze Snow
 *.color14:    #9AEDFE
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6
-*.font:xft:Hack Nerd Font Mono:pixelsize=15:antialias=true:hinting=full, \
-           xft:Material Icons:pixelsize=15:antialias=true
-*.boldFont:xft:Hack Nerd Font Mono:bold:pixelsize=15:antialias=true
+/* *.font:xft:Hack Nerd Font Mono:pixelsize=15:antialias=true:hinting=full */
+/* *.boldFont:xft:Hack Nerd Font Mono:bold:pixelsize=15:antialias=true */
 
 rofi.color-enabled: true
 /* rofi.color-window: #2c3539, #2c3539, #2c3539 */
@@ -53,7 +67,7 @@ st.shell: /usr/bin/zsh
 st.opacity: 127.5
 st.borderpx: 4
 !st.color0: #14151b
-st.cursorshape: 2
+st.cursorshape: 6
 st.background: #282a36
 st.color8:     #4D4D4D
 st.color1:     #FF5555
@@ -71,7 +85,6 @@ st.color14:    #9AEDFE
 st.color7:     #BFBFBF
 st.color15:    #E6E6E6
 st.termname: st-256color
-
 /* Xft.dpi: 96 */
 /* Xft.autohint: 0 */
 /* Xft.lcdfilter: lcddefault */

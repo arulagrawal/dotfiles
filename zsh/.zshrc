@@ -4,7 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/arul/.oh-my-zsh"
 export PATH="$HOME/scripts/bin:$PATH"
-export GOPATH="~/go"
+export GOPATH="/home/arul/go"
 export PATH=$GOPATH/bin:$PATH
 fpath=( "$HOME/.zfunctions" $fpath )
 
@@ -188,6 +188,7 @@ alias calc='python -qi -c "from math import *"'
 alias get='curl --continue-at - --location --progress-bar --remote-name --remote-time'
 
 alias dot='lf ~/dotfiles'
+alias xres='nvim ~/.Xresources; xrdb ~/.Xresources'
 #end aliases
 
 
@@ -223,5 +224,8 @@ c() {
         cat "$1"
     fi
 }
+
+function shorten() {
+  curl -F"shorten=$*" https://0x0.st
+}
 #end functions
-eval $(thefuck --alias)

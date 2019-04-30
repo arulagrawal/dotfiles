@@ -28,6 +28,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "" Plug install packages
 "*****************************************************************************
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'junegunn/goyo.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
@@ -162,6 +163,8 @@ syntax on
 set ruler
 set number
 
+let g:goyo_linenr=0
+
 let no_buffers_menu=1
 let g:dracula_colorterm = 0
 colorscheme dracula
@@ -271,6 +274,9 @@ endif
 "*****************************************************************************
 "" Autocmd Rules
 "*****************************************************************************
+" save cursor
+au VimLeave * set guicursor=a:ver25-blinkon0
+"
 "" The PC is fast enough, do syntax highlight syncing from start unless 200 lines
 augroup vimrc-sync-fromstart
   autocmd!
@@ -301,6 +307,9 @@ set autoread
 "*****************************************************************************
 "" Mappings
 "*****************************************************************************
+" goyo
+
+noremap <Leader>gg :Goyo<CR>
 
 "copy
 vmap <C-c> "+y

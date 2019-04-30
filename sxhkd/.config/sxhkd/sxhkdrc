@@ -14,6 +14,10 @@ super + shift + r
 super + Return
     alacritty
 
+# open xst
+super + shift + Return
+    xst
+
 # scratchpad
 super + d
     sid=$(bspc query --nodes --node any.private.hidden); \
@@ -29,17 +33,10 @@ super + d
         bspc node "$sid" --to-desktop "focused:focused" --focus; \
     fi
 
-
-
 # draw a terminal window
 super + shift + d
     bspc rule -a \* -o state=floating rectangle=$(slop -f "%g") && alacritty
     #~/scripts/bspwm/draw.sh
-
-
-# open xst
-super + shift + Return
-    xst
 
 # save song to spotify
 super + ctrl + s
@@ -159,7 +156,7 @@ super + {q,e}
 super + shift + {q,e}
     bspc node -d {prev,next}.local
 
-# focus the last node/desktop
+# focus the last desktop that has stuff in this monitor
 super + grave
 	bspc desktop -f last.occupied.local
 

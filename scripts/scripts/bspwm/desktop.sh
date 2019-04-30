@@ -7,3 +7,4 @@ pactl set-sink-volume 1 50%
 wmname LG3D
 urxvtd -q -o -f
 xst -c dropdown -g 212x20+1920+0
+xset r rate 350 60
