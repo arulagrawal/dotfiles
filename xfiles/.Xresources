@@ -1,44 +1,7 @@
-! -----------------------------------
-! Includes for easier (Instant) rice!
-! -----------------------------------
-!#include ".cache/squash/x_colors"
-!#include "/home/arul/.xrdb/colors/monodevek"
-!#include "~/.xrdb/fonts/hack"
-!#include "/home/arul/.xrdb/rofi/nord"
-!#include ".config/rasi/config.rasi"
-
-!Xft.autohint:1
-Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintslight
-Xft.hinting: 1
-!XTerm.vt100.faceName: Iosevka Term:size=11:antialias=true
-XTerm.vt100.faceName: Hack Nerd Font:pixelsize=15:antialias=true
-!XTerm.vt100.font: -schumacher-clean-medium-r-normal-*-12-120-75-75-c-*-iso8859-*
-Xft.rgba: rgb
-Xft.dpi: 96
-XTerm.termName: xterm-256color
-XTerm.vt100.locale: true
-XTerm.scaleHeight: 1.01
-!XCursor.theme: Breeze Snow
-*.background: #282a36
-URxvt.scrollBar: false
-URxvt*depth: 32
-URxvt.perl-ext-common: default,matcher,resize-font
-URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.matcher.button: 1
-URxvt.clipboard.autocopy: true
-!URxvt.matcher.rend.0: Uline Bold fg5
-URxvt*borderless: true
-!URxvt*inheritPixMap: true
-!URxvt*transparency: true
-!URxvt*shading: 120
-URxvt.letterSpace: -1
-URxvt*background: [10]#282a36
-URxvt.font:xft:Hack Nerd Font Mono:pixelsize=15:antialias=true:hinting=full, \
-           xft:Material Icons:pixelsize=15:antialias=true
-URxvt.boldFont:xft:Hack Nerd Font Mono:bold:pixelsize=15:antialias=true
-!*.cursorColor:  #c4c4b5
+!colors for rofi
+! Dracula Xresources palette
 *.foreground: #F8F8F2
+*.background: #282A36
 *.color0:     #000000
 *.color8:     #4D4D4D
 *.color1:     #FF5555
@@ -55,43 +18,15 @@ URxvt.boldFont:xft:Hack Nerd Font Mono:bold:pixelsize=15:antialias=true
 *.color14:    #9AEDFE
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6
-/* *.font:xft:Hack Nerd Font Mono:pixelsize=15:antialias=true:hinting=full */
-/* *.boldFont:xft:Hack Nerd Font Mono:bold:pixelsize=15:antialias=true */
 
-rofi.color-enabled: true
-/* rofi.color-window: #2c3539, #2c3539, #2c3539 */
-/* rofi.color-normal: #2c3539, #c4c4b5, #2c3539, #343d41, #ac8d6e */
-st.font: Hack Nerd Font Mono:pixelsize=15:antialias=true
-st.bold_font: 1
-st.shell: /usr/bin/zsh
-st.opacity: 127.5
-st.borderpx: 4
-!st.color0: #14151b
-st.cursorshape: 6
-st.background: #282a36
-st.color8:     #4D4D4D
-st.color1:     #FF5555
-st.color9:     #FF6E67
-st.color2:     #50FA7B
-st.color10:    #5AF78E
-st.color3:     #F1FA8C
-st.color11:    #F4F99D
-st.color4:     #BD93F9
-st.color12:    #CAA9FA
-st.color5:     #FF79C6
-st.color13:    #FF92D0
-st.color6:     #8BE9FD
-st.color14:    #9AEDFE
-st.color7:     #BFBFBF
-st.color15:    #E6E6E6
-st.termname: st-256color
-/* Xft.dpi: 96 */
-/* Xft.autohint: 0 */
-/* Xft.lcdfilter: lcddefault */
-/* Xft.hintstyle: hintslight */
-/* Xft.hinting: 1 */
-/* Xft.antialias: 1 */
-/* Xft.rgba: rgb */
+
+
+Xft.autohint:1
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.rgba: rgb
+Xft.dpi: 96
 
 rofi.color-enabled: true
 rofi.color-enaled: true

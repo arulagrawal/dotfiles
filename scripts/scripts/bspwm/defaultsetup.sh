@@ -18,4 +18,3 @@ for a in "${apps[@]}"
 do
     $a & disown
 done
-

@@ -21,7 +21,6 @@ bindkey -v
 ZSH_THEME="spaceship"
 
 
-
 SPACESHIP_PROMPT_ORDER=(
   #user          # Username section
   dir           # Current directory section
@@ -140,6 +139,7 @@ alias d='clear'
 alias comp='killall compton; compton --config .compton.conf --blur-background & disown'
 alias server='mosh arul@arul.io'
 alias code='vscodium'
+alias copy='xclip -sel clip'
 
 alias q='exit 0'
 

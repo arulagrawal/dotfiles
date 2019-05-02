@@ -1,22 +1,14 @@
 #
 # wm independent hotkeys
 #
-# scrot
-super + shift + p
-    scrot -e 'mv $f ~/Pictures/screenshots/' && pkill scrot -q 100; \
-    dunstify -u normal "Screenshot taken" "in ~/Pictures/screenshots";
 
-super + shift + r
-    pkill polybar && polybar -r burs & disown; \
-    polybar -r bur & disown;
+# open st
+super + Return
+    st
 
 # open alacritty
-super + Return
-    alacritty
-
-# open xst
 super + shift + Return
-    xst
+    alacritty
 
 # scratchpad
 super + d
@@ -36,7 +28,6 @@ super + d
 # draw a terminal window
 super + shift + d
     bspc rule -a \* -o state=floating rectangle=$(slop -f "%g") && alacritty
-    #~/scripts/bspwm/draw.sh
 
 # save song to spotify
 super + ctrl + s
@@ -49,12 +40,12 @@ super + ctrl + Return
 
 # program launcher - rofi
 super + @space
-	rofi -show combi -theme drac -terminal xst -font "SF Pro Display 14" -matching fuzzy
+	rofi -show combi -theme drac -terminal st -font "SF Pro Display 14" -matching fuzzy
 
 
-# launch browser - chromium/surf
+# launch browser - chromium/firefox
 super + {_,shift + }b
-	{chromium, surf}
+	{chromium, firefox}
 
 # launch vscodium
 super + v
@@ -62,7 +53,7 @@ super + v
 
 # launch lf/pcmanfm
 super + {_,shift + }n
-    {xst -e lf, pcmanfm}
+    {st -e lf, pcmanfm}
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -71,12 +62,27 @@ super + Escape
 # launch youtube dmenu
 super + y
     ~/scripts/bin/dmenu_youtube
-#
-# bspwm hotkeys
 
 # lock screen
-super + ctrl + l
+super + alt + l
 	~/scripts/rice/lock.sh
+
+# take screenshot
+Print
+    ~/scripts/utility/scrot.sh;
+
+# take region screensho TODO: currently broken
+shift + Print
+    ~/scripts/utility/scrot_selection.sh;
+
+# reload bars
+super + shift + r
+    pkill polybar && polybar -r burs & disown; \
+    polybar -r bur & disown;
+
+#
+# bspwm keybinds
+#
 
 # quit bspwm normally
 super + alt + Escape
@@ -183,7 +189,7 @@ super + shift + {1-9}
 #
 
 # preselect the direction
-super + ctrl + alt + {h,j,k,l}
+super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
 
 # preselect the ratio
