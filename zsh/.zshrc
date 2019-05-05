@@ -4,8 +4,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/arul/.oh-my-zsh"
 export PATH="$HOME/scripts/bin:$PATH"
+export GOROOT=""
 export GOPATH="/home/arul/go"
-export PATH=$GOPATH/bin:$PATH
+export PATH="$GOPATH/bin:$PATH"
 fpath=( "$HOME/.zfunctions" $fpath )
 
 HISTFILE=~/.histfile
@@ -129,7 +130,7 @@ bindkey "^X^E" edit-command-line
 # alias zshconfig="mate ~/.zshrc"
 # # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-#
+source ~/scripts/utility/todoist_functions.sh
 # My Aliases
 alias vimrc='nvim ~/.config/nvim/init.vim'
 alias zshrc='nvim ~/.zshrc && source ~/.zshrc'
@@ -140,6 +141,7 @@ alias comp='killall compton; compton --config .compton.conf --blur-background & 
 alias server='mosh arul@arul.io'
 alias code='vscodium'
 alias copy='xclip -sel clip'
+alias todo='todoist'
 
 alias q='exit 0'
 
