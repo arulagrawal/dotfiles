@@ -14,7 +14,7 @@ case $class in
     (Spotify) echo desktop=^1:^2;;
     ([sS]urf) echo state=tiled;;
     #games
-    ([sS]team) echo desktop=^2:8 \ state=floating;;
+    ([sS]team) echo desktop=^2:^8 \ state=floating;;
     (dota2) echo desktop=^2:^9;;
     ('')
         case $(ps -p "$(xdo pid $id)" -o comm= 2>/dev/null) in

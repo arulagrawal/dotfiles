@@ -19,6 +19,7 @@ super + d
         echo "hide it"; \
         sid=$(bspc query --nodes --node any.private); \
         bspc node "$sid" --flag hidden=true; \
+        bspc node "$sid" --to-desktop "focused:^1"; \
     else \  
         echo "unhide it"; \
         bspc node "$sid" --flag hidden=false; \
@@ -27,7 +28,7 @@ super + d
 
 # draw a terminal window
 super + shift + d
-    bspc rule -a \* -o state=floating rectangle=$(slop -f "%g") && alacritty
+    bspc rule -a \* -o state=floating rectangle=$(slop -f "%g") && st
 
 # save song to spotify
 super + ctrl + s
@@ -160,8 +161,12 @@ super + {_,shift + }{h,j,k,l}
 
 #do something with x and z
 
-# focus the next/previous desktop in the current monitor
+# focus the next/previous occupied desktop in the current monitor
 super + {q,e}
+	bspc desktop -f {prev,next}.local.occupied
+
+# focus the next/previous occupied desktop in the current monitor
+super + ctrl + {q,e}
 	bspc desktop -f {prev,next}.local
 
 # send to next/previous desktop in current monitor
