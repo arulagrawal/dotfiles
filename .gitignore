@@ -1,3 +1,6 @@
 nvim/.config/nvim/plugged
 spotifyinfo.json
 spotify_add
+base
+explicit
+tocheck

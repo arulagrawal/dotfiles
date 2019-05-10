@@ -1,5 +1,5 @@
 #!/bin/bash
-#render the bar
+#render the bars
 polybar burs & disown
 polybar bur & disown
 

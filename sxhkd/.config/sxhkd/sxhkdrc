@@ -20,7 +20,7 @@ super + shift + d
     bspc rule -a \* -o state=floating rectangle=$(slop -f "%g") && st
 
 # save song to spotify
-super + ctrl + s
+super + alt + s
     ~/scripts/go/spotify_add; \
     dunstify -u normal "Song added to spotify";
 
@@ -42,7 +42,7 @@ super + v
     vscodium
 
 # launch lf/pcmanfm
-super + {_,shift + }n
+super + {_,shift + }f
     {st -e lf, pcmanfm}
 
 # make sxhkd reload its configuration files:
@@ -129,7 +129,7 @@ super + shift + g
 #
 
 # set the window state
-super + {t,shift + t,s,f}
+super + ctrl + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # mark a node
@@ -140,7 +140,7 @@ super + ctrl + m
 # focus/swap
 #
 
-# focus the node in the given direction
+# focus/swap the node in the given direction
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
