@@ -101,14 +101,9 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 export RTV_BROWSER=surf
 export BROWSER=chromium
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='nvim'
-  export VISUAL='nvim'
-fi
-
+export EDITOR='nvim'
+export VISUAL='nvim'
+export MANPAGER='nvim +Man!'
 
 autoload -z edit-command-line
 zle -N edit-command-line
@@ -195,10 +190,16 @@ alias xres='nvim ~/.Xresources; xrdb ~/.Xresources'
 
 
 #functions
+#fzf with preview options
+fzfp(){
+    fzf --reverse --inline-info --preview='~/bin/preview.sh {}' --bind '?:toggle-preview' --tabstop=1 --ansi
+}
+
+
 #quick lookup for my config files
 dots()
 {
-    find ~/dotfiles/ -type f -exec du -a {} + | awk '{print $2}' | sed '/git\|bash\|plugged\|xrdb/d' | fzf --reverse | xargs -r $EDITOR;
+    find ~/dotfiles/ -type f -exec du -a {} + | awk '{print $2}' | sed '/git\|autoload\|generate.vim\|netrwhist\|python.vim\|screenshot\|bash\|plugged\|xrdb/d' | fzfp | xargs -r $EDITOR;
 }
 
 #show me what my key config looks like - pressing enter goes to that command in the config
@@ -228,6 +229,14 @@ c() {
 }
 
 function shorten() {
-  curl -F"shorten=$*" https://0x0.st
+    curl -F"shorten=$*" https://0x0.st
+}
+
+function zathura() {
+    command zathura "$@" & disown
+}
+
+function spawn() {
+    "$@" & disown
 }
 #end functions

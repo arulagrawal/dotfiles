@@ -1,3 +1,4 @@
+#!/bin/bash
 #
 # wm independent hotkeys
 #
@@ -10,21 +11,9 @@ super + Return
 super + shift + Return
     alacritty
 
-# scratchpad
+# scratchpad/dropdown
 super + d
-    sid=$(bspc query --nodes --node any.private.hidden); \
-    echo $sid; \
-    if [[ -z "$sid" ]] \
-    then \
-        echo "hide it"; \
-        sid=$(bspc query --nodes --node any.private); \
-        bspc node "$sid" --flag hidden=true; \
-        bspc node "$sid" --to-desktop "focused:^1"; \
-    else \  
-        echo "unhide it"; \
-        bspc node "$sid" --flag hidden=false; \
-        bspc node "$sid" --to-desktop "focused:focused" --focus; \
-    fi
+    ~/scripts/bspwm/dropdown.sh
 
 # draw a terminal window
 super + shift + d
@@ -70,11 +59,11 @@ super + ctrl + alt + l
 
 # take screenshot
 Print
-    ~/scripts/utility/scrot.sh;
+    ~/scripts/utility/screenshot.sh;
 
 # take region screensho TODO: currently broken
 shift + Print
-    ~/scripts/utility/scrot_selection.sh;
+    ~/scripts/utility/screenshot.sh area;
 
 # reload bars
 super + shift + r
@@ -155,11 +144,10 @@ super + ctrl + m
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
-# focus the node for the given path jump
-#super + {p,b,comma,period}
-#	bspc node -f @{parent,brother,first,second}
-
-#do something with x and z
+# warp window in the given direction
+super + ctrl + shift + {h,j,k,l}
+    bspc node -n {west,south,north,east} --follow
+    #~/scripts/bspwm/warp.sh {west,south,north,east}
 
 # focus the next/previous occupied desktop in the current monitor
 super + {q,e}
@@ -207,13 +195,9 @@ super + ctrl + {h,j,k,l}
 super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
-# cancel the preselection for the focused node
+# cancel all preselections
 super + ctrl + space
-	bspc node -p cancel
-
-# cancel the preselection for the focused desktop
-super + ctrl + shift + space
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+    for window in $(bspc query -N); do bspc node $window -p cancel; done
 
 #
 # move/resize
