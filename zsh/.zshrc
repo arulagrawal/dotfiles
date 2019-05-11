@@ -49,8 +49,5 @@ source $ZSH/oh-my-zsh.sh
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
-
 source ~/scripts/utility/todoist_functions.sh
-for file in ~/.zsh/*.zsh; do
-    source $file
-done
+for config (~/.zsh/*.zsh) source $config

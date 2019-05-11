@@ -14,7 +14,7 @@ fzfp()
 #quick lookup for my config files
 dots()
 {
-    find ~/dotfiles/ -type f -exec du -a {} + | awk '{print $2}' | sed '/git\|autoload\|generate.vim\|netrwhist\|python.vim\|screenshot\|bash\|plugged\|xrdb/d' | fzfp | xargs -r $EDITOR;
+    find ~/dotfiles/ -type f -exec du -a {} + | awk '{print $2}' | sed '/git\|autoload\|generate.vim\|netrwhist\|python.vim\|bash\|plugged\|xrdb/d' | fzfp | xargs -r $EDITOR;
 }
 
 #show me what my key config looks like - pressing enter goes to that command in the config

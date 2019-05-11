@@ -8,4 +8,5 @@ export RTV_BROWSER=surf
 export BROWSER=chromium
 export EDITOR='nvim'
 export VISUAL='nvim'
+export PAGER='/usr/share/nvim/runtime/macros/less.sh'
 export MANPAGER='nvim +Man!'
