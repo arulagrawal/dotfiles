@@ -35,7 +35,7 @@ super + @space
 
 # launch browser - chromium/firefox
 super + {_,shift + }b
-	{chromium, firefox}
+	{chromium, google-chrome-stable}
 
 # launch vscodium
 super + v
@@ -236,5 +236,3 @@ XF86AudioPrev
 
 XF86AudioNext
     dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
-
-#vim:set syntax=sh
