@@ -31,6 +31,9 @@ map X !$f
 map o &mimeopen $f
 map O $mimeopen --ask $f
 
+
+set previewer ~/.config/lf/pv.sh
+map i $~/.config/lf/pv.sh $f | less -R
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
 # use either file extensions and/or mime types here. Below uses an editor for

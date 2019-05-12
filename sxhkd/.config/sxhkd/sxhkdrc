@@ -13,13 +13,13 @@
 # wm independent hotkeys
 #
 
-# open st
-super + Return
-    st
-
 # open alacritty
-super + shift + Return
+super + Return
     alacritty
+
+# open st
+super + shift + Return
+    st
 
 # scratchpad/dropdown
 super + d
@@ -53,7 +53,7 @@ super + v
 
 # launch lf/pcmanfm
 super + {_,shift + }f
-    {st -e lf, pcmanfm}
+    {alacritty -e lf, pcmanfm}
 
 # make sxhkd reload its configuration files:
 super + Escape
