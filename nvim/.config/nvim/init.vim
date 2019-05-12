@@ -1,3 +1,14 @@
+"                                     ██            
+"                                    ░░             
+"  ███████   █████   ██████  ██    ██ ██ ██████████ 
+" ░░██░░░██ ██░░░██ ██░░░░██░██   ░██░██░░██░░██░░██
+"  ░██  ░██░███████░██   ░██░░██ ░██ ░██ ░██ ░██ ░██
+"  ░██  ░██░██░░░░ ░██   ░██ ░░████  ░██ ░██ ░██ ░██
+"  ███  ░██░░██████░░██████   ░░██   ░██ ███ ░██ ░██
+" ░░░   ░░  ░░░░░░  ░░░░░░     ░░    ░░ ░░░  ░░  ░░ 
+
+
+
 " vim-bootstrap 
 
 "*****************************************************************************
@@ -34,8 +45,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
@@ -405,6 +416,8 @@ if has('unnamedplus')
   set clipboard=unnamed,unnamedplus
 endif
 
+vmap r "_dP
+
 noremap YY "+y<CR>
 noremap <leader>p "+gP<CR>
 noremap XX "+x<CR>
@@ -415,7 +428,7 @@ if has('macunix')
   vmap <C-c> :w !pbcopy<CR><CR>
 endif
 
-"" Buffer nav
+"" buffer nav
 noremap <leader>z :bp<CR>
 noremap <leader>q :bp<CR>
 noremap <leader>x :bn<CR>

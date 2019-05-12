@@ -13,7 +13,7 @@
 ##
 
 # apps=(sxhkd chromium spotify redshift discord unclutter udiskie xst)
-apps=(devmon sxhkd redshift unclutter)
+apps=(devmon sxhkd redshift unclutter clipmenud)
 for a in "${apps[@]}"
 do
     $a & disown

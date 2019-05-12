@@ -1,4 +1,14 @@
 #!/bin/bash
+
+#                 ██      ██          ██
+#                ░██     ░██         ░██
+#  ██████ ██   ██░██     ░██  ██     ░██
+# ██░░░░ ░░██ ██ ░██████ ░██ ██   ██████
+#░░█████  ░░███  ░██░░░██░████   ██░░░██
+# ░░░░░██  ██░██ ░██  ░██░██░██ ░██  ░██
+# ██████  ██ ░░██░██  ░██░██░░██░░██████
+#░░░░░░  ░░   ░░ ░░   ░░ ░░  ░░  ░░░░░░ 
+
 #
 # wm independent hotkeys
 #
@@ -93,8 +103,8 @@ super + {_,shift} + i
     for win in `bspc query -N -n .leaf.!window`; do bspc node $win -k ; done;
 
 # circulate the leaves of the tree
-super + {_,shift + }c
-	bspc node @/ --circulate {backward,forward}
+super + c
+    clipmenu
 
 # make split ratios equal
 super + equal
@@ -128,9 +138,9 @@ super + shift + g
 # state/flags
 #
 
-# set the window state
-super + ctrl + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+# set the window state; t to swap tiled/floating and f for fullscreen
+super + s; {t,f}
+	bspc node -t {$(bspc query -N -n -n .tiled > /dev/null && echo floating || echo tiled),fullscreen}
 
 # mark a node
 super + ctrl + m

@@ -8,7 +8,6 @@ alias server='mosh arul@arul.io'
 alias code='vscodium'
 alias copy='xclip -sel clip'
 alias todo='todoist'
-alias less='$PAGER'
 
 alias q='exit 0'
 

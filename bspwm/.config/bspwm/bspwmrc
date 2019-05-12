@@ -1,8 +1,18 @@
 #!/bin/bash
+#  ██                                            
+# ░██              ██████                        
+# ░██       ██████░██░░░██ ███     ██ ██████████ 
+# ░██████  ██░░░░ ░██  ░██░░██  █ ░██░░██░░██░░██
+# ░██░░░██░░█████ ░██████  ░██ ███░██ ░██ ░██ ░██
+# ░██  ░██ ░░░░░██░██░░░   ░████░████ ░██ ░██ ░██
+# ░██████  ██████ ░██      ███░ ░░░██ ███ ░██ ░██
+# ░░░░░   ░░░░░░  ░░      ░░░    ░░░ ░░░  ░░  ░░ 
+
 
 bspc monitor HDMI-0 -d 一 二 三 四 五 六 七 八 九
 bspc monitor eDP-1-1 -d 一 二 三 四 五 六 七 八 九
 
+xrdb ~/.Xresources
 background=$(xrdb -query | grep "background" | cut -f2 | sed -r 's/#//' | head -n 1)
 foreground=$(xrdb -query | grep "foreground" | cut -f2 | sed -r 's/#//' | head -n 1)
 mapfile -t colors < <( xrdb -query | grep color | cut -f2 | head -n 16 | sed -r 's/#//' )
