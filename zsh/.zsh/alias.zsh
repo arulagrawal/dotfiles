@@ -1,4 +1,4 @@
-# My Aliases
+# my Aliases
 alias vimrc='nvim ~/.config/nvim/init.vim'
 alias zshrc='nvim ~/.zshrc && source ~/.zshrc'
 alias joke='curl https://icanhazdadjoke.com && printf "\n"'
@@ -55,5 +55,5 @@ alias calc='python -qi -c "from math import *"'
 
 alias get='curl --continue-at - --location --progress-bar --remote-name --remote-time'
 
-alias dot='lf ~/dotfiles'
+alias dot='lf -command "set hidden" ~/dotfiles/alacritty'
 alias xres='nvim ~/.Xresources; xrdb ~/.Xresources'

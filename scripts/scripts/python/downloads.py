@@ -2,7 +2,6 @@
 from os import listdir, rename
 from os.path import isfile, join, splitext
 
-
 archives = ["zip", "tgz", "rar", "7z", "xz", "gz"]
 documents = ["pdf", "mom", "docx"]
 images = ["png", "jpeg", "jpg"]

@@ -17,3 +17,6 @@ xmodmap ~/dotfiles/capslock
 
 #make keypress repetition way faster
 xset r rate 350 60
+
+#time out settings
+xset dpms 600 900 1000

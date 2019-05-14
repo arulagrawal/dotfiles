@@ -23,6 +23,11 @@ set scrolloff 10
 # use enter for shell commands
 map <enter> shell
 
+
+# shortcuts
+map gd 'cd ~/dotfiles'
+map gc 'cd ~/.config'
+
 # execute current file (must be executable)
 map x $$f
 map X !$f

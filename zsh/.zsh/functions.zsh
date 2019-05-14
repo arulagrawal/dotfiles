@@ -1,4 +1,4 @@
-#my functions
+# my functions
 twitch()
 {
     streamlink --player=mpv https://www.twitch.tv/$1 $2
@@ -57,4 +57,14 @@ zathura()
 spawn()
 {
     "$@" & disown
+}
+
+pdfcombine()
+{
+    gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="combinepdf".pdf "$1" "$2"
+}
+
+netflix()
+{
+    qtwebflix & disown > /dev/null
 }
