@@ -38,9 +38,13 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
+" mine
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'junegunn/goyo.vim'
-"Plug 'baskerville/vim-sxhkdrc'
+Plug 'tpope/vim-surround'
+Plug 'easymotion/vim-easymotion'
+
+" defaults
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'

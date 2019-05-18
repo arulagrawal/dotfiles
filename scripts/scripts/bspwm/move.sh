@@ -20,7 +20,7 @@ floating ()
     percent=1
 
     # get a percentage of the monitor horizontal resolution
-    var=$((`bspc query -T -m | jq .rectangle.width` * percent / 100))
+    var=$(($(bspc query -T -m | jq .rectangle.width) * percent / 100))
 
     [ "$fdim" = width  ] && { x=$sign$var; y=0; }
     [ "$fdim" = height ] && { y=$sign$var; x=0; }
@@ -62,8 +62,5 @@ tiled ()
 if bspc query -N -n focused.floating > /dev/null; then
     floating
 else
-    # teleport pointer on the focused window
-    bspc config pointer_follows_focus true
     tiled
-    bspc config pointer_follows_focus false
 fi

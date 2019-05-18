@@ -64,7 +64,15 @@ pdfcombine()
     gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="combinepdf".pdf "$1" "$2"
 }
 
-netflix()
+archive()
 {
-    qtwebflix & disown > /dev/null
+    local format="$1"
+    local output="$2"
+    local input=( "${@:3}" )
+    case "$format" in
+        tar )
+            tar -czvf "${output}.tar.gz" "${input[@]}";;
+        7z )
+            7za a "${output}.7z" "${input[@]}";;
+    esac
 }

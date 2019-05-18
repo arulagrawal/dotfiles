@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 connect(){
     echo -e "power on\nconnect 6C:56:97:2F:96:AE\n" | bluetoothctl
     sleep 2

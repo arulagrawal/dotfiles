@@ -25,6 +25,6 @@ case $class in
 esac;
 
 case $title in
-    ('Friends List') echo state=floating;;
+    ('Friends List') echo state=floating \ desktop=^2:^8;;
 esac;
 # vim: set ft=sh :

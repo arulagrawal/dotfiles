@@ -40,12 +40,12 @@ super + ctrl + Return
 
 # program launcher - rofi
 super + @space
-	rofi -show combi -theme drac -terminal st -font "SF Pro Display 14" -matching fuzzy
+    rofi -show combi -theme drac -terminal st -font "SF Pro Display 14" -matching fuzzy
 
 
 # launch browser - chromium/firefox
 super + {_,shift + }b
-	{chromium, google-chrome-stable}
+    {chromium, google-chrome-stable}
 
 # launch vscodium
 super + v
@@ -57,7 +57,7 @@ super + {_,shift + }f
 
 # make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd
+    pkill -USR1 -x sxhkd
 
 # launch youtube dmenu
 super + y
@@ -65,7 +65,7 @@ super + y
 
 # lock screen
 super + ctrl + alt + l
-	~/scripts/rice/lock.sh
+    ~/scripts/rice/lock.sh
 
 # take screenshot
 Print
@@ -86,15 +86,15 @@ super + shift + r
 
 # quit bspwm normally
 super + alt + Escape
-	bspc quit
+    bspc quit
 
 # close and kill
 super + {_,shift + }w
-	bspc node -{c,k}
+    bspc node -{c,k}
 
 # rotate desktop
 super + {_,shift + }r
-	bspc node @/ --rotate {90,-90}
+    bspc node @/ --rotate {90,-90}
 
 # insert receptacle, or cleanr receptacles on current desktop
 super + {_,shift} + i
@@ -108,11 +108,11 @@ super + c
 
 # make split ratios equal
 super + equal
-	bspc node @/ --equalize
+    bspc node @/ --equalize
 
 # make split ratios balanced
 super + minus
-	bspc node @/ --balance
+    bspc node @/ --balance
 
 # send window to other monitor
 super + shift + m
@@ -128,11 +128,11 @@ super + ctrl + shift + m
 
 # send the focused node to the newest preselected node
 super + shift + y
-	bspc node focused.local -n newest.!automatic.local
+    bspc node focused.local -n newest.!automatic.local
 
 # swap the current node and the biggest node
 super + shift + g
-	bspc node -s biggest.local
+    bspc node -s biggest.local
 
 #
 # state/flags
@@ -140,11 +140,11 @@ super + shift + g
 
 # set the window state; t to swap tiled/floating and f for fullscreen
 super + s; {t,f}
-	bspc node -t {$(bspc query -N -n -n .tiled > /dev/null && echo floating || echo tiled),fullscreen}
+    bspc node -t {$(bspc query -N -n -n .tiled > /dev/null && echo floating || echo tiled),fullscreen}
 
 # mark a node
 super + ctrl + m
-	bspc node -g marked
+    bspc node -g marked
 
 #
 # focus/swap/move/warp
@@ -156,7 +156,7 @@ super + {h,j,k,l}
 
 # move the node in the given direction
 super + shift + {h,j,k,l}
-	~/scripts/bspwm/move.sh {west,south,north,east}
+    ~/scripts/bspwm/move.sh {west,south,north,east}
 
 # warp window in the given direction
 super + ctrl + shift + {h,j,k,l}
@@ -164,11 +164,11 @@ super + ctrl + shift + {h,j,k,l}
 
 # focus the next/previous occupied desktop in the current monitor
 super + {q,e}
-	bspc desktop -f {prev,next}.local.occupied
+    bspc desktop -f {prev,next}.local.occupied
 
 # focus the next/previous occupied desktop in the current monitor
 super + ctrl + {q,e}
-	bspc desktop -f {prev,next}.local
+    bspc desktop -f {prev,next}.local
 
 # send to next/previous desktop in current monitor
 super + shift + {q,e}
@@ -176,7 +176,7 @@ super + shift + {q,e}
 
 # focus the last desktop that has stuff in this monitor
 super + grave
-	bspc desktop -f last.occupied.local
+    bspc desktop -f last.occupied.local
 
 # focus the next/previous node in the current desktop
 super + {_,shift + }Tab
@@ -202,11 +202,11 @@ super + shift + {1-9}
 
 # preselect the direction
 super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
+    bspc node -p {west,south,north,east}
 
 # preselect the ratio
 super + ctrl + {1-9}
-	bspc node -o 0.{1-9}
+    bspc node -o 0.{1-9}
 
 # cancel all preselections
 super + ctrl + space
@@ -223,14 +223,14 @@ super + alt + {h,j,k,l}
 ##Media Keys
 # Raise volume
 XF86AudioRaiseVolume
-	pactl set-sink-volume 0 +5%
+    pactl set-sink-volume 0 +5%
 
 # Lower Volume
 XF86AudioLowerVolume
-	pactl set-sink-volume 0 -5%
+    pactl set-sink-volume 0 -5%
 
 XF86AudioMute
-	pamixer -t
+    pamixer -t
 
 XF86AudioPlay
     dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause

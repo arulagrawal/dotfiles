@@ -13,8 +13,8 @@ bspc monitor HDMI-0 -d 一 二 三 四 五 六 七 八 九
 bspc monitor eDP-1-1 -d 一 二 三 四 五 六 七 八 九
 
 xrdb ~/.Xresources
-background=$(xrdb -query | grep "background" | cut -f2 | sed -r 's/#//' | head -n 1)
-foreground=$(xrdb -query | grep "foreground" | cut -f2 | sed -r 's/#//' | head -n 1)
+#background=$(xrdb -query | grep "background" | cut -f2 | sed -r 's/#//' | head -n 1)
+#foreground=$(xrdb -query | grep "foreground" | cut -f2 | sed -r 's/#//' | head -n 1)
 mapfile -t colors < <( xrdb -query | grep color | cut -f2 | head -n 16 | sed -r 's/#//' )
 
 bspc config border_width         2
@@ -25,7 +25,6 @@ bspc config borderless_monocle      true
 bspc config gapless_monocle         true
 bspc config focus_follows_pointer   true
 bspc config pointer_follows_monitor true
-bspc config pointer_follows_focus   true
 
 bspc config normal_border_color     "#${colors[8]}"
 bspc config active_border_color     "#${colors[8]}"

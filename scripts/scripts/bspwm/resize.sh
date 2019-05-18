@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 #
 # easier resizing with bspwm
 # stolen from https://github.com/ym1234

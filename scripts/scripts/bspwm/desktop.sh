@@ -1,10 +1,12 @@
-#!/bin/bash
+#!/bin/sh
 #render the bars
-polybar burs & disown
-polybar bur & disown
+killall polybar
+nohup polybar burs > /dev/null &
+nohup polybar bur > /dev/null &
 
 #launch compton for transparency and blur
-compton --config ~/.compton.conf & disown
+killall compton
+compton --config ~/.compton.conf &
 
 #set volume to 50%
 pactl set-sink-volume 0 50%
