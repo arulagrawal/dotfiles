@@ -1,4 +1,12 @@
-# my functions
+#   ████                            ██   ██                          
+#  ░██░                            ░██  ░░                           
+# ██████ ██   ██ ███████   █████  ██████ ██  ██████  ███████   ██████
+#░░░██░ ░██  ░██░░██░░░██ ██░░░██░░░██░ ░██ ██░░░░██░░██░░░██ ██░░░░ 
+#  ░██  ░██  ░██ ░██  ░██░██  ░░   ░██  ░██░██   ░██ ░██  ░██░░█████ 
+#  ░██  ░██  ░██ ░██  ░██░██   ██  ░██  ░██░██   ░██ ░██  ░██ ░░░░░██
+#  ░██  ░░██████ ███  ░██░░█████   ░░██ ░██░░██████  ███  ░██ ██████ 
+#  ░░    ░░░░░░ ░░░   ░░  ░░░░░     ░░  ░░  ░░░░░░  ░░░   ░░ ░░░░░░  
+
 twitch()
 {
     streamlink --player=mpv https://www.twitch.tv/$1 $2
@@ -7,7 +15,10 @@ twitch()
 #fzf with preview options
 fzfp()
 {
-    fzf --reverse --inline-info --preview='~/bin/preview.sh {}' --bind '?:toggle-preview' --tabstop=1 --ansi
+    fzf --reverse --inline-info --preview='[[ $(file --mime {}) =~ binary ]] &&
+                  echo {} is a binary file ||
+                  highlight -O ansi -l {} ||
+                  cat {}) 2> /dev/null | head -500' --bind '?:toggle-preview' --tabstop=1 --ansi
 }
 
 

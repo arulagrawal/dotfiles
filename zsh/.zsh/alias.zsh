@@ -1,4 +1,12 @@
-# my Aliases
+#            ██ ██                  
+#           ░██░░                   
+#  ██████   ░██ ██  ██████    ██████
+# ░░░░░░██  ░██░██ ░░░░░░██  ██░░░░ 
+#  ███████  ░██░██  ███████ ░░█████ 
+# ██░░░░██  ░██░██ ██░░░░██  ░░░░░██
+#░░████████ ███░██░░████████ ██████ 
+# ░░░░░░░░ ░░░ ░░  ░░░░░░░░ ░░░░░░  
+
 alias vimrc='nvim ~/.config/nvim/init.vim'
 alias zshrc='nvim ~/.zshrc && source ~/.zshrc'
 alias joke='curl https://icanhazdadjoke.com && printf "\n"'
