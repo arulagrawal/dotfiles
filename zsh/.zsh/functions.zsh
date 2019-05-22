@@ -9,7 +9,7 @@
 
 twitch()
 {
-    streamlink --player=mpv https://www.twitch.tv/$1 $2
+    streamlink --player=mpv https://www.twitch.tv/"$1" "$2" & disown
 }
 
 #fzf with preview options
@@ -17,8 +17,8 @@ fzfp()
 {
     fzf --reverse --inline-info --preview='[[ $(file --mime {}) =~ binary ]] &&
                   echo {} is a binary file ||
-                  highlight -O ansi -l {} ||
-                  cat {}) 2> /dev/null | head -500' --bind '?:toggle-preview' --tabstop=1 --ansi
+                  highlight --style="base16/dracula" -O ansi -l {} ||
+                  cat {} 2> /dev/null | head -500' --bind '?:toggle-preview' --tabstop=1 --ansi
 }
 
 

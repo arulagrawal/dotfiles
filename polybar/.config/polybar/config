@@ -252,7 +252,7 @@ type = internal/date
 interval = 1
 
 date =
-date-alt = " %Y-%m-%d"
+date-alt = " %A %Y-%m-%d"
 
 time = %H:%M
 time-alt = %H:%M:%S
@@ -358,5 +358,4 @@ exec = python /home/arul/scripts/polybar/spotify.py -f '{artist}: {song}' --font
 format-underline = #50FA7B
 click-left = dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 
-; vim: filetype=sh
 # vim:ft=dosini

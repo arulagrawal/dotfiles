@@ -67,8 +67,8 @@ super + ctrl + alt + l
     ~/scripts/rice/lock.sh
 
 # take screenshot
-Print
-    ~/scripts/utility/screenshot.sh;
+Print; {m, w}
+    ~/scripts/utility/screenshot.sh whole {monitor, whole};
 
 # take region screensho TODO: currently broken
 shift + Print
@@ -78,6 +78,10 @@ shift + Print
 super + shift + r
     pkill polybar && polybar -r burs & disown; \
     polybar -r bur & disown;
+
+# open clipboard manager
+super + c
+    clipmenu
 
 #
 # bspwm keybinds
@@ -100,10 +104,6 @@ super + {_,shift} + i
     insert={true,false}; \
     $insert && bspc node -i || \
     for win in `bspc query -N -n .leaf.!window`; do bspc node $win -k ; done;
-
-# circulate the leaves of the tree
-super + c
-    clipmenu
 
 # make split ratios equal
 super + equal
@@ -148,6 +148,7 @@ super + ctrl + m
 #
 # focus/swap/move/warp
 #
+## vim binds
 
 # focus the node in the given direction
 super + {h,j,k,l}
@@ -159,6 +160,19 @@ super + shift + {h,j,k,l}
 
 # warp window in the given direction
 super + ctrl + shift + {h,j,k,l}
+    bspc node -n {west,south,north,east} --follow
+
+## arrow key binds
+# focus the node in the given direction
+super + {Left, Down, Up, Right}
+    bspc node -f {west,south,north,east}
+
+# move the node in the given direction
+super + shift + {Left, Down, Up, Right}
+    ~/scripts/bspwm/move.sh {west,south,north,east}
+
+# warp window in the given direction
+super + ctrl + shift + {Left, Down, Up, Right}
     bspc node -n {west,south,north,east} --follow
 
 # focus the next/previous occupied desktop in the current monitor
@@ -203,6 +217,10 @@ super + shift + {1-9}
 super + ctrl + {h,j,k,l}
     bspc node -p {west,south,north,east}
 
+# preselect the direction
+super + ctrl + {Left, Down, Up, Right}
+    bspc node -p {west,south,north,east}
+
 # preselect the ratio
 super + ctrl + {1-9}
     bspc node -o 0.{1-9}
@@ -219,6 +237,10 @@ super + ctrl + space
 super + alt + {h,j,k,l}
     ~/scripts/bspwm/resize.sh {west,south,north,east}
 
+# expand a window by moving one of its side outward
+super + alt + {Left, Down, Up, Right}
+    ~/scripts/bspwm/resize.sh {west,south,north,east}
+
 ##Media Keys
 # Raise volume
 XF86AudioRaiseVolume
@@ -232,10 +254,13 @@ XF86AudioMute
     pamixer -t
 
 XF86AudioPlay
-    dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+    playerctl play-pause 
 
 XF86AudioPrev
-    dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+    playerctl previous
 
 XF86AudioNext
-    dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+    playerctl next
+
+XF86AudioStop
+    playerctl stop
