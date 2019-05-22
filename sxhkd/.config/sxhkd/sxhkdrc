@@ -70,7 +70,7 @@ super + ctrl + alt + l
 Print; {m, w}
     ~/scripts/utility/screenshot.sh whole {monitor, whole};
 
-# take region screensho TODO: currently broken
+# take region screenshot
 shift + Print
     ~/scripts/utility/screenshot.sh area;
 
@@ -137,9 +137,9 @@ super + shift + g
 # state/flags
 #
 
-# set the window state; t to swap tiled/floating and f for fullscreen
-super + s; {t,f}
-    bspc node -t {$(bspc query -N -n -n .tiled > /dev/null && echo floating || echo tiled),fullscreen}
+# set the window state
+super + s; {t,f,s}
+    ~/scripts/bspwm/state.sh {tiling, fullscreen, sticky}
 
 # mark a node
 super + ctrl + m
@@ -152,7 +152,8 @@ super + ctrl + m
 
 # focus the node in the given direction
 super + {h,j,k,l}
-    bspc node -f {west,south,north,east}
+    ~/scripts/bspwm/focus.sh {west,south,north,east}
+    #bspc node -f {west,south,north,east}
 
 # move the node in the given direction
 super + shift + {h,j,k,l}

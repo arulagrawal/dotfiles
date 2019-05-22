@@ -36,7 +36,7 @@ alias vi='nvim'
 alias vim='nvim'
 alias sv='sudoedit'
 
-alias f='lf'
+alias f='ranger'
 
 alias pup='sudo pacman -Syyu' # update
 alias pin='sudo pacman -S'    # install
@@ -63,5 +63,5 @@ alias calc='python -qi -c "from math import *"'
 
 alias get='curl --continue-at - --location --progress-bar --remote-name --remote-time'
 
-alias dot='lf ~/dotfiles/'
+alias dot='ranger ~/dotfiles/'
 alias xres='nvim ~/.Xresources; xrdb ~/.Xresources'
