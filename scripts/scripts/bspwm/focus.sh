@@ -4,9 +4,12 @@
 
 targets(){
     case $1 in
-        focused) bspc query -N -n .focused.\!fullscreen;;
-        normal)  bspc query -N -n .\!focused.\!fullscreen
-    esac
+        focused)
+            bspc query -N -n .focused.\!fullscreen;;
+        normal)
+            bspc query -N -n .local.\!focused.\!fullscreen
+            bspc query --monitor any --nodes -n .\!focused.active;;
+         esac
 }
 
 # exit when fullscreen

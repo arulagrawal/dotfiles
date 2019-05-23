@@ -19,9 +19,10 @@ alias todo='todoist'
 
 alias q='exit 0'
 
-alias la='ls -Ah'
-alias ll='ls -lAh'
-alias l.='ls -ld .*'
+alias ls='exa'
+alias la='exa -a'
+alias ll='exa -la'
+alias l.='exa -ld .*'
 
 alias mkdir='mkdir -pv'
 alias grep='grep --color=auto'
@@ -65,3 +66,4 @@ alias get='curl --continue-at - --location --progress-bar --remote-name --remote
 
 alias dot='ranger ~/dotfiles/'
 alias xres='nvim ~/.Xresources; xrdb ~/.Xresources'
+alias gc='git commit'

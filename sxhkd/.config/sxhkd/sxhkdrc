@@ -166,7 +166,7 @@ super + ctrl + shift + {h,j,k,l}
 ## arrow key binds
 # focus the node in the given direction
 super + {Left, Down, Up, Right}
-    bspc node -f {west,south,north,east}
+    ~/scripts/bspwm/focus.sh {west,south,north,east}
 
 # move the node in the given direction
 super + shift + {Left, Down, Up, Right}
