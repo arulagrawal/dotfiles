@@ -291,6 +291,8 @@ endif
 "*****************************************************************************
 " save cursor
 au VimLeave * set guicursor=a:ver25-blinkon0
+" add f9 keybind to run python file
+autocmd FileType python nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
 "
 "" The PC is fast enough, do syntax highlight syncing from start unless 200 lines
 augroup vimrc-sync-fromstart

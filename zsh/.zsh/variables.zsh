@@ -21,3 +21,5 @@ export VISUAL='nvim'
 #export PAGER='/usr/share/nvim/runtime/macros/less.sh'
 export MANPAGER='nvim +Man!'
 export OPENER='xdg-open'
+export WINEPREFIX=~/hard_drive/games/lol
+export WINEARCH=win32

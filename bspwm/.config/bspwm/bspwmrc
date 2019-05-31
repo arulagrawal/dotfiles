@@ -18,13 +18,13 @@ xrdb ~/.Xresources
 mapfile -t colors < <( xrdb -query | grep color | cut -f2 | head -n 16 | sed -r 's/#//' )
 
 bspc config border_width         2
-bspc config window_gap           8
+bspc config window_gap           20
 
 bspc config split_ratio             0.50
 bspc config borderless_monocle      true
 bspc config gapless_monocle         true
 bspc config focus_follows_pointer   true
-bspc config pointer_follows_monitor true
+bspc config pointer_follows_monitor false
 
 bspc config normal_border_color     "#${colors[8]}"
 bspc config active_border_color     "#${colors[8]}"

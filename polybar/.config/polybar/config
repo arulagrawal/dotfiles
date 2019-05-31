@@ -43,7 +43,7 @@ foreground = ${xrdb:foreground:#FF0000}
 line-size = 4
 line-color = #f00
 
-border-size = 4
+border-size = 2
 border-color = ${xrdb:color8:#FF000000}
 
 padding-left = 0
@@ -53,7 +53,7 @@ module-margin-left = 1
 module-margin-right = 2
 
 ;font-0 = M+ 1mn:pixelsize=11;1
-font-0 = SF Pro Display:style=semibold:antialias=true:pixelsize=11;1
+font-0 = curie:style=bold:antialias=true;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-3 = "Wuncon Siji:style=bold:pixelsize=11:antialias=false;1"
 ;font-3 = "Noto Sans CJK:style=bold:pixelsize=11:antialias=false;1"
@@ -83,7 +83,7 @@ foreground = ${xrdb:foreground:#FF0000}
 line-size = 4
 line-color = #f00
 
-border-size = 4
+border-size = 2
 border-color = ${xrdb:color8:#FF000000}
 
 padding-left = 0
@@ -92,12 +92,12 @@ padding-right = 3
 module-margin-left = 1
 module-margin-right = 2
 
-;font-0 = M+ 1mn:pixelsize=11;1
-font-0 = SF Pro Display:style=semibold:antialias=true:pixelsize=11;1
+font-0 = curie:style=bold;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-;font-3 "Wuncon Siji:style=bold:pixelsize=11:antialias=false;1"
-font-3 = "Noto Sans CJK:style=bold:pixelsize=11:antialias=false;1"
+font-3 = "Wuncon Siji:style=bold:pixelsize=11:antialias=false;1"
+;font-3 = "Noto Sans CJK:style=bold:pixelsize=11:antialias=false;1"
 font-1 = Material Icons:size=11;2
+;font-2 = curie:style=bold;1
 font-2 = M+ 1mn:style=bold:pixelsize=11;1
 
 modules-left = bspwm
@@ -151,24 +151,25 @@ type = internal/bspwm
 module-margin-left = 0
 module-margin-right = 0
 label-focused = %name%
-label-focused-font = 4
+label-font = 0
+label-focused-font = 0
 label-focused-background = ${xrdb:background:#ff0000}
 label-focused-foreground = ${xrdb:foreground:#ff0000}
 label-focused-underline= ${xrdb:color9:#ff0000}
-label-focused-padding = 2
+label-focused-padding = 1
 
 label-occupied = %name%
 
 label-occupied-foreground = ${xrdb:color1:#ff0000}
-label-occupied-padding = 2
+label-occupied-padding = 1
 
 label-urgent = %name%
 label-urgent-background = ${xrdb:color1:#ff0000}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 label-empty = %name%
 label-empty-foreground = ${xrdb:foreground:#ff0000}
-label-empty-padding = 2
+label-empty-padding = 1
 
 [module/i3]
 

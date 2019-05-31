@@ -44,15 +44,15 @@ super + @space
 
 # launch browser - chromium/firefox
 super + {_,shift + }b
-    {chromium, google-chrome-stable}
+    {firefox, chromium}
 
 # launch vscodium
 super + v
     vscodium
 
-# launch lf/pcmanfm
+# launch ranger/pcmanfm
 super + {_,shift + }f
-    {alacritty -e lf, pcmanfm}
+    {alacritty -e ranger, pcmanfm}
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -243,25 +243,10 @@ super + alt + {Left, Down, Up, Right}
     ~/scripts/bspwm/resize.sh {west,south,north,east}
 
 ##Media Keys
-# Raise volume
-XF86AudioRaiseVolume
-    pactl set-sink-volume 0 +5%
+# volume control
+XF86Audio{LowerVolume,RaiseVolume,Mute}
+    pamixer {-d 5,-i 5,-t}
 
-# Lower Volume
-XF86AudioLowerVolume
-    pactl set-sink-volume 0 -5%
-
-XF86AudioMute
-    pamixer -t
-
-XF86AudioPlay
-    playerctl play-pause 
-
-XF86AudioPrev
-    playerctl previous
-
-XF86AudioNext
-    playerctl next
-
-XF86AudioStop
-    playerctl stop
+# media control
+XF86Audio{Next,Prev,Play,Stop}
+    playerctl {next,previous,play-pause,stop}

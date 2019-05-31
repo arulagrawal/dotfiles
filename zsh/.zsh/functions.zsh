@@ -23,7 +23,7 @@ fzfp()
 
 
 #quick lookup for my config files
-dots()
+function dots()
 {
     find ~/dotfiles/ -type f -exec du -a {} + | awk '{print $2}' | sed '/git\|autoload\|generate.vim\|netrwhist\|python.vim\|bash\|plugged\|xrdb/d' | fzfp | xargs -r $EDITOR;
 }

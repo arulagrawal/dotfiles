@@ -7,9 +7,10 @@ targets(){
         focused)
             bspc query -N -n .focused.\!fullscreen;;
         normal)
-            bspc query -N -n .local.\!focused.\!fullscreen
-            bspc query --monitor any --nodes -n .\!focused.active;;
-         esac
+            bspc query -N -n .local.\!focused.\!fullscreen.\!hidden
+            #bspc qeury --nodes --desktop eDP-1-1:focused
+            bspc query --monitor next --nodes -n .\!focused.active.\!hidden;;
+    esac
 }
 
 # exit when fullscreen
