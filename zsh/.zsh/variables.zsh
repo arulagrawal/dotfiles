@@ -11,6 +11,7 @@ export PATH="$HOME/scripts/bin:$PATH"
 export PATH="$HOME/scripts/utility:$PATH"
 export GOROOT=""
 export GOPATH="/home/arul/go"
+#export GOPATH="/home/arul/code/go:$GOPATH"
 export PATH="$GOPATH/bin:$PATH"
 
 export LANG=en_US.UTF-8

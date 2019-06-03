@@ -20,7 +20,7 @@ case $1 in
     east)  arg=xy; op=-gt;;
     west)  arg=xy; op=-lt;;
     north) arg=yx; op=-lt;;
-    south) arg=yx; op=-gt
+    south) arg=yx; op=-gt;;
 esac
 
 # get the coordinates of all windows on the current desktop

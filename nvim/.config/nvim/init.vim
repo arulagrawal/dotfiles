@@ -1,15 +1,15 @@
-"                                     ██            
-"                                    ░░             
-"  ███████   █████   ██████  ██    ██ ██ ██████████ 
+"                                     ██
+"                                    ░░
+"  ███████   █████   ██████  ██    ██ ██ ██████████
 " ░░██░░░██ ██░░░██ ██░░░░██░██   ░██░██░░██░░██░░██
 "  ░██  ░██░███████░██   ░██░░██ ░██ ░██ ░██ ░██ ░██
 "  ░██  ░██░██░░░░ ░██   ░██ ░░████  ░██ ░██ ░██ ░██
 "  ███  ░██░░██████░░██████   ░░██   ░██ ███ ░██ ░██
-" ░░░   ░░  ░░░░░░  ░░░░░░     ░░    ░░ ░░░  ░░  ░░ 
+" ░░░   ░░  ░░░░░░  ░░░░░░     ░░    ░░ ░░░  ░░  ░░
 
 
 
-" vim-bootstrap 
+" vim-bootstrap
 
 "*****************************************************************************
 "" Vim-PLug core
@@ -196,7 +196,7 @@ let g:indentLine_concealcursor = 0
 let g:indentLine_char = '┆'
 let g:indentLine_faster = 1
 
-  
+
 "" Disable the blinking cursor.
 set gcr=a:blinkon0
 set scrolloff=3
@@ -274,6 +274,10 @@ nnoremap <silent> <leader>sh :terminal<CR>
 " remove trailing whitespaces
 command! FixWhitespace :%s/\s\+$//e
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#complete_method = "omnifunc"
+call deoplete#custom#option('omni_patterns', {
+\ 'go': '[^. *\t]\.\w*',
+\})
 
 "*****************************************************************************
 "" Functions
@@ -477,7 +481,7 @@ function! s:build_go_files()
     call go#cmd#Build(0)
   endif
 endfunction
-
+let g:go_code_completion_enabled = 1
 let g:go_list_type = "quickfix"
 let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 1
