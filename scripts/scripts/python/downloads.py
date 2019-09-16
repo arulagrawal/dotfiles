@@ -5,6 +5,7 @@ from os.path import isfile, join, splitext
 archives = ["zip", "tgz", "rar", "7z", "xz", "gz"]
 documents = ["pdf", "mom", "docx"]
 images = ["png", "jpeg", "jpg"]
+scripts = ["py", "sh", "go"]
 
 
 def getFiles(path):
@@ -18,6 +19,10 @@ def moveToFolder(path, folder, file):
 
 def archive(path, file):
     moveToFolder(path, "archives", file)
+
+
+def script(path, file):
+    moveToFolder(path, "scripts", file)
 
 
 def document(path, file):
@@ -43,6 +48,8 @@ def main():
             document(path, file)
         elif extension in images:
             image(path, file)
+        elif extension in scripts:
+            script(path, file)
         else:
             misc(path, file)
 

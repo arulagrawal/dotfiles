@@ -47,13 +47,13 @@ border-size = 2
 border-color = ${xrdb:color8:#FF000000}
 
 padding-left = 0
-padding-right = 3
+padding-right = 1
 
-module-margin-left = 1
-module-margin-right = 2
+module-margin-left = 0
+module-margin-right = 1
 
 ;font-0 = M+ 1mn:pixelsize=11;1
-font-0 = curie:style=regular:antialias=true;1
+font-0 = GohuFont Nerd Font:style=uni-14:pixelsize=11;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-3 = "Wuncon Siji:style=bold:pixelsize=11:antialias=false;1"
 ;font-3 = "Noto Sans CJK:style=bold:pixelsize=11:antialias=false;1"
@@ -87,12 +87,12 @@ border-size = 2
 border-color = ${xrdb:color8:#FF000000}
 
 padding-left = 0
-padding-right = 3
+padding-right = 1
 
-module-margin-left = 1
-module-margin-right = 2
+module-margin-left = 0
+module-margin-right = 1
 
-font-0 = curie:style=regular;1
+font-0 = GohuFont Nerd Font:style=uni-14:pixelsize=11;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-3 = "Wuncon Siji:style=bold:pixelsize=11:antialias=false;1"
 ;font-3 = "Noto Sans CJK:style=bold:pixelsize=11:antialias=false;1"
@@ -164,7 +164,7 @@ label-occupied-foreground = ${xrdb:color1:#ff0000}
 label-occupied-padding = 1
 
 label-urgent = %name%
-label-urgent-background = ${xrdb:color1:#ff0000}
+label-urgent-background = ${xrdb:color5:#ff0000}
 label-urgent-padding = 1
 
 label-empty = %name%
@@ -207,6 +207,7 @@ label-urgent = %name%
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
+label-seperator-padding = 2
 [module/battery]
 
 type = internal/battery
@@ -221,11 +222,11 @@ animation-charging-1 = 
 
 format-discharging = <label-discharging>
 label-discharging =  %percentage%%
-;format-discharging-underline = ${self.format-charging-underline}
+format-discharging-underline = ${xrdb:color2:#50fa7b} 
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
-;format-full-underline = ${self.format-charging-underline}
+format-full-underline = ${xrdb:color2:#50fa7b}
 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
@@ -357,6 +358,6 @@ format-prefix = ""
 format = <label>
 exec = python /home/arul/scripts/polybar/spotify.py -f '{artist}: {song}' --font=1 -t 90
 format-underline = #50FA7B
-click-left = dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+click-left = playerctl -p spotify play-pause
 
 # vim:ft=dosini

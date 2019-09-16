@@ -12,7 +12,7 @@ show() {
 open=$(wmctrl -lx | grep -o dropdownterm)
 if [ -z "$open" ]
 then
-    nohup st -c dropdownterm -g 212x20+1920+0 > /dev/null &
+    nohup st -c dropdownterm -g 272x20+1920+0 > /dev/null &
     sleep 0.1
 fi
 sid=$(wmctrl -lx | grep dropdownterm | awk '{print $1}')

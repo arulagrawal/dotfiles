@@ -20,7 +20,6 @@
 *.color15:    #E6E6E6
 
 
-*.font: xft:Hack Nerd Font Mono
 Xft.autohint:1
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintslight

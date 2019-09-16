@@ -6,7 +6,7 @@
 #░░█████  ░░███  ░██░░░██░████   ██░░░██
 # ░░░░░██  ██░██ ░██  ░██░██░██ ░██  ░██
 # ██████  ██ ░░██░██  ░██░██░░██░░██████
-#░░░░░░  ░░   ░░ ░░   ░░ ░░  ░░  ░░░░░░ 
+#░░░░░░  ░░   ░░ ░░   ░░ ░░  ░░  ░░░░░░
 
 #
 # wm independent hotkeys
@@ -47,8 +47,8 @@ super + {_,shift + }b
     {firefox, chromium}
 
 # launch vscodium
-super + v
-    vscodium
+super + {_,shift + }v
+    {vscodium, emacs}
 
 # launch ranger/pcmanfm
 super + {_,shift + }f
@@ -64,7 +64,7 @@ super + y
 
 # lock screen
 super + ctrl + alt + l
-    ~/scripts/rice/lock.sh
+    gllock
 
 # take screenshot
 Print; {m, w}
@@ -76,8 +76,9 @@ shift + Print
 
 # reload bars
 super + shift + r
-    pkill polybar && polybar -r burs & disown; \
-    polybar -r bur & disown;
+    killall polybar; \
+    polybar -r bur & disown; \
+    polybar -r burs & disown;
 
 # open clipboard manager
 super + c

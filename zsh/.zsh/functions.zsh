@@ -9,7 +9,14 @@
 
 twitch()
 {
-    streamlink --player=mpv https://www.twitch.tv/"$1" "$2" & disown
+    streamlink --player=mpv https://www.twitch.tv/"$1" "$2" &
+    surf https://www.twitch.tv/"$1"/chat > /dev/null &
+    disown
+}
+
+pa()
+{
+    curl -F "file=@$1" https://paste.arul.io
 }
 
 #fzf with preview options
@@ -86,4 +93,17 @@ archive()
         7z )
             7za a "${output}.7z" "${input[@]}";;
     esac
+}
+
+torrents()
+{
+    transmission-daemon;
+    sleep 1;
+    transmission-remote-cli;
+}
+
+dict()
+{
+    local word="$1"
+    curl dict://dict.org/d:"${word}"
 }
