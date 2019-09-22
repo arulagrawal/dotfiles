@@ -14,14 +14,13 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/arul/.oh-my-zsh"
 fpath=( "$HOME/.zfunctions" $fpath )
+fpath+=("$HOME/.zsh/pure")
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt autocd extendedglob nomatch
+HISTSIZE=10000
+SAVEHIST=10000
+setopt autocd extendedglob nomatch globdots
 unsetopt beep
 bindkey -v
-ZSH_THEME="dracula"
-
 
 # SPACESHIP_PROMPT_ORDER=(
 #   #user         # Username section
@@ -65,8 +64,9 @@ plugins=(git
 
 source $ZSH/oh-my-zsh.sh
 
-autoload -z edit-command-line
-zle -N edit-command-line
-bindkey "^X^E" edit-command-line
 source ~/scripts/utility/todoist_functions.sh
 for config (~/.zsh/*.zsh) source $config;
+autoload -U promptinit; promptinit
+prompt pure
+PROMPT=">> "
+zstyle ':completion:*' special-dirs false

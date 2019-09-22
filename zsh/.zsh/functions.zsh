@@ -10,7 +10,7 @@
 twitch()
 {
     streamlink --player=mpv https://www.twitch.tv/"$1" "$2" &
-    surf https://www.twitch.tv/"$1"/chat > /dev/null &
+    firefox https://www.twitch.tv/"$1"/chat > /dev/null &
     disown
 }
 

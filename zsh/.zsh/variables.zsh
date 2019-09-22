@@ -24,3 +24,5 @@ export MANPAGER='nvim +Man!'
 export OPENER='xdg-open'
 export WINEPREFIX=~/hard_drive/games/lol
 export WINEARCH=win32
+HISTSIZE=10000
+SAVEHIST=10000
