@@ -19,10 +19,16 @@ alias todo='todoist'
 
 alias q='exit 0'
 
-alias ls='exa'
-alias la='exa -a'
-alias ll='exa -la'
-alias l.='exa -ld .*'
+if [ -x "$(command -v exa)" ]; then
+    alias ls='exa'
+    alias la='exa -a'
+    alias ll='exa -la'
+    alias l.='exa -ld .*'
+else
+    alias ls='ls'
+    alias la='ls -a'
+    alias ll='la -la'
+fi
 
 alias mkdir='mkdir -pv'
 alias grep='grep --color=auto'
