@@ -11,7 +11,7 @@ alias vimrc='nvim ~/.config/nvim/init.vim'
 alias zshrc='nvim ~/.zshrc && source ~/.zshrc'
 alias joke='curl https://icanhazdadjoke.com && printf "\n"'
 alias weather='curl wttr.in'
-alias comp='killall compton; compton --config .compton.conf --blur-background & disown'
+alias comp='killall compton; compton --config ~/.compton.conf & disown'
 alias server='mosh arul@arul.io'
 alias code='vscodium'
 alias copy='xclip -sel clip'
@@ -73,3 +73,6 @@ alias get='curl --continue-at - --location --progress-bar --remote-name --remote
 alias dot='ranger ~/dotfiles/'
 alias xres='nvim ~/.Xresources; xrdb ~/.Xresources'
 alias gc='git commit'
+
+
+alias neofetch='neofetch --ascii_colors 4 0 --colors 4'

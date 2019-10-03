@@ -1,12 +1,12 @@
 #!/bin/sh
 #modified from github.com/ym1234
 
-name="$HOME/Pictures/screenshots/$(date +'%F:%R:%S').png"
+name="$HOME/images/scrots/$(date +'%F:%R:%S').png"
 case $1 in
 	area)
-		shotgun -g "$(slop)" "$name" ;;
+		maim -g "$(slop)" "$name" ;;
 	whole)
-		shotgun "$name" ;;
+		maim "$name" ;;
 esac
 case $2 in
     monitor)

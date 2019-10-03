@@ -57,7 +57,6 @@ plugins=(git
          extract
          sudo
          z
-         fzf
          colored-man-pages
          history-substring-search
          golang)
@@ -70,3 +69,6 @@ autoload -U promptinit; promptinit
 prompt pure
 PROMPT=">> "
 zstyle ':completion:*' special-dirs false
+export FZF_BASE=/bin/fzf
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

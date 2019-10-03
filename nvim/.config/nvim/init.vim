@@ -39,18 +39,22 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "" Plug install packages
 "*****************************************************************************
 " mine
-Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
+Plug 'itchyny/lightline.vim'
+Plug 'dylanaraps/wal.vim'
+
+
 
 " defaults
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
@@ -182,7 +186,8 @@ let g:goyo_linenr=0
 
 let no_buffers_menu=1
 let g:dracula_colorterm = 0
-colorscheme dracula
+" colorscheme dracula
+" colorscheme pabloc
 set mouse=a
 set mousemodel=popup
 set t_Co=256
@@ -223,13 +228,53 @@ if exists("*fugitive#statusline")
   set statusline+=%{fugitive#statusline()}
 endif
 
-" vim-airline
-let g:airline_theme = 'dracula'
-let g:airline#extensions#branch#enabled = 0
-let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#tabline#enabled = 0
-let g:airline#extensions#tagbar#enabled = 0
-let g:airline_skip_empty_sections = 1
+
+let g:indentLine_char = '│'
+      let g:indnetLine_color_term = 5
+      let g:indnetLine_bgcolor_term = 0
+
+    "vanilla
+    "scheme
+        colorscheme pabloc
+    "line nums
+        set number
+        hi LineNr ctermfg=60
+    "split stuff
+        hi VertSplit ctermfg=12 ctermbg=12
+        set fillchars+=vert:o
+    "hide end of buffer ~
+        hi EndOfBuffer ctermfg=0
+    "italics
+        hi Comment cterm=italic
+        hi Conditional cterm=italic
+        set t_ZH=[3m
+        set t_ZR=[23m
+
+    "comments
+        hi Comment ctermfg=8
+    "lightline
+        let g:lightline = {
+            \ 'colorscheme': 'wal',
+            \ }
+        set noshowmode
+
+    "ALE
+    let g:ale_sign_error = '✖'
+    let g:ale_sign_warning = '⚠'
+    hi todo ctermbg=2 ctermfg=0
+    hi error ctermbg=1 ctermfg=0
+
+    let g:ale_linters = {'rust': ['rls']}
+
+    "actually dunno but it fixes something(?)
+    augroup my-colors
+        autocmd!
+        autocmd ColorScheme * hi IndentGuidesEven ctermbg=2
+        autocmd ColorScheme * hi LineNr ctermfg=60
+        autocmd ColorScheme * hi VertSplit ctermfg=12 ctermbg=12
+        autocmd ColorScheme * hi EndOfBuffer ctermfg=0
+    augroup END
+
 
 "*****************************************************************************
 "" Abbreviations
@@ -421,9 +466,7 @@ if has('autocmd')
 endif
 
 "" Copy/Paste/Cut
-if has('unnamedplus')
-  set clipboard=unnamed,unnamedplus
-endif
+set clipboard=unnamedplus
 
 vmap r "_dP
 
@@ -577,8 +620,6 @@ let g:jedi#smart_auto_mappings = 0
 :call extend(g:ale_linters, {
     \'python': ['flake8'], })
 
-" vim-airline
-let g:airline#extensions#virtualenv#enabled = 1
 
 " Syntax highlight
 " Default highlight is better than polyglot
@@ -593,44 +634,4 @@ let python_highlight_all = 1
 "" Include user's local vim config
 if filereadable(expand("~/.config/nvim/local_init.vim"))
   source ~/.config/nvim/local_init.vim
-endif
-
-"*****************************************************************************
-"" Convenience variables
-"*****************************************************************************
-
-" vim-airline
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-
-if !exists('g:airline_powerline_fonts')
-  let g:airline_left_sep = ''
-  let g:airline_left_alt_sep = ''
-  let g:airline_right_sep = ''
-  let g:airline_right_alt_sep = ''
-  let g:airline#extensions#tabline#left_sep = ' '
-  let g:airline#extensions#tabline#left_alt_sep = '|'
-  let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
-  let g:airline#extensions#readonly#symbol   = '⊘'
-  let g:airline#extensions#linecolumn#prefix = '¶'
-  let g:airline#extensions#paste#symbol      = 'ρ'
-  let g:airline_symbols.linenr    = '␊'
-  let g:airline_symbols.branch    = '⎇'
-  let g:airline_symbols.paste     = 'ρ'
-  let g:airline_symbols.paste     = 'Þ'
-  let g:airline_symbols.paste     = '∥'
-  let g:airline_symbols.whitespace = 'Ξ'
-else
-  let g:airline#extensions#tabline#left_sep = ''
-  let g:airline#extensions#tabline#left_alt_sep = ''
-
-  " powerline symbols
-  let g:airline_left_sep = ''
-  let g:airline_left_alt_sep = ''
-  let g:airline_right_sep = ''
-  let g:airline_right_alt_sep = ''
-  let g:airline_symbols.branch = ''
-  let g:airline_symbols.readonly = ''
-  let g:airline_symbols.linenr = ''
 endif

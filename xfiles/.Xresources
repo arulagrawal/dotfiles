@@ -21,11 +21,12 @@
 
 
 Xft.autohint:1
+Xft.antialias: 1
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintslight
 Xft.hinting: 1
 Xft.rgba: rgb
-Xft.dpi: 101
+Xft.dpi: 92
 
 rofi.color-enabled: true
 rofi.color-enaled: true

@@ -39,7 +39,7 @@ super + ctrl + Return
 
 # program launcher - rofi
 super + @space
-    rofi -show combi -theme drac -terminal st -font "SF Pro Display 14" -matching fuzzy
+    rofi -show combi -terminal st -font "SF Pro Display 14" -matching fuzzy
 
 
 # launch browser - chromium/firefox
