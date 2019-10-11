@@ -9,7 +9,7 @@ title=$(xtitle "$id")
 printf "id %s\nclass %s\ninst %s\ntitle %s\n\n" "$id" "$class" "$instance" "$title" >> /tmp/extout.txt
 
 case $class in
-    (dropdownterm) echo state=floating \ desktop=focused:focused \ hidden=true;;
+    (dropdownterm.Alacritty) echo state=floating \ desktop=focused:focused \ hidden=true;;
     (Firefox|Chromium) echo \ desktop=^2:^1;;
     ([dD]iscord) echo desktop=^1:^1;;
     ([zZ]athura) echo state=tiled;;

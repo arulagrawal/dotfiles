@@ -12,10 +12,11 @@ show() {
 open=$(wmctrl -lx | grep -o dropdownterm)
 if [ -z "$open" ]
 then
-    nohup st -c dropdownterm -g 272x20+1920+0 > /dev/null &
+    nohup alacritty --class dropdownterm --dimensions 272 20 --position 1920 0 > /dev/null &
     sleep 0.1
 fi
 sid=$(wmctrl -lx | grep dropdownterm | awk '{print $1}')
+bspc node "$sid" -t floating
 ishidden=$(bspc query -N -n .hidden)
 if [ -z "$ishidden" ]
 then

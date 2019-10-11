@@ -45,17 +45,17 @@ Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'itchyny/lightline.vim'
 Plug 'dylanaraps/wal.vim'
-
+Plug 'chriskempson/base16-vim'
 
 
 " defaults
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
 Plug 'Raimondi/delimitMate'
@@ -64,7 +64,7 @@ Plug 'w0rp/ale'
 Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
+" Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -185,7 +185,6 @@ set number
 let g:goyo_linenr=0
 
 let no_buffers_menu=1
-let g:dracula_colorterm = 0
 " colorscheme dracula
 " colorscheme pabloc
 set mouse=a
@@ -229,51 +228,42 @@ if exists("*fugitive#statusline")
 endif
 
 
-let g:indentLine_char = '│'
-      let g:indnetLine_color_term = 5
-      let g:indnetLine_bgcolor_term = 0
-
     "vanilla
     "scheme
-        colorscheme pabloc
-    "line nums
-        set number
-        hi LineNr ctermfg=60
-    "split stuff
-        hi VertSplit ctermfg=12 ctermbg=12
-        set fillchars+=vert:o
-    "hide end of buffer ~
-        hi EndOfBuffer ctermfg=0
-    "italics
-        hi Comment cterm=italic
-        hi Conditional cterm=italic
-        set t_ZH=[3m
-        set t_ZR=[23m
+    colorscheme wal 
+    ""line nums
+    highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+   "set number
+    hi LineNr ctermfg=60
+    """"split stuff
+    "hi VertSplit ctermfg=12 ctermbg=12
+    "set fillchars+=vert:o
+    """"hide end of buffer ~
+    "hi EndOfBuffer ctermfg=0
+    """"italics
+    "hi Comment cterm=italic
+    "hi Conditional cterm=italic
+    "set t_ZH=[3m
+    "set t_ZR=[23m
 
-    "comments
-        hi Comment ctermfg=8
-    "lightline
-        let g:lightline = {
-            \ 'colorscheme': 'wal',
-            \ }
-        set noshowmode
+    """comments
+    " hi Comment ctermfg=8
+    """lightline
+      let g:lightline = {
+           \ 'colorscheme': 'wal',
+           \ }
+       set noshowmode
 
-    "ALE
-    let g:ale_sign_error = '✖'
-    let g:ale_sign_warning = '⚠'
-    hi todo ctermbg=2 ctermfg=0
-    hi error ctermbg=1 ctermfg=0
+    """"ALE
+    "let g:ale_sign_error = '✖'
+    "let g:ale_sign_warning = '⚠'
+    "hi todo ctermbg=2 ctermfg=0
+    "hi error ctermbg=1 ctermfg=0
 
-    let g:ale_linters = {'rust': ['rls']}
-
-    "actually dunno but it fixes something(?)
-    augroup my-colors
-        autocmd!
-        autocmd ColorScheme * hi IndentGuidesEven ctermbg=2
-        autocmd ColorScheme * hi LineNr ctermfg=60
-        autocmd ColorScheme * hi VertSplit ctermfg=12 ctermbg=12
-        autocmd ColorScheme * hi EndOfBuffer ctermfg=0
-    augroup END
+    """let g:ale_linters = {'rust': ['rls']}
+	highlight Pmenu ctermbg=0 guibg=#606060
+	highlight PmenuSel ctermbg=1 guifg=#dddd00 guibg=#1f82cd
+	highlight PmenuSbar ctermbg=1 guibg=#d6d6d6
 
 
 "*****************************************************************************
@@ -600,7 +590,7 @@ augroup END
 " vim-python
 augroup vimrc-python
   autocmd!
-  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
+  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 
       \ formatoptions+=croq softtabstop=4
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
@@ -619,9 +609,9 @@ let g:jedi#smart_auto_mappings = 0
 " ale
 :call extend(g:ale_linters, {
     \'python': ['flake8'], })
-
-
+let g:ale_python_flake8_options = "--ignore=E501"
 " Syntax highlight
+
 " Default highlight is better than polyglot
 let g:polyglot_disabled = ['python']
 let python_highlight_all = 1

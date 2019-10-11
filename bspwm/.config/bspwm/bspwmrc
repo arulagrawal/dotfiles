@@ -9,9 +9,8 @@
 # ░░░░░   ░░░░░░  ░░      ░░░    ░░░ ░░░  ░░  ░░
 
 
-bspc monitor HDMI-0 -d 一 二 三 四 五 六 七 八 九
-bspc monitor eDP-1-1 -d 一 二 三 四 五 六 七 八 九
-
+bspc monitor HDMI-0 -d cero uno dos tres cuatro cinco seis siete ocho nueve
+bspc monitor eDP-1-1 -d cero uno dos tres cuatro cinco seis siete ocho nueve 
 xrdb ~/.Xresources
 
 background="#231E18"

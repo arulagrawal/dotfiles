@@ -9,6 +9,7 @@
 
 export PATH="$HOME/scripts/bin:$PATH"
 export PATH="$HOME/scripts/utility:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export GOROOT=""
 export GOPATH="/home/arul/go"
 #export GOPATH="/home/arul/code/go:$GOPATH"
