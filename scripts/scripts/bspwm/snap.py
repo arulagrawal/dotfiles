@@ -1,9 +1,7 @@
-#!/bin/python3
+#!/usr/bin/env python3
 
-# get all floating windows
 import json
 from os import system
-from pprint import pprint
 
 
 class window:
@@ -38,50 +36,81 @@ class window:
 
         return stri
 
+    def move(self, dx, dy):
+        system("bspc node {} --move {} {}".format(str(self.id), dx, dy))
 
-def main():
-    threshhold = 30
-    system("bspc query -T -m -d > /tmp/desktop.json")
-    with open("/tmp/desktop.json") as desktop:
-        data = json.load(desktop)
-        keys = ["firstChild", "secondChild"]
-        children = [child for child in getAllChildren(keys, data)]
-        children = [
-            child for child in children if child["client"]["state"] == "floating"
-        ]
+    def moveVerti(self, dy):
+        self.move(0, dy)
+        self.topEdge -= dy
+        self.bottomEdge -= dy
+
+    def moveHori(self, dx):
+        self.move(dx, 0)
+        self.leftEdge += dx
+        self.rightEdge += dx
+
+
+class desktop:
+    def __init__(self, threshold, gapSize):
+        self.windows = self.getWindows()
+        self.threshold = threshold
+        self.gapSize = gapSize
+
+    def getWindows(self):
         windows = []
-        for child in children:
-            client = child["client"]
-            name = client["className"]
-            geometry = client["floatingRectangle"]
-            w = window(
-                name,
-                child["id"],
-                geometry["x"],
-                geometry["y"],
-                geometry["width"],
-                geometry["height"],
-            )
-            windows.append(w)
-        pprint(windows)
-        for w in windows:
-            for other in windows:
+        system("bspc query -T -m -d > /tmp/desktop.json")
+        with open("/tmp/desktop.json") as desktop:
+            data = json.load(desktop)
+            keys = ["firstChild", "secondChild"]
+            children = [child for child in getAllChildren(keys, data)]
+            # only consider floating windows
+            children = [c for c in children if c["client"]["state"] == "floating"]
+            for child in children:
+                client = child["client"]
+                name = client["className"]
+                geometry = client["floatingRectangle"]
+                w = window(
+                    name,
+                    child["id"],
+                    geometry["x"],
+                    geometry["y"],
+                    geometry["width"],
+                    geometry["height"],
+                )
+                windows.append(w)
+        return windows
+
+    def alignWindows(self):
+        for w in self.windows:
+            for other in self.windows:
                 topDiff = w.topEdge - other.topEdge
-                if abs(topDiff) < threshhold:
+                if abs(topDiff) < self.threshold:
                     if topDiff > 0:
                         # need to move window up
-                        system("bspc node " + str(w.id) + " --move 0 " + str(-topDiff))
+                        w.moveVerti(-topDiff)
                 leftDiff = w.leftEdge - other.leftEdge
-                if abs(leftDiff) < threshhold:
+                if abs(leftDiff) < self.threshold:
                     if leftDiff > 0:
-                        # need to move window up
-                        system(
-                            "bspc node "
-                            + str(w.id)
-                            + " --move "
-                            + str(-leftDiff)
-                            + " 0"
-                        )
+                        # need to move window left
+                        w.moveHori(-leftDiff)
+
+    def fixGaps(self):
+        for w in self.windows:
+            for other in self.windows:
+                horiGap = w.leftEdge - other.rightEdge
+                if abs(horiGap) < 2 * self.gapSize:
+                    w.moveHori(self.gapSize - horiGap)
+                vertGap = w.bottomEdge - other.topEdge
+                if abs(vertGap) < 1.5 * self.gapSize:
+                    other.moveVerti(w.bottomEdge + self.gapSize - other.topEdge)
+
+
+def main():
+    threshold = 30
+    gapSize = 20
+    d = desktop(threshold, gapSize)
+    d.alignWindows()
+    d.fixGaps()
 
 
 def getAllChildren(keys, desktop):

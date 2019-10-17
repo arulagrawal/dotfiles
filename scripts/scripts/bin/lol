@@ -1,2 +1,2 @@
 #!/bin/sh
-/home/arul/hard_drive/wine/wine-staging-i386_lol-patched_x86_64-bionic.AppImage wine "/home/arul/hard_drive/games/lol/drive_c/Riot Games/League of Legends/LeagueClient.exe"
+/opt/wine-lol/bin/wine "/home/arul/hard_drive/games/lol/drive_c/Riot Games/League of Legends/LeagueClient.exe"

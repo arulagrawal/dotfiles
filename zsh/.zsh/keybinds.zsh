@@ -26,7 +26,6 @@ autoload -z edit-command-line # [Ctrl + X, Ctrl + E] - Edit command in vim
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 
-
 #   Arrow keys search history
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search

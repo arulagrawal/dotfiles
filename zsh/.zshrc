@@ -22,23 +22,6 @@ setopt autocd extendedglob nomatch globdots
 unsetopt beep
 bindkey -v
 
-# SPACESHIP_PROMPT_ORDER=(
-#   #user         # Username section
-#   dir           # Current directory section
-#   #host         # Hostname section
-#   git           # Git section (git_branch + git_status)
-#   line_sep      # Line break
-#   battery       # Battery level and status
-#   jobs          # Background jobs indicator
-#   exit_code     # Exit code section
-#   char          # Prompt character
-# )
-
-# SPACESHIP_RPROMPT_ORDER=(
-#   time
-#   exec_time
-# )
-
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="false"
 
@@ -57,6 +40,7 @@ plugins=(git
          extract
          sudo
          z
+         fzf
          colored-man-pages
          history-substring-search
          golang)
@@ -70,9 +54,6 @@ prompt pure
 PROMPT=">> "
 zstyle ':completion:*' special-dirs false
 export FZF_BASE=/bin/fzf
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"

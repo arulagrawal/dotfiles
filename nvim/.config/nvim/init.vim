@@ -609,7 +609,7 @@ let g:jedi#smart_auto_mappings = 0
 " ale
 :call extend(g:ale_linters, {
     \'python': ['flake8'], })
-let g:ale_python_flake8_options = "--ignore=E501"
+let g:ale_python_flake8_options = "--ignore=E501,W503"
 " Syntax highlight
 
 " Default highlight is better than polyglot

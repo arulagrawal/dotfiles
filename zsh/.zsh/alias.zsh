@@ -26,9 +26,9 @@ if [ -x "$(command -v exa)" ]; then
     alias ll='exa -la'
     alias l.='exa -ld .*'
 else
-    alias ls='ls'
+    alias ls='ls --color=auto'
     alias la='ls -a'
-    alias ll='la -la'
+    alias ll='ls -lha'
 fi
 
 alias mkdir='mkdir -pv'
@@ -75,5 +75,5 @@ alias dot='ranger ~/dotfiles/'
 alias xres='nvim ~/.Xresources; xrdb ~/.Xresources'
 alias gc='git commit'
 
-
-alias neofetch='neofetch --ascii_colors 4 0 --colors 4'
+alias fixtime='sudo ntpdate pool.ntp.org'
+alias sudo='doas'
