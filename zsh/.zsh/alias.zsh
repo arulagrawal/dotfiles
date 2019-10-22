@@ -42,7 +42,7 @@ alias df='df -kTh'
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
-alias sv='sudoedit'
+alias svim='sudoedit'
 
 alias f='ranger'
 
@@ -76,4 +76,4 @@ alias xres='nvim ~/.Xresources; xrdb ~/.Xresources'
 alias gc='git commit'
 
 alias fixtime='sudo ntpdate pool.ntp.org'
-alias sudo='doas'
+# alias sudo='doas'

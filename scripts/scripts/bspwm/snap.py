@@ -108,9 +108,9 @@ class desktop:
 def main():
     threshold = 30
     gapSize = 20
-    d = desktop(threshold, gapSize)
-    d.alignWindows()
-    d.fixGaps()
+    desk = desktop(threshold, gapSize)
+    desk.alignWindows()
+    desk.fixGaps()
 
 
 def getAllChildren(keys, desktop):

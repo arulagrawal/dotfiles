@@ -14,11 +14,11 @@
 
 # open alacritty
 super + Return
-    alacritty
+    kitty
 
-# open st
+# open kitty
 super + shift + Return
-    st
+    alacritty
 
 # scratchpad/dropdown
 super + d

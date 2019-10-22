@@ -8,7 +8,7 @@
 # killall compton
 # compton --config ~/.compton.conf &
 ~/scripts/bspwm/fixcompton.sh
-nohup snooze -H'*' ~/scripts/bspwm/fixcompton.sh &
+nohup snooze -H '*' ~/scripts/bspwm/fixcompton.sh &
 
 #set volume to 50%
 pactl set-sink-volume 0 50%
@@ -30,3 +30,6 @@ xsetroot -cursor_name left_ptr
 
 #cache spotify art for time script
 ~/scripts/utility/cache_spotify_art.sh &
+
+#make keypress repetition way faster
+xset r rate 350 60

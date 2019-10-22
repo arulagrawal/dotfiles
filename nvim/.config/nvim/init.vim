@@ -46,16 +46,17 @@ Plug 'easymotion/vim-easymotion'
 Plug 'itchyny/lightline.vim'
 Plug 'dylanaraps/wal.vim'
 Plug 'chriskempson/base16-vim'
+Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 
 
 " defaults
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
-" Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
 Plug 'Raimondi/delimitMate'
@@ -180,6 +181,9 @@ let g:session_command_aliases = 1
 "" Visual Settings
 "*****************************************************************************
 syntax on
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+		  \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+		  \,sm:block-blinkwait175-blinkoff150-blinkon175
 set ruler
 set number
 let g:goyo_linenr=0
@@ -190,9 +194,6 @@ let no_buffers_menu=1
 set mouse=a
 set mousemodel=popup
 set t_Co=256
-set guioptions=egmrti
-set gfn=Monospace\ 10
-noremap <silent><esc> <esc>:noh<CR><esc>
 
 " IndentLine
 let g:indentLine_enabled = 1
@@ -223,47 +224,34 @@ set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-if exists("*fugitive#statusline")
-  set statusline+=%{fugitive#statusline()}
-endif
+colorscheme wal 
+hi LineNr ctermfg=60
+""""split stuff
+""""hide end of buffer ~
+hi EndOfBuffer ctermfg=0
+""""italics
+hi Comment cterm=italic
+hi Conditional cterm=italic,bold
+"set t_ZH=[3m
+"set t_ZR=[23m
 
+"""comments
+"""lightline
+let g:lightline = {
+   \ 'colorscheme': 'wal',
+   \ }
+set noshowmode
 
-    "vanilla
-    "scheme
-    colorscheme wal 
-    ""line nums
-    highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
-   "set number
-    hi LineNr ctermfg=60
-    """"split stuff
-    "hi VertSplit ctermfg=12 ctermbg=12
-    "set fillchars+=vert:o
-    """"hide end of buffer ~
-    "hi EndOfBuffer ctermfg=0
-    """"italics
-    "hi Comment cterm=italic
-    "hi Conditional cterm=italic
-    "set t_ZH=[3m
-    "set t_ZR=[23m
+""""ALE
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '⚠'
+hi todo ctermbg=2 ctermfg=0
+hi error ctermbg=1 ctermfg=0
 
-    """comments
-    " hi Comment ctermfg=8
-    """lightline
-      let g:lightline = {
-           \ 'colorscheme': 'wal',
-           \ }
-       set noshowmode
-
-    """"ALE
-    "let g:ale_sign_error = '✖'
-    "let g:ale_sign_warning = '⚠'
-    "hi todo ctermbg=2 ctermfg=0
-    "hi error ctermbg=1 ctermfg=0
-
-    """let g:ale_linters = {'rust': ['rls']}
-	highlight Pmenu ctermbg=0 guibg=#606060
-	highlight PmenuSel ctermbg=1 guifg=#dddd00 guibg=#1f82cd
-	highlight PmenuSbar ctermbg=1 guibg=#d6d6d6
+"""let g:ale_linters = {'rust': ['rls']}
+highlight Pmenu ctermbg=0
+highlight PmenuSel ctermbg=1
+highlight PmenuSbar ctermbg=1
 
 
 "*****************************************************************************
@@ -302,7 +290,8 @@ let Grep_Skip_Dirs = '.git node_modules'
 " terminal emulation
 nnoremap <silent> <leader>sh :terminal<CR>
 
-
+" remove search highlights on escape
+noremap <silent><esc> <esc>:noh<CR><esc>
 "*****************************************************************************
 "" Commands
 "*****************************************************************************
