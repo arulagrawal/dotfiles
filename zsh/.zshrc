@@ -21,6 +21,7 @@ SAVEHIST=10000
 setopt autocd extendedglob nomatch globdots
 unsetopt beep
 bindkey -v
+export FZF_BASE=/bin/fzf
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="false"
@@ -53,7 +54,6 @@ autoload -U promptinit; promptinit
 prompt pure
 PROMPT=">> "
 zstyle ':completion:*' special-dirs false
-export FZF_BASE=/bin/fzf
 
 # # Base16 Shell
 # BASE16_SHELL="$HOME/.config/base16-shell/"
