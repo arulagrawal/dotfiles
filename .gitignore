@@ -5,3 +5,5 @@ base
 explicit
 .vscode
 tocheck
+antigen.zsh
+plugins.zsh.zwc

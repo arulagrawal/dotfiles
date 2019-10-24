@@ -45,8 +45,10 @@ bspc config pointer_follows_monitor false
 bspc config external_rules_command ~/.config/bspwm/bspwm-rules #most of the rules are in here
 
 # Autostart
-feh --bg-fill  ~/images/wallpapers/pixelLushAlley.jpg
+feh --bg-fill --no-fehbg ~/dotfiles/wallpapers/pixelLushAlley.jpg
 ~/scripts/bspwm/desktop.sh &
 ~/scripts/bspwm/defaultsetup.sh &
+
+st & disown
 
 dunstify -u critical "system" "everything is up and running"
