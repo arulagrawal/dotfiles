@@ -11,4 +11,6 @@ antigen bundle ael-code/zsh-colored-man-pages
 antigen bundle hcgraf/zsh-sudo
 antigen bundle skywind3000/z.lua
 
+antigen bundle thetic/extract
+
 antigen apply

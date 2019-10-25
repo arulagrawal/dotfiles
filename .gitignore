@@ -1,4 +1,11 @@
 nvim/.config/nvim/plugged
+nvim/.config/nvim/autoload
+nvim/.config/nvim/colors
+nvim/.config/nvim/ftplugin
+nvim/.config/nvim/session
+nvim/.config/nvim/syntax
+nvim/.config/nvim/generate.vim
+nvim/.config/nvim/.netrwhist
 spotifyinfo.json
 spotify_add
 base
