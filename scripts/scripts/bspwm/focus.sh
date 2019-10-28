@@ -40,4 +40,3 @@ wattr "i$arg" "$(targets focused)" $(targets normal) | {
 
     bspc node "$focus" -f
 }
-

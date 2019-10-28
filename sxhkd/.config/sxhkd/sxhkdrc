@@ -26,7 +26,7 @@ super + d
 
 # draw a terminal window
 super + shift + d
-    bspc rule -a \* -o state=floating rectangle=$(slop -f "%g") && alacritty
+    bspc rule -a \* -o state=floating rectangle=$(slop -f "%g") && kitty
 
 # save song to spotify
 super + alt + s
@@ -44,7 +44,7 @@ super + @space
 
 # launch browser - chromium/firefox
 super + {_,shift + }b
-    {firefox, chromium}
+    {firefox-developer-edition, chromium}
 
 # launch vscodium
 super + {_,shift + }v

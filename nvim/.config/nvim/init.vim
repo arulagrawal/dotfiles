@@ -39,7 +39,6 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "" Plug install packages
 "*****************************************************************************
 " mine
-" Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
@@ -48,14 +47,11 @@ Plug 'dylanaraps/wal.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 
-
 " defaults
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
@@ -189,8 +185,6 @@ set number
 let g:goyo_linenr=0
 
 let no_buffers_menu=1
-" colorscheme dracula
-" colorscheme pabloc
 set mouse=a
 set mousemodel=popup
 set t_Co=256
@@ -226,29 +220,26 @@ nnoremap N Nzzzv
 
 colorscheme wal 
 hi LineNr ctermfg=60
-""""split stuff
-""""hide end of buffer ~
+""split stuff
+""hide end of buffer ~
 hi EndOfBuffer ctermfg=0
-""""italics
-hi Comment cterm=italic
-hi Conditional cterm=italic,bold
-"set t_ZH=[3m
-"set t_ZR=[23m
+""""bold
+hi Comment cterm=bold
+hi Conditional cterm=bold
 
-"""comments
-"""lightline
+""lightline
 let g:lightline = {
    \ 'colorscheme': 'wal',
    \ }
 set noshowmode
 
-""""ALE
+""ALE
 let g:ale_sign_error = '✖'
-let g:ale_sign_warning = '⚠'
+let g:ale_sign_warning = '!'
 hi todo ctermbg=2 ctermfg=0
 hi error ctermbg=1 ctermfg=0
 
-"""let g:ale_linters = {'rust': ['rls']}
+""let g:ale_linters = {'rust': ['rls']}
 highlight Pmenu ctermbg=0
 highlight PmenuSel ctermbg=1
 highlight PmenuSbar ctermbg=1

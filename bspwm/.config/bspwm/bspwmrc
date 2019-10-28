@@ -49,6 +49,4 @@ feh --bg-fill --no-fehbg ~/dotfiles/wallpapers/pixelLushAlley.jpg
 ~/scripts/bspwm/desktop.sh &
 ~/scripts/bspwm/defaultsetup.sh &
 
-st & disown
-
 dunstify -u critical "system" "everything is up and running"

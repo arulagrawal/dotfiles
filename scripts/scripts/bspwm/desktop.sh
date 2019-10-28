@@ -12,6 +12,8 @@ nohup snooze -H '*' ~/scripts/bspwm/fixcompton.sh &
 
 #set volume to 50%
 pactl set-sink-volume 0 50%
+pactl set-sink-volume 1 50%
+pactl set-sink-volume 2 50%
 
 #set wmname to LG3D to trick java applications into working
 wmname LG3D

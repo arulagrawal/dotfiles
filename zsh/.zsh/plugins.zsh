@@ -11,6 +11,10 @@ antigen bundle ael-code/zsh-colored-man-pages
 antigen bundle hcgraf/zsh-sudo
 antigen bundle skywind3000/z.lua
 
+# extract plugin from ohz
 antigen bundle thetic/extract
+
+# autopair brackets etc
+antigen bundle hlissner/zsh-autopair
 
 antigen apply

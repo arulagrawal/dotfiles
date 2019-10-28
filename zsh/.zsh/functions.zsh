@@ -107,3 +107,8 @@ dict()
     local word="$1"
     curl dict://dict.org/d:"${word}"
 }
+
+fixlol()
+{
+    sudo bash -c 'echo "abi.vsyscall32 = 0" >> /etc/sysctl.conf && sysctl -p'
+}

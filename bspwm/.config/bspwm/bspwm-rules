@@ -5,7 +5,7 @@
 id=${1?};
 class=$2;
 instance=$3;
-title=$(xtitle "$id")
+title=$(xtitle)
 printf "id %s\nclass %s\ninst %s\ntitle %s\n\n" "$id" "$class" "$instance" "$title" >> /tmp/extout.txt
 
 case $class in
