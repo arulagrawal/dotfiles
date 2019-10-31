@@ -1,0 +1,23 @@
+# vim: ft=sh
+# run `plugins` after updating this file
+# standard zsh stuff tbh
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
+zsh-users/zsh-history-substring-search
+
+# pure prompt
+mafredri/zsh-async
+sindresorhus/pure
+
+# prepend sudo when pressing esc
+hcgraf/zsh-sudo
+
+# z autojump stuff
+skywind3000/z.lua
+
+# extract plugin from ohz
+thetic/extract
+
+# autopair brackets etc
+hlissner/zsh-autopair

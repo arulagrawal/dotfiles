@@ -25,5 +25,4 @@ export OPENER='xdg-open'
 HISTFILE=~/.cache/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
-export ANTIGEN_COMPDUMP=~/.antigen/.zcompdump
 export _ZL_DATA=~/.config/.zlua

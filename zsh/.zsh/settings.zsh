@@ -1,10 +1,12 @@
+autoload -U compinit
 setopt autocd extendedglob nomatch globdots extended_glob
 unsetopt beep
-zstyle ':completion:*' special-dirs false
+zstyle ':completion:*' special-dirs ..
 zstyle ':completion:*' completer _complete
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
-zstyle ':completion:*' menu select=0
-
+zstyle ':completion:*' menu select=0 interactive
+zmodload zsh/complist
+compinit
 # ls colors
 autoload -U colors && colors
 
