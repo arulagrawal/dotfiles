@@ -15,7 +15,6 @@ alias comp='killall compton; compton --config ~/.compton.conf & disown'
 alias server='mosh arul@arul.io'
 alias emacs='spawn emacs'
 alias copy='xclip -sel clip'
-alias todo='todoist'
 
 alias q='exit 0'
 
@@ -33,7 +32,7 @@ fi
 alias mkdir='mkdir -pv'
 alias grep='grep --color=auto'
 alias debug="set -o nounset; set -o xtrace"
-alias x='chmod +x'
+alias cx='chmod +x'
 alias du='du -kh'
 alias df='df -kTh'
 

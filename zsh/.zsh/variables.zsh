@@ -16,7 +16,6 @@ export GOPATH="/home/arul/go"
 export PATH="$GOPATH/bin:$PATH"
 
 export LANG=en_US.UTF-8
-export RTV_BROWSER=surf
 export BROWSER=firefox
 export EDITOR='nvim'
 export VISUAL='nvim'
@@ -26,6 +25,6 @@ export OPENER='xdg-open'
 HISTFILE=~/.cache/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
-PROMPT=">> "
+PURE_PROMPT_SYMBOL="❯❯"
 export ANTIGEN_COMPDUMP=~/.antigen/.zcompdump
 export _ZL_DATA=~/.config/.zlua

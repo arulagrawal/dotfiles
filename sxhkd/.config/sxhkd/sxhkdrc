@@ -12,11 +12,11 @@
 # wm independent hotkeys
 #
 
-# open alacritty
+# open kitty
 super + Return
     kitty
 
-# open kitty
+# open alacritty
 super + shift + Return
     alacritty
 
@@ -52,7 +52,7 @@ super + {_,shift + }v
 
 # launch ranger/pcmanfm
 super + {_,shift + }f
-    {alacritty -e ranger, pcmanfm}
+    {kitty -e ranger, pcmanfm}
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -67,11 +67,11 @@ super + ctrl + alt + l
     gllock
 
 # take screenshot
-Print; {m, w}
+super + p; {m, w}
     ~/scripts/utility/screenshot.sh whole {monitor, whole};
 
 # take region screenshot
-shift + Print
+super shift + p
     ~/scripts/utility/screenshot.sh area;
 
 # reload bars
