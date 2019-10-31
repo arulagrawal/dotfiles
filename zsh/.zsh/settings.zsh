@@ -17,3 +17,9 @@ ls --color -d . &>/dev/null && alias ls='ls --color=tty' || { ls -G . &>/dev/nul
 
 # Take advantage of $LS_COLORS for completion as well.
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+# settings for pure prompt
+PURE_PROMPT_SYMBOL="❯❯"
+PURE_PROMPT_VICMD_SYMBOL="❮❮"
+PURE_GIT_UP_ARROW="↑"
+PURE_GIT_DOWN_ARROW="↓"
