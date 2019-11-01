@@ -26,3 +26,5 @@ HISTFILE=~/.cache/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 export _ZL_DATA=~/.config/.zlua
+export ZGEN_RESET_ON_CHANGE="${HOME}/.zsh/plugins.zsh"
+export ZSH_PLUGINS_ALIAS_TIPS_TEXT="!"

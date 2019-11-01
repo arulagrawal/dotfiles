@@ -74,4 +74,3 @@ alias gaa='git add -A'
 
 alias fixtime='sudo ntpdate pool.ntp.org'
 alias sudo='sudo '
-alias plugins='antibody bundle < ~/.zsh/plugins.txt > ~/.zsh/plugins.zsh'

@@ -24,7 +24,7 @@ fzfp()
 {
     fzf --reverse --inline-info --preview='[[ $(file --mime {}) =~ binary ]] &&
                   echo {} is a binary file ||
-                  highlight --style="base16/dracula" -O ansi -l {} ||
+                  highlight -O ansi -l {} ||
                   cat {} 2> /dev/null | head -500' --bind '?:toggle-preview' --tabstop=1 --ansi
 }
 
