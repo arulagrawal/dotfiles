@@ -15,4 +15,5 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 fi
 
 #exec $STARTUP ck-launch-session dbus-launch --sh-syntax --exit-with-x11 bspwm
+xset r rate 350 60
 exec bspwm

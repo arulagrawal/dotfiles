@@ -36,8 +36,6 @@ alias cx='chmod +x'
 alias du='du -kh'
 alias df='df -kTh'
 
-alias v='nvim'
-alias vi='nvim'
 alias vim='nvim'
 alias svim='sudoedit'
 
@@ -50,6 +48,7 @@ alias yun='yay -Rs'   # remove
 alias ycc='yay -Scc'  # clear cache
 alias yls='yay -Ql'        # list files
 alias yrm='yay -Rnsc' # really remove, configs and all
+alias yaur='yay -Syu --devel --needed'
 
 alias pkg='makepkg --printsrcinfo > .SRCINFO && makepkg -fsrc'
 alias spkg='pkg --sign'

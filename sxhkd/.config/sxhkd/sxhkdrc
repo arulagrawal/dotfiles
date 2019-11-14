@@ -12,13 +12,13 @@
 # wm independent hotkeys
 #
 
-# open kitty
-super + Return
-    kitty
-
 # open alacritty
-super + shift + Return
+super + Return
     alacritty
+
+# open kitty
+super + shift + Return
+    kitty
 
 # scratchpad/dropdown
 super + d

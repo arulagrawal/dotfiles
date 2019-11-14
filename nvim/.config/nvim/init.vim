@@ -218,33 +218,46 @@ set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-colorscheme wal 
+colorscheme base16-snazzy 
+hi Normal ctermbg=none
+hi NonText ctermbg=none
 hi LineNr ctermfg=60
+hi LineNr ctermbg=none
 ""split stuff
 ""hide end of buffer ~
 hi EndOfBuffer ctermfg=0
 """"bold
 hi Comment cterm=bold
-hi Conditional cterm=bold
+hi Conditional cterm=italic
 
 ""lightline
 let g:lightline = {
-   \ 'colorscheme': 'wal',
-   \ }
+      \ 'colorscheme': 'wal',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 set noshowmode
 
 ""ALE
-let g:ale_sign_error = '✖'
+let g:ale_sign_error = '×'
 let g:ale_sign_warning = '!'
-hi todo ctermbg=2 ctermfg=0
-hi error ctermbg=1 ctermfg=0
+hi todo ctermbg=none ctermfg=2
+hi error ctermbg=none ctermfg=1
 
 ""let g:ale_linters = {'rust': ['rls']}
 highlight Pmenu ctermbg=0
 highlight PmenuSel ctermbg=1
 highlight PmenuSbar ctermbg=1
 
-
+" git gutter stuff
+highlight GitGutterAdd ctermfg=2 ctermbg=none
+highlight GitGutterChange ctermfg=3 ctermbg=none
+highlight GitGutterDelete ctermfg=1 ctermbg=none
 "*****************************************************************************
 "" Abbreviations
 "*****************************************************************************

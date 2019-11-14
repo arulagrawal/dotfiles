@@ -26,6 +26,10 @@ case $class in
         esac;;
 esac;
 
+case $instance in
+    ("league of legends.exe") echo desktop=^2:^2 \ state=fullscreen;;
+esac
+
 case $title in
     ('Friends List') echo state=floating \ desktop=^2:^8;;
 esac;

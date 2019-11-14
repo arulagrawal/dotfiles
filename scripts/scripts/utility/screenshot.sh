@@ -21,5 +21,5 @@ case $2 in
     *)
         ;;
 esac
-curl -sF"file=@$name" https://paste.arul.io | xclip -selection clipboard -in
+curl -sF "file=@$name" https://paste.arul.io | xclip -selection clipboard -in
 dunstify -u normal "Screenshot taken!" "$(xclip -selection clipboard -out)"

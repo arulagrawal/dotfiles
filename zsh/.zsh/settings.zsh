@@ -1,6 +1,7 @@
 setopt autocd extendedglob nomatch globdots extended_glob completeinword
 unsetopt beep
-zstyle ':completion:*' special-dirs ..
+zstyle ':completion:*' special-dirs false
+zstyle ':completion:*:functions' ignored-patterns '_*'
 zstyle ':completion:*' completer _complete
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
 zstyle ':completion:*' menu select=0 interactive

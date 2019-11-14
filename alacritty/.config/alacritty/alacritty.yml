@@ -19,7 +19,7 @@
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  #TERM: alacritty
+  #  TERM: alacritty
 
 window:
   # Window dimensions (changes require restart)
@@ -43,7 +43,7 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 10
+    x: 15
     y: 10
 
   # Spread additional padding evenly around the terminal content.
@@ -103,10 +103,10 @@ font:
     #   - (macOS) Menlo
     #   - (Linux) monospace
     #   - (Windows) Consolas
-    family: Dina
+    family: Hack Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
-    style: regular
+    style: Bold
 
   # Bold font face
   bold:
@@ -114,10 +114,10 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Dina
+    family: Hack Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
-    style: bold
+    style: Bold
 
   # Italic font face
   italic:
@@ -125,13 +125,13 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Dina
+    family: Hack Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
-    style: italic
+    style: Bold Italic
 
   # Point size
-  size: 5.0
+  size: 7.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -174,7 +174,7 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x282a36'
+    background: '0x14151b'
     foreground: '0xeff0eb'
 
   # Normal colors
