@@ -112,3 +112,9 @@ fixlol()
 {
     sudo bash -c 'echo "abi.vsyscall32 = 0" >> /etc/sysctl.conf && sysctl -p'
 }
+
+swap()
+{
+    local TMPFILE=tmp.$$
+    mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE "$2"
+}
