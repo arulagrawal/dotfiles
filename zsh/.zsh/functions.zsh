@@ -32,7 +32,7 @@ fzfp()
 #quick lookup for my config files
 function dots()
 {
-    find ~/dotfiles/ -type f -exec du -a {} + | awk '{print $2}' | sed '/git\|autoload\|generate.vim\|netrwhist\|python.vim\|bash\|plugged\|xrdb/d' | fzfp | xargs -r $EDITOR;
+    find ~/dotfiles/ -type f -exec du -a {} + | awk '{print $2}' | sed '/git\|autoload\|generate.vim\|netrwhist\|python.vim\|bash\|plugged\|xrdb/d' | fzfp | xargs $EDITOR;
 }
 
 #show me what my key config looks like - pressing enter goes to that command in the config
@@ -117,4 +117,12 @@ swap()
 {
     local TMPFILE=tmp.$$
     mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE "$2"
+}
+
+comp()
+{
+    rm a.out
+    g++ $1
+    ./a.out
+    rm a.out
 }

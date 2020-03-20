@@ -12,3 +12,4 @@ base
 explicit
 .vscode
 tocheck
+.DS_Store
