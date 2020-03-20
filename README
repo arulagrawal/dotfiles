@@ -7,10 +7,6 @@
 ░███   ░░██████░░████████░░██████ ███ ░██ ░██░░██████
 ░░░     ░░░░░░  ░░░░░░░░  ░░░░░░ ░░░  ░░  ░░  ░░░░░░ 
 
-These are my dotfiles.
+These are my dotfiles. MacOS version.
 
-Managed via GNU Stow
-
-TODO:
-    - Commenting
-    - MOAR bspwm scripts!
+Managed via GNU Stow.

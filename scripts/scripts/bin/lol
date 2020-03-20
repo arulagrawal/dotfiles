@@ -1,2 +1,0 @@
-#!/bin/sh
-/opt/wine-lol/bin/wine "/home/arul/hard_drive/games/lol/drive_c/Riot Games/League of Legends/LeagueClient.exe"
