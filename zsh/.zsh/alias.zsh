@@ -13,7 +13,6 @@ alias joke='curl https://icanhazdadjoke.com && printf "\n"'
 alias weather='curl wttr.in'
 alias server='mosh arul@arul.io'
 alias emacs='spawn emacs'
-alias copy='xclip -sel clip'
 
 alias q='exit 0'
 
@@ -38,30 +37,9 @@ alias df='df -kTh'
 alias vim='nvim'
 alias svim='sudoedit'
 
-alias f='ranger'
-
-# aliases for yay (pacman helper)
-alias yup='yay' # update
-alias yin='yay -S'    # install
-alias yun='yay -Rs'   # remove
-alias ycc='yay -Scc'  # clear cache
-alias yls='yay -Ql'        # list files
-alias yrm='yay -Rnsc' # really remove, configs and all
-alias yaur='yay -Syu --devel --needed'
-
-alias pkg='makepkg --printsrcinfo > .SRCINFO && makepkg -fsrc'
-alias spkg='pkg --sign'
-
-alias mk='make && make clean'
-alias smk='sudo make clean install && make clean'
-alias ssmk='sudo make clean install && make clean && rm -iv config.h'
-
 alias calc='python -qi -c "from math import *"'
 
 alias get='curl --continue-at - --location --progress-bar --remote-name --remote-time'
-
-alias dot='ranger ~/dotfiles/'
-alias xres='nvim ~/.Xresources; xrdb ~/.Xresources'
 
 # git stuff
 alias ga='git add'
@@ -70,5 +48,4 @@ alias gs='git status'
 alias gp='git push'
 alias gaa='git add -A'
 
-alias fixtime='sudo ntpdate pool.ntp.org'
 alias sudo='sudo '

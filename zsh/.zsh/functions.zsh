@@ -32,7 +32,7 @@ fzfp()
 #quick lookup for my config files
 function dots()
 {
-    find ~/dotfiles/ -type f -exec du -a {} + | awk '{print $2}' | sed '/git\|autoload\|generate.vim\|netrwhist\|python.vim\|bash\|plugged\|xrdb/d' | fzfp | xargs $EDITOR;
+    find ~/dotfiles/ -type f | awk '!/git|plugged|autoload|.DS_Store/' | awk 'gsub("//", "/")' | fzfp | xargs $EDITOR;
 }
 
 #show me what my key config looks like - pressing enter goes to that command in the config
@@ -67,21 +67,6 @@ shorten()
     curl -F"shorten=$*" https://0x0.st
 }
 
-zathura()
-{
-    command zathura "$@" & disown
-}
-
-spawn()
-{
-    "$@" & disown
-}
-
-pdfcombine()
-{
-    gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="combinepdf".pdf "$1" "$2"
-}
-
 archive()
 {
     local format="$1"
@@ -93,24 +78,6 @@ archive()
         7z )
             7za a "${output}.7z" "${input[@]}";;
     esac
-}
-
-torrents()
-{
-    transmission-daemon;
-    sleep 1;
-    transmission-remote-cli;
-}
-
-dict()
-{
-    local word="$1"
-    curl dict://dict.org/d:"${word}"
-}
-
-fixlol()
-{
-    sudo bash -c 'echo "abi.vsyscall32 = 0" >> /etc/sysctl.conf && sysctl -p'
 }
 
 swap()
