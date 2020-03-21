@@ -82,6 +82,11 @@ cmd - return : osascript -e 'tell application "iTerm2" to create window with def
 # open vscode
 cmd + shift - return : code
 
+# take a screenshot
+cmd + shift - 3 : $HOME/scripts/screenshot.sh whole
+cmd + shift - 4 : $HOME/scripts/screenshot.sh area
+cmd + shift - 5 : $HOME/scripts/screenshot.sh window
+
 # focus window
 alt - h : yabai -m window --focus west
 alt - l : yabai -m window --focus east
