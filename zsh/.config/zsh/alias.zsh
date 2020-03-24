@@ -46,6 +46,6 @@ alias gc='git commit'
 alias gs='git status'
 alias gp='git push'
 alias gaa='git add -A'
-alias gd='git diff'
+alias gd='git diff --color | less -R' #weird hack to get mouse scrolling in macOS
 
 alias sudo='sudo '

@@ -1,4 +1,5 @@
 setopt autocd extendedglob nomatch globdots extended_glob completeinword
+setopt inc_append_history share_history
 unsetopt beep
 zstyle ':completion:*' special-dirs false
 zstyle ':completion:*:functions' ignored-patterns '_*'

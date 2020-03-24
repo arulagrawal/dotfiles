@@ -13,4 +13,4 @@ if [ ! -d ~/.config/zgen ]; then
 fi
 
 source "${HOME}/.config/zgen/zgen.zsh"
-for config (~/.zsh/*.zsh) source $config;
+for config (${HOME}/.config/zsh/*.zsh) source $config;
