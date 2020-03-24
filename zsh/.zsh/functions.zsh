@@ -28,11 +28,10 @@ fzfp()
                   cat {} 2> /dev/null | head -500' --bind '?:toggle-preview' --tabstop=1 --ansi
 }
 
-
 #quick lookup for my config files
-function dots()
+dots()
 {
-    find ~/dotfiles/ -type f | awk '!/git|plugged|autoload|.DS_Store/' | awk 'gsub("//", "/")' | fzfp | xargs $EDITOR;
+    find ~/dotfiles/ -type f | awk '!/git|plugged|autoload|.DS_Store/ && gsub("//", "/")' | fzfp | xargs $EDITOR;
 }
 
 #show me what my key config looks like - pressing enter goes to that command in the config
@@ -53,11 +52,11 @@ dec2hex()
 
 c()
 {
-    if [ $# -eq 0 ] ; then
+    if [ $# -eq 0 ]; then
         clear
-    elif [ -d "$1" ] ; then
+    elif [ -d "$1" ]; then
         cd "$1"
-    elif [ -f "$1" ] ; then
+    elif [ -f "$1" ]; then
         cat "$1"
     fi
 }
@@ -92,4 +91,15 @@ comp()
     g++ $1
     ./a.out
     rm a.out
+}
+
+mkcd()
+{
+    if [ ! -n "$1" ]; then
+        echo "Enter a directory name"
+    elif [ -d $1 ]; then
+        echo "\`$1' already exists"
+    else
+        mkdir $1 && cd $1
+    fi
 }

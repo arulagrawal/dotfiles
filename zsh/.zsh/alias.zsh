@@ -29,15 +29,14 @@ fi
 
 alias mkdir='mkdir -pv'
 alias grep='grep --color=auto'
-alias debug="set -o nounset; set -o xtrace"
 alias cx='chmod +x'
 alias du='du -kh'
-alias df='df -kTh'
+alias df='df -kh'
 
 alias vim='nvim'
 alias svim='sudoedit'
 
-alias calc='python -qi -c "from math import *"'
+alias calc='python3 -qi -c "from math import *"'
 
 alias get='curl --continue-at - --location --progress-bar --remote-name --remote-time'
 
@@ -47,5 +46,6 @@ alias gc='git commit'
 alias gs='git status'
 alias gp='git push'
 alias gaa='git add -A'
+alias gd='git diff'
 
 alias sudo='sudo '
