@@ -132,9 +132,17 @@ alt - 6 : yabai -m space --focus 6
 alt - 7 : yabai -m space --focus 7
 alt - 8 : yabai -m space --focus 8
 
-# focus on next/prev window
-alt - e : ~/scripts/nextprev.sh next
+# focus on next/prev occupied window
 alt - q : ~/scripts/nextprev.sh prev
+alt - e : ~/scripts/nextprev.sh next
+
+# focus on next/prev window
+alt + ctrl - q : yabai -m space --focus prev
+alt + ctrl - e : yabai -m space --focus next
+
+# send window to next/prev window
+alt + shift - q : yabai -m window --space prev
+alt + shift - e : yabai -m window --space next
 
 # send window to desktop
 shift + alt - x : yabai -m window --space recent
