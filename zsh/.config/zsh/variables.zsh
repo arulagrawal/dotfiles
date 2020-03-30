@@ -22,6 +22,7 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 export MANPAGER='nvim +Man!'
 
+export GNUPGHOME="${HOME}/.config/gnupg"
 HISTFILE=~/.cache/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
