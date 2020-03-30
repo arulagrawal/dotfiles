@@ -77,7 +77,7 @@
 # ############################################################### #
 
 # open iterm
-cmd - return : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || /Applications/iTerm.app/Contents/MacOS/iTerm2
+cmd - return : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || open -na iTerm
 
 cmd + alt - return : open -na /Applications/Alacritty.app
 
