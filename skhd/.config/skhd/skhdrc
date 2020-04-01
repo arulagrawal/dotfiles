@@ -77,9 +77,9 @@
 # ############################################################### #
 
 # open iterm
-cmd - return : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || open -na iTerm
+cmd + alt - return : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || open -na iTerm
 
-cmd + alt - return : open -na /Applications/Alacritty.app
+cmd - return : open -na kitty --args -1
 
 # open vscode
 cmd + shift - return : code
@@ -109,6 +109,9 @@ ctrl + shift + alt - k : yabai -m window --warp north
 
 # balance size of windows
 shift + alt - 0 : yabai -m space --balance
+
+# rotate tree
+alt + r : yabai -m space --rotate 90
 
 # make floating window fill screen
 # shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
