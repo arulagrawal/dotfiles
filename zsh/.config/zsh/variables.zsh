@@ -32,6 +32,7 @@ export _ZL_DATA=~/.config/.zlua
 export ZGEN_RESET_ON_CHANGE="${HOME}/.zsh/plugins.zsh"
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="!"
 export GPG_TTY=$(tty)
+export XDG_CONFIG_HOME="${HOME}/.config"
 
 # ignore .DS_Store in autocompletions
 FIGNORE=DS_Store
