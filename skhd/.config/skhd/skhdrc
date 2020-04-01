@@ -111,7 +111,7 @@ ctrl + shift + alt - k : yabai -m window --warp north
 shift + alt - 0 : yabai -m space --balance
 
 # rotate tree
-alt + r : yabai -m space --rotate 90
+alt - r : yabai -m space --rotate 90
 
 # make floating window fill screen
 # shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
