@@ -1,33 +1,62 @@
 # vim: ft=sh
-if ! zgen saved; then
-    # standard zsh stuff tbh
-    zgen load zsh-users/zsh-syntax-highlighting
-    zgen load zsh-users/zsh-autosuggestions
-    zgen load zsh-users/zsh-completions
-    zgen load zsh-users/zsh-history-substring-search
+# standard zsh stuff tbh
 
-    # pure prompt
-    zgen load mafredri/zsh-async
-    zgen load sindresorhus/pure
 
-    # prepend sudo when pressing esc
-    zgen load hcgraf/zsh-sudo
+zinit ice wait lucid
+zinit light zsh-users/zsh-autosuggestions
 
-    # z autojump stuff
-    zgen load skywind3000/z.lua
 
-    # extract plugin from ohz
-    zgen load thetic/extract
+zinit ice wait lucid
+zinit light zsh-users/zsh-history-substring-search
 
-    # autopair brackets etc
-    zgen load hlissner/zsh-autopair
-   
-    # remind me of aliases
-    zgen load djui/alias-tips 
+# pure prompt
+zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+zinit light sindresorhus/pure
 
-    # fzf integrations
-    zgen load junegunn/fzf shell/completion.zsh
-    zgen load junegunn/fzf shell/key-bindings.zsh
+# prepend sudo when pressing esc
+zinit ice wait lucid
+zinit light hcgraf/zsh-sudo
 
-    zgen save
-fi
+# z
+zinit ice wait blockf lucid
+zinit light rupa/z
+
+# z tab completion
+zinit ice wait lucid
+zinit light changyuheng/fz
+
+# z / fzf (ctrl-g)
+zinit ice wait lucid
+zinit light andrewferrier/fzf-z
+
+# extract plugin from ohz
+zinit ice wait lucid
+zinit light thetic/extract
+
+# autopair brackets etc
+zinit ice wait'1' lucid
+zinit light hlissner/zsh-autopair
+
+# remind me of aliases
+zinit ice wait lucid
+zinit light djui/alias-tips 
+
+# fzf integrations
+zinit ice wait lucid multisrc'shell/{key-bindings,completion}.zsh'
+zinit light junegunn/fzf
+
+zinit ice wait'1' lucid
+zinit light laggardkernel/zsh-thefuck
+
+# note, obtain https://github.com/arcticicestudio/nord-dircolors
+zinit ice atclone"gdircolors -b LS_COLORS > clrs.zsh" \
+    atpull'%atclone' pick"clrs.zsh" nocompile'!' \
+    atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
+zinit light trapd00r/LS_COLORS
+
+
+zinit ice wait lucid blockf atpull'zinit creinstall -q .'
+zinit light zsh-users/zsh-completions
+
+zinit ice wait lucid atload"zicompinit; zicdreplay"
+zinit light zdharma/fast-syntax-highlighting

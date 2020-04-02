@@ -11,6 +11,7 @@
 PATH="/usr/local/sbin:$PATH"
 PATH="$HOME/Library/Python/3.7/bin:$PATH"
 PATH="/usr/local/opt/gnu-indent/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export GOROOT=""
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
@@ -35,7 +36,7 @@ HISTFILE=~/.cache/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
 
-export _ZL_DATA=~/.config/.zlua
+export _Z_DATA="${HOME}/.cache/z"
 export ZGEN_RESET_ON_CHANGE="${HOME}/.zsh/plugins.zsh"
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="!"
 export GPG_TTY=$(tty)
