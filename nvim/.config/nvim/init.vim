@@ -31,6 +31,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/grep.vim'
@@ -54,10 +55,6 @@ if exists('make')
         let g:make = 'make'
 endif
 Plug 'Shougo/vimproc.vim', {'do': g:make}
-
-"" Vim-Session
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
 
 "" Snippets
 Plug 'SirVer/ultisnips'
@@ -285,7 +282,7 @@ endif
 "" Autocmd Rules
 "*****************************************************************************
 "" Save cursor
-au VimLeave * set guicursor=a:ver25-blinkon0
+"au VimLeave * set guicursor=a:ver25-blinkon0
 "" The PC is fast enough, do syntax highlight syncing from start unless 200 lines
 augroup vimrc-sync-fromstart
   autocmd!
@@ -441,6 +438,10 @@ nnoremap <Leader>o :.Gbrowse<CR>
 "*****************************************************************************
 "" Custom configs
 "*****************************************************************************
+
+" shell scripts
+au BufReadPre *.sh let g:is_posix=1
+au BufReadPre * let g:is_posix=1
 
 " c
 autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab

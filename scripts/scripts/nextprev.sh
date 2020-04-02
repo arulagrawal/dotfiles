@@ -2,8 +2,7 @@
 
 query="$(yabai -m query --spaces)"
 occupied="$(echo "$query" | jq -r 'map(select(.windows | length > 0)) | .[].index')"
-focused="$(echo "$query"  | jq -r '.[] | select(.focused == 1).index')"
-
+focused="$(echo "$query" | jq -r '.[] | select(.focused == 1).index')"
 
 case $1 in 
     next)

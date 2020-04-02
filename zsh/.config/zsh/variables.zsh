@@ -1,4 +1,5 @@
 #                           ██           ██       ██                
+#
 #                          ░░           ░██      ░██                
 # ██    ██  ██████   ██████ ██  ██████  ░██      ░██  █████   ██████
 #░██   ░██ ░░░░░░██ ░░██░░█░██ ░░░░░░██ ░██████  ░██ ██░░░██ ██░░░░ 
@@ -23,7 +24,13 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 export MANPAGER='nvim +Man!'
 
+export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_CACHE_HOME="${HOME}/.cache"
+export XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_RUNTIME_DIR="/tmp"
 export GNUPGHOME="${HOME}/.config/gnupg"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+
 HISTFILE=~/.cache/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
@@ -32,7 +39,6 @@ export _ZL_DATA=~/.config/.zlua
 export ZGEN_RESET_ON_CHANGE="${HOME}/.zsh/plugins.zsh"
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="!"
 export GPG_TTY=$(tty)
-export XDG_CONFIG_HOME="${HOME}/.config"
 
 # ignore .DS_Store in autocompletions
 FIGNORE=DS_Store
