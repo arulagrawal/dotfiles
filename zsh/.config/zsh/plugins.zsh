@@ -2,9 +2,8 @@
 # standard zsh stuff tbh
 
 
-zinit ice wait lucid
+zinit ice wait lucid atload'_zsh_autosuggest_start'
 zinit light zsh-users/zsh-autosuggestions
-
 
 zinit ice wait lucid
 zinit light zsh-users/zsh-history-substring-search
@@ -58,5 +57,6 @@ zinit light trapd00r/LS_COLORS
 zinit ice wait lucid blockf atpull'zinit creinstall -q .'
 zinit light zsh-users/zsh-completions
 
-zinit ice wait lucid atload"zicompinit; zicdreplay"
+# temp solution from https://github.com/zdharma/fast-syntax-highlighting/issues/179
+zinit ice wait lucid atload"zicompinit; zicdreplay; FAST_HIGHLIGHT[chroma-man]="
 zinit light zdharma/fast-syntax-highlighting
