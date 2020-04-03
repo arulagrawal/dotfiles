@@ -1,5 +1,5 @@
 setopt autocd extendedglob nomatch globdots extended_glob completeinword
-setopt inc_append_history share_history
+setopt inc_append_history share_history HIST_IGNORE_ALL_DUPS
 unsetopt beep
 
 zstyle ':completion:*' special-dirs false
@@ -10,6 +10,8 @@ zstyle ':completion:*' menu select=0 interactive
 
 # stop thefuck from taking over sudo esc
 zstyle ":prezto:module:thefuck" bindkey "no"
+
+bindkey -e
 
 # settings for pure prompt
 PURE_PROMPT_SYMBOL="❯❯"
