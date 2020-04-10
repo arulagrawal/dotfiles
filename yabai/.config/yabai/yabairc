@@ -7,7 +7,7 @@ alias yr='yabai -m rule --add'
 yc mouse_follows_focus          on
 yc focus_follows_mouse          autofocus
 yc window_placement             second_child
-yc window_topmost               off
+yc window_topmost               on
 yc window_opacity               off
 yc window_opacity_duration      0.0
 yc window_shadow                on

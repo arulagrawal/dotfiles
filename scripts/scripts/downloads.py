@@ -4,7 +4,7 @@ from pathlib import Path
 types = {
     "images": ["png", "jpg", "jpeg", "bmp"],
     "docs": ["docx", "xlsx", "pdf", "mom"],
-    "archives": ["gz", "tar", "zip", "7z", "rar"],
+    "archives": ["gz", "tar", "zip", "7z", "rar", "bz2"],
     "software": ["exe", "dmg", "app"],
     "videos": ["mkv", "mp4"],
     "music": ["mp3", "flac", "aac"],

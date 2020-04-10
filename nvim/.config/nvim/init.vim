@@ -550,6 +550,11 @@ let g:jedi#smart_auto_mappings = 0
 :call extend(g:ale_linters, {
     \'python': ['flake8'], })
 
+let g:ale_completion_delay = 0
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_save = 1
+
+
 " Syntax highlight
 " Default highlight is better than polyglot
 let g:polyglot_disabled = ['python']

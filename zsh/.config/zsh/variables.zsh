@@ -23,7 +23,6 @@ export LC_ALL=en_US.UTF-8
 export BROWSER=firefox
 export EDITOR='nvim'
 export VISUAL='nvim'
-export MANPAGER='nvim +Man!'
 
 export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_CACHE_HOME="${HOME}/.cache"

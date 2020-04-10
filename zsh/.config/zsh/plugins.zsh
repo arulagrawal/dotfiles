@@ -44,6 +44,8 @@ zinit light djui/alias-tips
 zinit ice wait lucid multisrc'shell/{key-bindings,completion}.zsh'
 zinit light junegunn/fzf
 
+zinit snippet OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
+
 zinit ice wait'1' lucid
 zinit light laggardkernel/zsh-thefuck
 

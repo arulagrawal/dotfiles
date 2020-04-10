@@ -13,6 +13,16 @@ zstyle ":prezto:module:thefuck" bindkey "no"
 
 bindkey -e
 
+rationalise-dot() {
+  if [[ $LBUFFER = *.. ]]; then
+    LBUFFER+=/..
+  else
+    LBUFFER+=.
+  fi
+}
+zle -N rationalise-dot
+bindkey . rationalise-dot
+
 # settings for pure prompt
 PURE_PROMPT_SYMBOL="❯❯"
 PURE_PROMPT_VICMD_SYMBOL="❮❮"
