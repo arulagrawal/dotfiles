@@ -30,6 +30,7 @@ export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_RUNTIME_DIR="/tmp"
 export GNUPGHOME="${HOME}/.config/gnupg"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export CARGO_HOME="${XDG_CACHE_HOME}/cargo"
 
 HISTFILE=~/.cache/.histfile
 HISTSIZE=100000
@@ -39,6 +40,7 @@ export _Z_DATA="${HOME}/.cache/z"
 export ZGEN_RESET_ON_CHANGE="${HOME}/.zsh/plugins.zsh"
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="!"
 export GPG_TTY=$(tty)
+export MANPAGER='less -R'
 
 # ignore .DS_Store in autocompletions
 FIGNORE=DS_Store
