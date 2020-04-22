@@ -10,7 +10,6 @@
 
 PATH="/usr/local/sbin:$PATH"
 PATH="$HOME/Library/Python/3.7/bin:$PATH"
-PATH="/usr/local/opt/gnu-indent/libexec/gnubin:$PATH"
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export GOROOT=""
 export GOPATH="$HOME/go"
