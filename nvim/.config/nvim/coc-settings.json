@@ -1,0 +1,8 @@
+{
+    "python.jediEnabled": false,
+    "python.formatting.provider": "black",
+    "python.linting.flake8Enabled": true,
+    "diagnostic.errorSign": "×",
+    "diagnostic.warningSign": "!",
+    "snippets.priority": 1000
+}

@@ -11,6 +11,7 @@
 PATH="/usr/local/sbin:$PATH"
 PATH="$HOME/Library/Python/3.7/bin:$PATH"
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/llvm/bin:$PATH"
 export GOROOT=""
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
@@ -44,3 +45,7 @@ export MANPAGER='less -R'
 # ignore .DS_Store in autocompletions
 FIGNORE=DS_Store
 export FIGNORE=$FIGNORE:.git
+
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+export ZSH_AUTOSUGGEST_USE_ASYNC=1
+export ZSH_AUTOSUGGEST_HISTORY_IGNORE=('cd *')
