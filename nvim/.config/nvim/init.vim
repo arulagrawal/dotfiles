@@ -65,6 +65,7 @@ let g:coc_global_extensions=['coc-json',
                            \ 'coc-yank',
                            \ 'coc-go',
                            \ 'coc-clangd',
+                           \ 'coc-tabnine',
                            \ 'coc-yaml' ]
 
 " ****************************************************************
@@ -142,7 +143,7 @@ colorscheme nord
 hi LineNr guibg=none
 ""split stuff
 ""hide end of buffer ~
-hi EndOfBuffer guifg=none guibg=none
+hi EndOfBuffer ctermfg=black ctermbg=black
 """"bold
 hi Comment gui=bold
 hi Conditional gui=italic
@@ -275,7 +276,7 @@ set nobackup
 set nowritebackup
 
 " Better display for messages
-set cmdheight=2
+set cmdheight=1
 
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
@@ -430,3 +431,9 @@ function FormatCPP()
     py3f /usr/local/opt/llvm/share/clang/clang-format.py
 endfunction
 au BufNewFile,BufReadPost,BufRead *.cpp command! Format :call FormatCPP()
+"
+" ****************************************************************
+" shell settings
+" ****************************************************************
+"let b:is_kornshell=1
+autocmd BufNewFile,BufReadPre,BufRead *.sh let is_posix=1
