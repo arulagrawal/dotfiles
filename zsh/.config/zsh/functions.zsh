@@ -7,16 +7,9 @@
 #  ░██  ░░██████ ███  ░██░░█████   ░░██ ░██░░██████  ███  ░██ ██████ 
 #  ░░    ░░░░░░ ░░░   ░░  ░░░░░     ░░  ░░  ░░░░░░  ░░░   ░░ ░░░░░░  
 
-twitch()
-{
-    streamlink --player=mpv https://www.twitch.tv/"$1" "$2" &
-    firefox https://www.twitch.tv/"$1"/chat > /dev/null &
-    disown
-}
-
 pa()
 {
-    curl -F "file=@$1" https://paste.arul.io
+    curl -F "file=@$1" "https://${PAUSER}:${PAPASS}@paste.arul.io"
 }
 
 #fzf with preview options

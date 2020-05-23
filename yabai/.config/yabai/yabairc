@@ -5,31 +5,24 @@ alias yr='yabai -m rule --add'
 
 # global settings
 yc mouse_follows_focus          on
-yc focus_follows_mouse          autofocus
+yc focus_follows_mouse          autoraise
 yc window_placement             second_child
 yc window_topmost               on
 yc window_opacity               off
 yc window_opacity_duration      0.0
 yc window_shadow                on
-yc window_border                off
-yc window_border_placement      inset
-yc window_border_width          4
-yc window_border_radius         -1.0
-yc active_window_border_topmost off
-yc active_window_border_color   0xff775759
-yc normal_window_border_color   0xff505050
-yc insert_window_border_color   0xffd75f5f
 yc active_window_opacity        1.0
-yc normal_window_opacity        0.90
+yc normal_window_opacity        1.0 
 yc split_ratio                  0.50
 yc auto_balance                 off
-yc mouse_modifier               cmd
+yc mouse_modifier               fn
 yc mouse_action1                move
 yc mouse_action2                resize
 
 # general space settings
 yc layout                       bsp
-yc top_padding                  40
+yc external_bar                 all:20:0
+yc top_padding                  20
 yc bottom_padding               20
 yc left_padding                 20
 yc right_padding                20
@@ -44,6 +37,7 @@ yr app='App Store' manage=off layer=above
 yr app='IINA' manage=off layer=above
 yr app='Finder' manage=off layer=above
 yr app='Keka' manage=off layer=above
+yr app='Contexts' manage=off layer=above
 
 yr app='Discord' space=5
 yr app='Spotify' space=6

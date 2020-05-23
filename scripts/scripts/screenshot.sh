@@ -1,5 +1,4 @@
 #!/bin/sh
-
 name="$HOME/Pictures/Screenshots/$(date +'%F:%R:%S').png"
 case $1 in
     whole)
@@ -11,7 +10,7 @@ case $1 in
 esac
 
 if [ -f "$name" ]; then
-    curl -sF "file=@$name" https://paste.arul.io | pbcopy
+    curl -sF "file=@$name" "https://${PAUSER}:${PAPASS}@paste.arul.io" | pbcopy
     URL="$(pbpaste)"
     osascript -e "display notification \"$URL\" with title \"Screenshot uploaded!\""
 fi
