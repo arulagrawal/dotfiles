@@ -11,6 +11,7 @@
 PATH="/usr/local/sbin:$PATH"
 PATH="$HOME/Library/Python/3.7/bin:$PATH"
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 PATH="/usr/local/opt/llvm/bin:$PATH"
 PATH="$HOME/.cache/cargo/bin:$PATH"
 export GOROOT=""
