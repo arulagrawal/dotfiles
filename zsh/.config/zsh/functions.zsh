@@ -80,8 +80,8 @@ swap()
 
 comp()
 {
-    rm a.out
-    g++ $1
+    [ -f "a.out" ] && rm a.out
+    g++ -std=c++2a $1
     ./a.out
     rm a.out
 }

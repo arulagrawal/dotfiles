@@ -14,9 +14,6 @@
 
 let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
 
-let g:vim_bootstrap_langs = "go,html,javascript,python"
-let g:vim_bootstrap_editor = "nvim"				" nvim or vim
-
 if !filereadable(vimplug_exists)
   if !executable("curl")
     echoerr "You have to install curl or first install vim-plug yourself!"
@@ -29,7 +26,7 @@ if !filereadable(vimplug_exists)
 
   autocmd VimEnter * PlugInstall
 endif
-
+let g:lsp_cxx_hl_use_text_props = 1
 " ****************************************************************
 " Vim-Plug plugin loading
 " ****************************************************************
@@ -43,15 +40,19 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
+
 Plug 'itchyny/lightline.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'Yggdroot/indentLine'
+
 Plug 'scrooloose/nerdcommenter'
 Plug 'honza/vim-snippets'
+Plug 'lilydjwg/colorizer'
 Plug 'farmergreg/vim-lastplace'
 " Plug 'w0rp/ale'
 Plug 'sheerun/vim-polyglot'
 " Plug 'fatih/vim-go'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 call plug#end()
 
 let g:coc_global_extensions=['coc-json',
@@ -77,7 +78,7 @@ set nocompatible
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
-
+set fileformats=unix,dos,mac
 " Fix backspace indent
 set backspace=indent,eol,start
 
@@ -146,10 +147,14 @@ hi LineNr guibg=none
 hi EndOfBuffer ctermfg=black ctermbg=black
 """"bold
 hi Comment gui=bold
-hi Conditional gui=italic
+hi Conditional cterm=italic
 hi SignColumn guibg=none
 
 ""lightline
+function! CocCurrentFunction()
+    return get(b:, 'coc_current_function', '')
+endfunction
+
 let g:lightline = {
       \ 'colorscheme': 'nord',
       \ 'active': {

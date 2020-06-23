@@ -1,19 +1,22 @@
 #!/bin/sh
 
-query="$(yabai -m query --spaces)"
-occupied="$(echo "$query" | jq -r 'map(select(.windows | length > 0)) | .[].index')"
-focused="$(echo "$query" | jq -r '.[] | select(.focused == 1).index')"
+occupied="$(yabai -m query --windows | jq -r '.[] | select(.minimized == 0).space' | uniq)"
+focused="$(yabai -m query --spaces --space | jq -r '.index')"
+
+focus() {
+    yabai -m space --focus "$1" && exit
+}
 
 case $1 in 
     next)
-        for num in $occupied; do
-            [ "$num" -gt "$focused" ] && yabai -m space --focus "$num" && exit
+        for space in $occupied; do
+            [ "$space" -gt "$focused" ] && focus "$space"
         done;;
     prev)
         prev=1
-        for num in $occupied; do
-            # store the largest number smaller than focused
-            [ "$num" -lt "$focused" ] && [ "$num" -gt "$prev" ] && prev=$num
-            [ "$num" -ge "$focused" ] && yabai -m space --focus "$prev" && exit
+        for space in $occupied; do
+            # store the largest space smaller than focused
+            [ "$space" -lt "$focused" ] && [ "$space" -gt "$prev" ] && prev="$space"
+            [ "$space" -ge "$focused" ] && focus "$prev"
         done;;
 esac
