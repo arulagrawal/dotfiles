@@ -1,7 +1,7 @@
 #!/bin/sh
 
 occupied="$(yabai -m query --windows | jq -r '.[] | select(.minimized == 0).space' | uniq)"
-focused="$(yabai -m query --spaces --space | jq -r '.index')"
+focused="$(yabai -m query --spaces --space | grep -m1 "index" | cut -c10)"
 
 focus() {
     yabai -m space --focus "$1" && exit
