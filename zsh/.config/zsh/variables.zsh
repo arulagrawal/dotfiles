@@ -52,4 +52,4 @@ export FIGNORE=$FIGNORE:.git
 
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
-export ZSH_AUTOSUGGEST_HISTORY_IGNORE=("(cd|rm) *")
+export ZSH_AUTOSUGGEST_HISTORY_IGNORE=("(cd|rm|c|cl) *")

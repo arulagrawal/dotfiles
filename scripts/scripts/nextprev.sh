@@ -1,7 +1,9 @@
 #!/bin/sh
 
 occupied="$(yabai -m query --windows | jq -r '.[] | select(.minimized == 0).space' | uniq)"
-focused="$(yabai -m query --spaces --space | "$grep" -Pom1 'index":\K\d')"
+
+# using gnu grep
+focused="$(yabai -m query --spaces --space | grep -Pom1 'index":\K\d')"
 
 focus() {
     yabai -m space --focus "$1" && exit

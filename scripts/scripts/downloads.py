@@ -38,7 +38,7 @@ def getFiles(folder):
     files = [
         f
         for f in folder.iterdir()
-        if f.is_file() and f.name != ".DS_Store" and f.suffix != ".crdownload"
+        if f.is_file() and f.name != ".DS_Store" and f.suffix != ".part"
     ]
     apps = [d for d in folder.iterdir() if d.name.endswith(".app")]
     return files + apps

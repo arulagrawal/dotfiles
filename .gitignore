@@ -13,3 +13,4 @@ explicit
 .vscode
 tocheck
 .DS_Store
+.zcompcache
