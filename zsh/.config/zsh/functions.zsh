@@ -9,7 +9,7 @@
 
 pa()
 {
-    curl -F "file=@$1" "https://${PAUSER}:${PAPASS}@paste.arul.io"
+    curl -sF "file=@$1" "https://${PAUSER}:${PAPASS}@paste.arul.io" | tee >(pbcopy)
 }
 
 #fzf with preview options

@@ -6,5 +6,7 @@
     "clangd.semanticHighlighting": true,
     "diagnostic.errorSign": "×",
     "diagnostic.warningSign": "!",
-    "snippets.priority": 10
+    "snippets.priority": 1000,
+    "snippets.loadFromExtensions": false,
+    "clangd.disableSnippetCompletion": true
 }

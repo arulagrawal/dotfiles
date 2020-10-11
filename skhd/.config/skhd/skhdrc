@@ -80,7 +80,7 @@
 cmd - return : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || open -na iTerm
 alt - return : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || open -na iTerm
 
-cmd + alt - return : open -na kitty --args -1
+#cmd + alt - return : open -na kitty --args -1
 
 # open vscode
 cmd + shift - return : code
@@ -197,3 +197,7 @@ alt - f : yabai -m window --toggle zoom-fullscreen
 
 # close window yabai way, not overriding system default
 alt - w : yabai -m window --close
+
+# sticky a window
+alt - s : yabai -m window --toggle float;\
+          yabai -m window --toggle sticky

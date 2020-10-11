@@ -1,4 +1,0 @@
-#!/usr/bin/env osascript
-tell application "Spotify"
-    playpause
-end tell

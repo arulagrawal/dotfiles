@@ -2,7 +2,7 @@
 from pathlib import Path
 
 types = {
-    "images": ["png", "jpg", "jpeg", "bmp"],
+    "images": ["png", "jpg", "jpeg", "bmp", "gif"],
     "docs": ["docx", "xlsx", "pdf", "mom"],
     "archives": ["gz", "tar", "zip", "7z", "rar", "bz2", "xz"],
     "software": ["exe", "dmg", "app"],
@@ -19,7 +19,7 @@ def main():
     home = Path.home()
     dl = home / "Downloads"
     misc = dl / "misc"
-    files = getFiles(dl)
+    files = get_files(dl)
 
     for f in files:
         for key, value in types.items():
@@ -34,7 +34,7 @@ def main():
             f.rename(misc / f.name)
 
 
-def getFiles(folder):
+def get_files(folder):
     files = [
         f
         for f in folder.iterdir()
