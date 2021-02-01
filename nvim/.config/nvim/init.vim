@@ -50,9 +50,10 @@ Plug 'honza/vim-snippets'
 Plug 'lilydjwg/colorizer'
 Plug 'farmergreg/vim-lastplace'
 " Plug 'w0rp/ale'
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
 " Plug 'fatih/vim-go'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 call plug#end()
 
 let g:coc_global_extensions=['coc-json',
@@ -60,13 +61,14 @@ let g:coc_global_extensions=['coc-json',
                            \ 'coc-html',
                            \ 'coc-tsserver',
                            \ 'coc-rls',
-                           \ 'coc-python',
+                           "\ 'coc-python',
+                           \ 'coc-pyright',
                            \ 'coc-snippets',
                            \ 'coc-pairs',
                            \ 'coc-yank',
                            \ 'coc-go',
                            \ 'coc-clangd',
-                           \ 'coc-tabnine',
+                           "\ 'coc-tabnine',
                            \ 'coc-yaml' ]
 
 " ****************************************************************
@@ -403,7 +405,19 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 " ****************************************************************
 " python settings
 " ****************************************************************
+"
+let g:python3_host_prog = "/usr/local/bin/python3"
+hi semshiBuiltin guifg=#8FBCBB
+hi semshiAttribute guifg=#8FBCBB
+hi semshiLocal guifg=#8FBCBB
+hi semshiGlobal guifg=#D08770
+hi semshiParameter guifg=#81A1C1
+hi semshiSelected guibg=#4C566A
+hi semshiUnresolved guibg=#BF616A
+hi semshiFree guifg=#D8DEE9
+hi semshiImported guifg=#8FBCBB
 
+hi semshiSelf guifg=#8FBCBB
 " ****************************************************************
 " go settings
 " ****************************************************************

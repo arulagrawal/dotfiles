@@ -26,12 +26,12 @@ def main():
             if f.suffix[1:] in value:
                 if not Path(dl / key).exists():
                     Path(dl / key).mkdir()
-                f.rename(dl / key / f.name)
+                f.replace(dl / key / f.name)
                 break
         else:
             if not misc.exists():
                 misc.mkdir()
-            f.rename(misc / f.name)
+            f.replace(misc / f.name)
 
 
 def get_files(folder):
@@ -41,7 +41,12 @@ def get_files(folder):
         if f.is_file() and f.name != ".DS_Store" and f.suffix != ".part"
     ]
     apps = [d for d in folder.iterdir() if d.name.endswith(".app")]
-    return files + apps
+    folders = [
+        f
+        for f in folder.iterdir()
+        if f.name not in types.keys() and f.name != "misc" and f.is_dir()
+    ]
+    return files + apps + folders
 
 
 if __name__ == "__main__":

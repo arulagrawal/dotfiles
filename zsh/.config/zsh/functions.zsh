@@ -9,7 +9,7 @@
 
 pa()
 {
-    curl -sF "file=@$1" "https://${PAUSER}:${PAPASS}@paste.arul.io" | tee >(pbcopy)
+    curl -sF "file=@$1" "https://${PAUSER}:${PAPASS}@arul.io" | tee >(pbcopy)
 }
 
 #fzf with preview options
@@ -18,7 +18,7 @@ fzfp()
     fzf --reverse --inline-info --preview='[[ $(file --mime {}) =~ binary ]] &&
                   echo {} is a binary file ||
                   highlight --style base16/nord -O ansi -l {} ||
-                  cat {} 2> /dev/null | head -500' --bind '?:toggle-preview' --tabstop=1 --ansi
+                  cat {} 2> /dev/null | head -500' --bind '?:toggle-preview' --tabstop=1 --ansi --delimiter / --with-nth -1
 }
 
 #quick lookup for my config files
@@ -105,4 +105,30 @@ cl()
 '$'()
 {
     "${@}"
+}
+
+java8()
+{
+    export PATH="/Users/arul/.jenv/shims:${PATH}"
+    export JENV_SHELL=zsh
+    export JENV_LOADED=1
+    unset JAVA_HOME
+    source '/usr/local/Cellar/jenv/0.5.4/libexec/libexec/../completions/jenv.zsh'
+    jenv rehash 2>/dev/null
+    jenv refresh-plugins
+    source "/Users/arul/.jenv/plugins/export/etc/jenv.d/init/export_jenv_hook.zsh"
+    jenv() {
+      typeset command
+      command="$1"
+      if [ "$#" -gt 0 ]; then
+        shift
+      fi
+
+      case "$command" in
+      enable-plugin|rehash|shell|shell-options)
+        eval `jenv "sh-$command" "$@"`;;
+      *)
+        command jenv "$command" "$@";;
+      esac
+    }
 }

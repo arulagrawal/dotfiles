@@ -1,12 +1,14 @@
 {
-    "python.jediEnabled": false,
-    "python.autoComplete.addBrackets": true,
+    "python.pythonPath": "/usr/local/bin/python3",
     "python.formatting.provider": "black",
+    "python.formatting.blackPath": "/Users/arul/Library/Python/3.9/bin/black",
     "python.linting.flake8Enabled": true,
     "clangd.semanticHighlighting": true,
     "diagnostic.errorSign": "×",
     "diagnostic.warningSign": "!",
-    "snippets.priority": 1000,
+    "snippets.priority": 15,
+    "tabnine.priority": 11,
+    "yank.enableCompletion": false,
     "snippets.loadFromExtensions": false,
     "clangd.disableSnippetCompletion": true
 }

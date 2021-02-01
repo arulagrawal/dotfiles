@@ -11,7 +11,7 @@ alias vimrc='nvim ~/.config/nvim/init.vim'
 alias zshrc='nvim ~/.zshrc && source ~/.zshrc'
 alias joke='curl https://icanhazdadjoke.com && printf "\n"'
 alias weather='curl wttr.in'
-alias aws='ssh ubuntu@arul.io'
+alias aws_ssh='ssh ubuntu@arul.io'
 
 alias q='exit 0'
 

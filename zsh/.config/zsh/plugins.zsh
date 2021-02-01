@@ -60,5 +60,5 @@ zinit ice wait lucid blockf atpull'zinit creinstall -q .'
 zinit light zsh-users/zsh-completions
 
 # temp solution from https://github.com/zdharma/fast-syntax-highlighting/issues/179
-zinit ice wait lucid atload"zicompinit; zicdreplay; FAST_HIGHLIGHT[chroma-man]="
+zinit ice wait'2' lucid atload"zicompinit; zicdreplay; FAST_HIGHLIGHT[chroma-man]="
 zinit light zdharma/fast-syntax-highlighting
