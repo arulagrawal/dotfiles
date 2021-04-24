@@ -14,3 +14,4 @@ explicit
 tocheck
 .DS_Store
 .zcompcache
+.zcompdump

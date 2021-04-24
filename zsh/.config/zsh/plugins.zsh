@@ -1,7 +1,6 @@
 # vim: ft=sh
 # standard zsh stuff tbh
 
-
 zinit ice wait lucid atload'_zsh_autosuggest_start'
 zinit light zsh-users/zsh-autosuggestions
 
@@ -9,7 +8,9 @@ zinit ice wait lucid
 zinit light zsh-users/zsh-history-substring-search
 
 # pure prompt
-zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+#zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+#zinit light sindresorhus/pure
+zinit ice pick"async.zsh" src"pure.zsh"
 zinit light sindresorhus/pure
 
 # prepend sudo when pressing esc
@@ -44,17 +45,20 @@ zinit light djui/alias-tips
 zinit ice wait lucid multisrc'shell/{key-bindings,completion}.zsh'
 zinit light junegunn/fzf
 
-zinit snippet OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
+zinit ice wait lucid
+zinit light iam4x/zsh-iterm-touchbar 
 
-zinit ice wait'1' lucid
-zinit light laggardkernel/zsh-thefuck
-
+#zinit snippet OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
+zinit ice lucid nocompile
+zinit load MenkeTechnologies/zsh-very-colorful-manuals
 # note, obtain https://github.com/arcticicestudio/nord-dircolors
 zinit ice atclone"gdircolors -b LS_COLORS > clrs.zsh" \
     atpull'%atclone' pick"clrs.zsh" nocompile'!' \
     atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
 zinit light trapd00r/LS_COLORS
 
+zinit ice wait lucid
+zinit light greymd/docker-zsh-completion
 
 zinit ice wait lucid blockf atpull'zinit creinstall -q .'
 zinit light zsh-users/zsh-completions

@@ -12,6 +12,7 @@ PATH="$HOME/Library/Python/3.9/bin:$PATH"
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 PATH="/usr/local/opt/llvm/bin:$PATH"
+PATH="/usr/local/opt/mysql-client/bin:$PATH"
 PATH="$HOME/.cache/cargo/bin:$PATH"
 PATH="$HOME/.jenv/bin:$PATH"
 export GOROOT=""
@@ -53,12 +54,12 @@ export FIGNORE=$FIGNORE:.git
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
 export ZSH_AUTOSUGGEST_HISTORY_IGNORE=("(cd|rm|c|cl) *")
-
+export ZSH_AUTOSUGGEST_CLEAR_WIDGETS=(buffer-empty bracketed-paste accept-line push-line-or-edit)
 # docker stuff
-export DOCKER_TLS_VERIFY="1"
-export DOCKER_HOST="tcp://172.16.148.130:2376"
-export DOCKER_CERT_PATH="/Users/arul/.docker/machine/machines/default"
-export DOCKER_MACHINE_NAME="default"
+#export DOCKER_TLS_VERIFY="1"
+#export DOCKER_HOST="tcp://172.16.148.130:2376"
+#export DOCKER_CERT_PATH="/Users/arul/.docker/machine/machines/default"
+#export DOCKER_MACHINE_NAME="default"
 
 export AWS_SHARED_CREDENTIALS_FILE="${XDG_CONFIG_HOME}/aws/credentials"
 export AWS_CONFIG_FILE="${XDG_CONFIG_HOME}/aws/config"

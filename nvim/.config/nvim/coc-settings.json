@@ -10,5 +10,6 @@
     "tabnine.priority": 11,
     "yank.enableCompletion": false,
     "snippets.loadFromExtensions": false,
-    "clangd.disableSnippetCompletion": true
+    "clangd.disableSnippetCompletion": true,
+    "python.analysis.typeCheckingMode": "off"
 }
