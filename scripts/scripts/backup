@@ -1,0 +1,9 @@
+#!/bin/sh
+
+RESTIC="/usr/local/bin/restic"
+
+source /Users/arul/scripts/.restic-env
+
+"$RESTIC" backup /Users/arul/code /Users/arul/dotfiles /Users/arul/Documents /Users/arul/Pictures --exclude={node_modules,target,plugged,autoload}
+
+"$RESTIC" forget --prune --keep-daily 7 --keep-weekly 4 --keep-monthly 2 --keep-yearly 1
