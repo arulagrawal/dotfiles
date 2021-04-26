@@ -52,7 +52,7 @@ zinit light iam4x/zsh-iterm-touchbar
 zinit ice lucid nocompile
 zinit load MenkeTechnologies/zsh-very-colorful-manuals
 # note, obtain https://github.com/arcticicestudio/nord-dircolors
-zinit ice atclone"gdircolors -b LS_COLORS > clrs.zsh" \
+zinit ice atclone"curl -o LS_COLORS https://raw.githubusercontent.com/arcticicestudio/nord-dircolors/develop/src/dir_colors;gdircolors -b LS_COLORS > clrs.zsh" \
     atpull'%atclone' pick"clrs.zsh" nocompile'!' \
     atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
 zinit light trapd00r/LS_COLORS
