@@ -6,12 +6,12 @@ date
 NC="/usr/bin/nc"
 RESTIC="/usr/local/bin/restic"
 
-while ! nc -zw1 google.com 443; do
+while ! "$NC" -zw1 google.com 443; do
     echo "waiting for connection"
     sleep 5
 done
 
-source /Users/arul/scripts/.restic-env
+. /Users/arul/scripts/.restic-env
 
 "$RESTIC" backup /Users/arul/code /Users/arul/dotfiles /Users/arul/Documents /Users/arul/Pictures /Users/arul/.config/gnupg /Users/arul/.ssh --exclude={node_modules,target,plugged,autoload}
 
