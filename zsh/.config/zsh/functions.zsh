@@ -12,6 +12,11 @@ pa()
     curl -sF "file=@$1" "https://${PAUSER}:${PAPASS}@arul.io" | tee >(pbcopy)
 }
 
+pad()
+{
+    curl -X DELETE "https://${PAUSER}:${PAPASS}@arul.io/$1"
+}
+
 #fzf with preview options
 fzfp()
 {

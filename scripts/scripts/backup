@@ -1,6 +1,15 @@
 #!/bin/sh
 
+echo "running backup script at"
+date
+
+NC="/usr/bin/nc"
 RESTIC="/usr/local/bin/restic"
+
+while ! nc -zw1 google.com 443; do
+    echo "waiting for connection"
+    sleep 5
+done
 
 source /Users/arul/scripts/.restic-env
 

@@ -60,6 +60,9 @@ zinit light trapd00r/LS_COLORS
 zinit ice wait lucid
 zinit light greymd/docker-zsh-completion
 
+zinit ice wait lucid
+zinit light thuandt/zsh-pipx
+
 zinit ice wait lucid blockf atpull'zinit creinstall -q .'
 zinit light zsh-users/zsh-completions
 

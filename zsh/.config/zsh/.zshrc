@@ -11,7 +11,7 @@ if [ ! -d "${HOME}/.config/zinit" ]; then
     echo "getting zinit"
     git clone https://github.com/zdharma/zinit.git "${HOME}/.config/zinit"
 fi
-
+autoload -U +X bashcompinit && bashcompinit
 declare -A ZINIT
 ZINIT[HOME_DIR]="${HOME}/.config/zinit"
 ZINIT[ZCOMPDUMP_PATH]="${HOME}/.cache/zcompdump"
