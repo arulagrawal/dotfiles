@@ -36,6 +36,7 @@ yc window_gap                   10
 # yabai rules
 yr title='Preferences' manage=off layer=above
 yr title='^(Opening)' manage=off layer=above
+yr title='Library' manage=off layer=above
 yr app='System Preferences' manage=off layer=above
 yr app='App Store' manage=off layer=above
 yr app='IINA' manage=off layer=above

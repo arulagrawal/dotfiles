@@ -29,7 +29,7 @@ fzfp()
 #quick lookup for my config files
 dots()
 {
-    find ~/dotfiles/ -type f | awk '!/git|netr|plugged|autoload|.DS_Store/ && gsub("//", "/")' | fzfp | xargs $EDITOR;
+    find ~/dotfiles -type f | awk '!/git|netr|plugged|autoload|.DS_Store/'| fzfp | xargs $EDITOR;
 }
 
 #show me what my key config looks like - pressing enter goes to that command in the config

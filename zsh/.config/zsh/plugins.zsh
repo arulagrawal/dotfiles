@@ -48,9 +48,9 @@ zinit light junegunn/fzf
 zinit ice wait lucid
 zinit light iam4x/zsh-iterm-touchbar 
 
-#zinit snippet OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
 zinit ice lucid nocompile
-zinit load MenkeTechnologies/zsh-very-colorful-manuals
+zinit load ael-code/zsh-colored-man-pages
+
 # note, obtain https://github.com/arcticicestudio/nord-dircolors
 zinit ice atclone"curl -o LS_COLORS https://raw.githubusercontent.com/arcticicestudio/nord-dircolors/develop/src/dir_colors;gdircolors -b LS_COLORS > clrs.zsh" \
     atpull'%atclone' pick"clrs.zsh" nocompile'!' \
@@ -67,5 +67,5 @@ zinit ice wait lucid blockf atpull'zinit creinstall -q .'
 zinit light zsh-users/zsh-completions
 
 # temp solution from https://github.com/zdharma/fast-syntax-highlighting/issues/179
-zinit ice wait'2' lucid atload"zicompinit; zicdreplay; FAST_HIGHLIGHT[chroma-man]="
+zinit ice wait'1' lucid atload"zicompinit; zicdreplay"
 zinit light zdharma/fast-syntax-highlighting
