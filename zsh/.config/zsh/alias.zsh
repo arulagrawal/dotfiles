@@ -11,8 +11,9 @@ alias vimrc='nvim ~/.config/nvim/init.vim'
 alias zshrc='nvim ~/.zshrc && source ~/.zshrc'
 alias joke='curl https://icanhazdadjoke.com && printf "\n"'
 alias weather='curl wttr.in'
-alias kettle='mosh arul@arul.io'
+alias kettle='ssh arul@ssh.arul.io'
 alias oven='mosh arul@192.168.70.66'
+alias airfryer='ssh arul@158.101.206.198'
 
 alias q='exit 0'
 

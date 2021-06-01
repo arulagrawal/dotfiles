@@ -6,6 +6,7 @@ nvim/.config/nvim/session
 nvim/.config/nvim/syntax
 nvim/.config/nvim/generate.vim
 nvim/.config/nvim/.netrwhist
+*.zip
 spotifyinfo.json
 spotify_add
 base
