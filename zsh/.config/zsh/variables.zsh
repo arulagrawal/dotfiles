@@ -1,11 +1,11 @@
-#                           ██           ██       ██                
-#                          ░░           ░██      ░██                
+#                           ██           ██       ██
+#                          ░░           ░██      ░██
 # ██    ██  ██████   ██████ ██  ██████  ░██      ░██  █████   ██████
-#░██   ░██ ░░░░░░██ ░░██░░█░██ ░░░░░░██ ░██████  ░██ ██░░░██ ██░░░░ 
-#░░██ ░██   ███████  ░██ ░ ░██  ███████ ░██░░░██ ░██░███████░░█████ 
+#░██   ░██ ░░░░░░██ ░░██░░█░██ ░░░░░░██ ░██████  ░██ ██░░░██ ██░░░░
+#░░██ ░██   ███████  ░██ ░ ░██  ███████ ░██░░░██ ░██░███████░░█████
 # ░░████   ██░░░░██  ░██   ░██ ██░░░░██ ░██  ░██ ░██░██░░░░  ░░░░░██
-#  ░░██   ░░████████░███   ░██░░████████░██████  ███░░██████ ██████ 
-#   ░░     ░░░░░░░░ ░░░    ░░  ░░░░░░░░ ░░░░░   ░░░  ░░░░░░ ░░░░░░  
+#  ░░██   ░░████████░███   ░██░░████████░██████  ███░░██████ ██████
+#   ░░     ░░░░░░░░ ░░░    ░░  ░░░░░░░░ ░░░░░   ░░░  ░░░░░░ ░░░░░░
 
 PATH="/usr/local/sbin:$PATH"
 PATH="$HOME/Library/Python/3.9/bin:$PATH"
@@ -13,6 +13,7 @@ PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 PATH="/usr/local/opt/llvm/bin:$PATH"
 PATH="/usr/local/opt/mysql-client/bin:$PATH"
+PATH="$HOME/.local/share/npm/bin:$PATH"
 PATH="$HOME/.cache/cargo/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/.jenv/bin:$PATH"
@@ -37,6 +38,8 @@ export GNUPGHOME="${XDG_CONFIG_HOME}/gnupg"
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME}/npm/npmrc"
 export CARGO_HOME="${XDG_CACHE_HOME}/cargo"
 export LESSHISTFILE="${XDG_CACHE_HOME}/less"
+
+export NETRC="${XDG_CONFIG_HOME}/.netrc"
 
 HISTFILE="${XDG_CACHE_HOME}/.histfile"
 HISTSIZE=100000

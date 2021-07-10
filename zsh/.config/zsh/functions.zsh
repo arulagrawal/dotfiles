@@ -9,12 +9,13 @@
 
 pa()
 {
-    curl -sF "file=@$1" "https://${PAUSER}:${PAPASS}@arul.io" | tee >(pbcopy)
+    [ ! -f "$1" ] && echo "give a file name" && return 1
+    curl --netrc-file ~/.config/.netrc -sF "file=@$1" "https://arul.io" | tee >(pbcopy)
 }
 
 pad()
 {
-    curl -X DELETE "https://${PAUSER}:${PAPASS}@arul.io/$1"
+    curl --netrc-file ~/.config/.netrc -X DELETE "https://arul.io/$1"
 }
 
 #fzf with preview options
@@ -36,6 +37,16 @@ dots()
 keys()
 {
     awk '/^[a-zA-Z]/ && last {print $0,"\t",last} {last=""} /^#/{last=$0}' ~/.config/sxhkd/sxhkdrc | column -t -s $'\t' | fzf --reverse | awk -F\# '{print $1}' | sed -e "s/ *$//" | xargs -I cmd nvim +/cmd ~/.config/sxhkd/sxhkdrc;
+}
+
+dec2bin ()
+{
+    echo "obase=2; $1" | bc
+}
+
+bin2dec ()
+{
+    echo "ibase=2; $1" | bc
 }
 
 hex2dec()

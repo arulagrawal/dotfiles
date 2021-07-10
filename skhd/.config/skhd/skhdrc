@@ -77,10 +77,11 @@
 # ############################################################### #
 
 # open iterm
-cmd - return : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || open -na iTerm
-alt - return : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || open -na iTerm
+# cmd - return : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || open -na iTerm
+# alt - return : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || open -na iTerm
 
-#cmd + alt - return : open -na kitty --args -1
+alt - return : open -na kitty --args -1
+cmd - return : open -na kitty --args -1
 
 # open vscode
 cmd + shift - return : code

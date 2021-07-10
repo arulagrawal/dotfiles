@@ -10,7 +10,7 @@ case $1 in
 esac
 
 if [ -f "$name" ]; then
-    curl -sF "file=@$name" "https://${PAUSER}:${PAPASS}@arul.io" | pbcopy
+    curl --netrc-file ~/.config/.netrc -sF "file=@$name" "https://@arul.io" | pbcopy
     URL="$(pbpaste)"
     osascript -e "display notification \"$URL\" with title \"Screenshot uploaded!\""
 fi

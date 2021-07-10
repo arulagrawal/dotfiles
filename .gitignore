@@ -16,4 +16,6 @@ tocheck
 .DS_Store
 .zcompcache
 .zcompdump
-.restic-env
+.restic.env
+.scaleway.env
+.oracle.env

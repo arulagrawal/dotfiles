@@ -5,14 +5,20 @@ date
 
 NC="/usr/bin/nc"
 RESTIC="/usr/local/bin/restic"
+ARUL="/Users/arul"
 
 while ! "$NC" -zw1 google.com 443; do
     echo "waiting for connection"
     sleep 5
 done
 
-. /Users/arul/scripts/.restic-env
+backup () {
+    "$RESTIC" backup $ARUL/code $ARUL/cloud  $ARUL/dotfiles $ARUL/Documents $ARUL/Pictures $ARUL/.config/gnupg $ARUL/.ssh --exclude={node_modules,target,plugged,autoload}
 
-"$RESTIC" backup /Users/arul/code /Users/arul/dotfiles /Users/arul/Documents /Users/arul/Pictures /Users/arul/.config/gnupg /Users/arul/.ssh --exclude={node_modules,target,plugged,autoload}
+    "$RESTIC" forget --prune --keep-daily 7 --keep-weekly 4 --keep-monthly 2 --keep-yearly 1
+}
 
-"$RESTIC" forget --prune --keep-daily 7 --keep-weekly 4 --keep-monthly 2 --keep-yearly 1
+
+. /Users/arul/scripts/.restic.env && backup
+. /Users/arul/scripts/.scaleway.env && backup
+. /Users/arul/scripts/.oracle.env && backup

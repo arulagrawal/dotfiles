@@ -35,7 +35,7 @@ set_options({
     ruler  = true,             -- show ruler line
     colorcolumn = 120,         -- display a color column when line is longer than 120 chars
     signcolumn = 'yes',        -- show sign column (column of the line number)
-    mouse = 'nv',              -- enable mouse under normal and visual mode
+    mouse = 'a',              -- enable mouse under normal and visual mode
     mousehide = true,          -- hide mouse when characters are typed
     showmatch = true,          -- show bracket match
     cmdheight = 2,             -- height of :command line
@@ -43,6 +43,8 @@ set_options({
     wildmode = 'longest,full',
     splitright = true,         -- split to right
     splitbelow = true,         -- split to below
+
+    clipboard = 'unnamedplus',
 
 })
 vim.cmd('set shortmess+=c')    -- status line e.g. CTRL+G
