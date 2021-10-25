@@ -1,6 +1,6 @@
 setopt autocd extendedglob nomatch globdots extended_glob COMPLETE_IN_WORD
 setopt inc_append_history share_history HIST_IGNORE_ALL_DUPS no_list_ambiguous MENU_COMPLETE
-setopt combiningchars
+setopt combiningchars HIST_IGNORE_SPACE
 unsetopt beep
 
 zstyle ':completion:*' special-dirs false

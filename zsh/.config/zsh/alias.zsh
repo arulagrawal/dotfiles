@@ -13,7 +13,7 @@ alias joke='curl https://icanhazdadjoke.com && printf "\n"'
 alias weather='curl wttr.in'
 alias kettle='ssh arul@ssh.arul.io'
 alias oven='mosh arul@192.168.70.66'
-alias airfryer='ssh ubuntu@158.101.215.216'
+alias airfryer='ssh ubuntu@152.70.52.150'
 
 alias q='exit 0'
 
